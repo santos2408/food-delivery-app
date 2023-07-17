@@ -79,7 +79,10 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](./src/assets/github-cover.png)
+<!-- [![Food Devivery Screen Shot][product-screenshot]](./src/assets/github-cover.png) -->
+<p align="center">
+  <img alt="" src="./src/assets/github-cover.png" width="100%">
+</p>
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
