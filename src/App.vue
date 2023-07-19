@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">Tailwind Instalado</h1>
-  </div>
+  <router-view />
 </template>
 
 <script>
