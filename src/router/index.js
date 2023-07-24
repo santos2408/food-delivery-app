@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 import LoginView from "@/views/Login/LoginView.vue";
-import ResetPasswordView from "@/views/Login/ResetPasswordView.vue";
+import ForgotPasswordView from "@/views/Login/ForgotPasswordView.vue";
 
 const routes = [
   {
@@ -9,8 +9,8 @@ const routes = [
     component: LoginView,
   },
   {
-    path: "/resetpassword",
-    component: ResetPasswordView,
+    path: "/forgotpassword",
+    component: ForgotPasswordView,
   },
 ];
 
