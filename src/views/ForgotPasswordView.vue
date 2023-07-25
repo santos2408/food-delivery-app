@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import LoginSwiper from "@/components/Login/LoginSwiper.vue";
-import ForgotPassword from "@/components/Login/ForgotPassword.vue";
+import LoginSwiper from "@/components/Shared/Login/LoginSwiper.vue";
+import ForgotPassword from "@/components/ForgotPassword/ForgotPassword.vue";
 
 export default {
   name: "ForgotPasswordView",

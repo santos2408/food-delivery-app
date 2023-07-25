@@ -8,8 +8,7 @@
 </template>
 
 <script>
-import InfoCover from "@/components/Login/InfoCover.vue";
-// import LoginSwiper from "@/components/Login/LoginSwiper.vue";
+import InfoCover from "@/components/Shared/Login/InfoCover.vue";
 import TheLogin from "@/components/Login/TheLogin.vue";
 
 export default {

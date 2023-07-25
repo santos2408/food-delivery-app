@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import LoginView from "@/views/Login/LoginView.vue";
-import ForgotPasswordView from "@/views/Login/ForgotPasswordView.vue";
+import LoginView from "@/views/LoginView.vue";
+import ForgotPasswordView from "@/views/ForgotPasswordView.vue";
 
 const routes = [
   {

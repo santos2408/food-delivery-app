@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LoginSwiper from "@/components/Login/LoginSwiper.vue";
+import LoginSwiper from "@/components/Shared/Login/LoginSwiper.vue";
 
 export default {
   name: "InfoCover",
@@ -30,7 +30,6 @@ export default {
   computed: {
     getCoverImage() {
       const isAMobileDevice = this.screenWidth >= 768 && this.screenWidth <= 1280;
-      console.log(this.screenWidth);
       return isAMobileDevice
         ? new URL(`@/assets/Login/login-cover-tablet.png`, import.meta.url).href
         : new URL(`@/assets/Login/login-cover-desktop.png`, import.meta.url).href;
