@@ -3,7 +3,7 @@
     <header class="mb-20 w-full">
       <div class="inline-block">
         <router-link to="/">
-          <img src="../../assets/Shared/food-delivery-logo.svg" alt="Food Delivery" />
+          <img src="../../assets/food-delivery-logo.svg" alt="Food Delivery" />
         </router-link>
       </div>
     </header>

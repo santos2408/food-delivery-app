@@ -3,7 +3,7 @@
     <header class="w-full">
       <div class="inline-block">
         <a href="/">
-          <img src="../../assets/Shared/food-delivery-logo.svg" alt="Food Delivery" />
+          <img src="../../assets/food-delivery-logo.svg" alt="Food Delivery" />
         </a>
       </div>
     </header>
@@ -84,7 +84,7 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import GoogleIcon from "@/assets/Shared/Icons/GoogleIcon.vue";
+import GoogleIcon from "@/assets/Icons/GoogleIcon.vue";
 import InputField from "@/components/Shared/InputField.vue";
 import TheCheckbox from "@/components/Shared/TheCheckbox.vue";
 
