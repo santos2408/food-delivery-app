@@ -14,6 +14,22 @@
         Sign in with your data that you entered during your registration.
       </p>
 
+      <div>
+        <button
+          type="button"
+          class="flex w-full items-center justify-center gap-1 rounded-lg border-[1px] border-brand-gray-3 p-3"
+        >
+          <google-icon />
+          <span>Log in with Google</span>
+        </button>
+
+        <div class="my-6 flex items-center justify-center gap-3">
+          <span class="inline-block h-[1px] w-16 bg-brand-gray-3"></span>
+          <span class="text-sm text-brand-gray-2">Or</span>
+          <span class="inline-block h-[1px] w-16 bg-brand-gray-3"></span>
+        </div>
+      </div>
+
       <form action="">
         <div class="mb-7">
           <label for="email" class="mb-1 block text-sm font-semibold text-brand-gray-1">
@@ -23,7 +39,7 @@
             id="email"
             type="email"
             placeholder="name@example.com"
-            class="block w-full rounded-lg border-[1px] p-3 placeholder:text-sm placeholder:text-brand-gray-2 focus-visible:outline-brand-purple-1"
+            class="login-input"
           />
         </div>
 
@@ -38,7 +54,7 @@
             id="password"
             type="email"
             placeholder="min. 8 characters"
-            class="block w-full rounded-lg border-[1px] p-3 placeholder:text-sm placeholder:text-brand-gray-2 focus-visible:outline-brand-purple-1"
+            class="login-input"
           />
         </div>
 
@@ -68,6 +84,7 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import GoogleIcon from "@/assets/Shared/Icons/GoogleIcon.vue";
 import InputField from "@/components/Shared/InputField.vue";
 import TheCheckbox from "@/components/Shared/TheCheckbox.vue";
 
@@ -77,6 +94,13 @@ export default {
     ActionButton,
     InputField,
     TheCheckbox,
+    GoogleIcon,
   },
 };
 </script>
+
+<style scoped>
+.login-input {
+  @apply block w-full rounded-lg border-[1px] border-brand-gray-3 p-3 placeholder:text-sm placeholder:text-brand-gray-2 focus-visible:outline-brand-purple-1;
+}
+</style>
