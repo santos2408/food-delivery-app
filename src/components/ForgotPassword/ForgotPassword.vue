@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-auto flex h-full max-w-sm flex-col justify-between">
-    <header class="w-full">
+  <div class="mx-auto flex h-full max-w-sm flex-col">
+    <header class="mb-20 w-full">
       <div class="inline-block">
         <router-link to="/">
           <img src="../../assets/Shared/food-delivery-logo.svg" alt="Food Delivery" />
@@ -54,7 +54,7 @@
       </form>
     </div>
 
-    <div class="text-center">
+    <div class="mt-auto text-center">
       <p class="text-bold text-sm text-brand-gray-1">
         Do you have any questions?
         <a href="#" class="font-bold text-brand-purple-1">FAQ</a>
