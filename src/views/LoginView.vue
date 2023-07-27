@@ -1,14 +1,12 @@
 <template>
   <div class="h-screen w-full md:flex">
-    <section class="h-full flex-1 px-4 py-5 xl:w-[650px] xl:flex-initial">
-      <the-login />
-    </section>
+    <the-login />
     <info-cover v-if="isADesktopDevice" :screen-width="screenWidth" />
   </div>
 </template>
 
 <script>
-import InfoCover from "@/components/Shared/Login/InfoCover.vue";
+import InfoCover from "@/components/Shared/InfoCover.vue";
 import TheLogin from "@/components/Login/TheLogin.vue";
 
 export default {
