@@ -1,10 +1,10 @@
 <template>
   <div class="hidden flex-1 justify-center bg-brand-purple-3 md:block">
-    <div class="h-full md:flex md:flex-col xl:justify-center xl:gap-10 2xl:gap-5">
-      <div class="relative h-[75%] overflow-hidden xl:h-auto">
+    <div class="h-full md:flex md:flex-col xl:justify-center 2xl:gap-0">
+      <div class="relative h-[80%] overflow-hidden xl:h-auto">
         <img
           :src="getCoverImage"
-          class="absolute left-4 mx-auto w-[655px] max-w-none xl:relative xl:w-[920px] xl:max-w-full"
+          class="absolute left-4 mx-auto w-[655px] max-w-none xl:relative xl:w-[860px] xl:max-w-full 2xl:w-[960px]"
           alt="Login cover image"
         />
       </div>
