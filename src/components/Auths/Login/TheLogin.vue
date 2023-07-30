@@ -18,7 +18,7 @@
         <div>
           <button
             type="button"
-            class="flex w-full items-center justify-center gap-1 rounded-lg border-[1px] border-brand-gray-3 p-3"
+            class="flex w-full items-center justify-center gap-1 rounded-lg border-[1px] border-brand-gray-3 p-3 transition duration-300 ease-in-out hover:bg-brand-gray-4"
           >
             <google-icon />
             <span>Log in with Google</span>

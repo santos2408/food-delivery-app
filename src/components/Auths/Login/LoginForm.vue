@@ -9,6 +9,7 @@
       </label>
       <input-field
         id="email"
+        v-model="email"
         type="email"
         placeholder="name@example.com"
         class="login-input"
@@ -24,7 +25,8 @@
       </label>
       <input-field
         id="password"
-        type="email"
+        v-model="password"
+        type="password"
         placeholder="min. 8 characters"
         class="login-input"
       />
@@ -56,6 +58,12 @@ export default {
     InputField,
     ActionButton,
     TheCheckbox,
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
   },
 };
 </script>

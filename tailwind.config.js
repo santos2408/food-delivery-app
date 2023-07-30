@@ -16,6 +16,7 @@ module.exports = {
         "brand-gray-1": "#545563",
         "brand-gray-2": "#83859c",
         "brand-gray-3": "#c7c8d2",
+        "brand-gray-4": "#f5f5f5",
       },
       boxShadow: {
         purple: "0px 8px 20px 0px rgba(78, 96, 255, 0.16)",

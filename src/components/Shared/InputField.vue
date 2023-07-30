@@ -1,5 +1,5 @@
 <template>
-  <input :id="id" :type="type" :value="value" @input="handleInput" />
+  <input :id="id" :value="modelValue" :type="type" @input="handleInput" />
 </template>
 
 <script>
@@ -14,15 +14,15 @@ export default {
       type: String,
       required: true,
     },
-    value: {
+    modelValue: {
       type: String,
       required: true,
     },
   },
-  emits: ["handle-input"],
+  emits: ["update:model-value"],
   methods: {
     handleInput($event) {
-      this.$emits("handle-input", $event.taget.value);
+      this.$emit("update:model-value", $event.target.value);
     },
   },
 };
