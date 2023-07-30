@@ -1,19 +1,19 @@
 <template>
   <div class="h-screen w-full md:flex">
-    <forgot-password />
+    <request-password />
     <info-cover v-if="isADesktopDevice" :screen-width="screenWidth" />
   </div>
 </template>
 
 <script>
 import InfoCover from "@/components/Shared/InfoCover.vue";
-import ForgotPassword from "@/components/ForgotPassword/ForgotPassword.vue";
+import RequestPassword from "@/components/Auths/RequestPassword/RequestPassword.vue";
 
 export default {
-  name: "ForgotPasswordView",
+  name: "RequestPasswordView",
   components: {
     InfoCover,
-    ForgotPassword,
+    RequestPassword,
   },
   data() {
     return {

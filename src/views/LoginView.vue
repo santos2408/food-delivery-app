@@ -7,7 +7,7 @@
 
 <script>
 import InfoCover from "@/components/Shared/InfoCover.vue";
-import TheLogin from "@/components/Login/TheLogin.vue";
+import TheLogin from "@/components/Auths/Login/TheLogin.vue";
 
 export default {
   name: "LoginView",

@@ -6,8 +6,8 @@
           Leave reviews for all meals
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Your opinion matters here! Join our food review blog and help us uncover the
-          secrets of the most appetizing dishes.
+          Your opinion matters here! Join our food review blog and help us
+          uncover the secrets of the most appetizing dishes.
         </p>
       </swiper-slide>
       <swiper-slide>
@@ -15,8 +15,8 @@
           Tasty Journeys
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Join us on this tasty journey, where we analyze every bite with care to provide
-          the best gastronomic tips and reviews.
+          Join us on this tasty journey, where we analyze every bite with care
+          to provide the best gastronomic tips and reviews.
         </p>
       </swiper-slide>
       <swiper-slide>
@@ -24,8 +24,8 @@
           Culinary Adventures
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Step into our culinary universe and share your experiences as we explore the
-          best restaurants and their delights.
+          Step into our culinary universe and share your experiences as we
+          explore the best restaurants and their delights.
         </p>
       </swiper-slide>
       <swiper-slide>
@@ -33,8 +33,8 @@
           Discover the Delights
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Explore the irresistible flavors of the culinary world with us and discover what
-          dishes have to reveal in our food reviews.
+          Explore the irresistible flavors of the culinary world with us and
+          discover what dishes have to reveal in our food reviews.
         </p>
       </swiper-slide>
     </swiper-container>
@@ -42,14 +42,32 @@
 </template>
 
 <script>
+import { mapStores } from "pinia";
+
+import { useSwiperStore } from "../../stores/swiper";
+
 import swiperParams from "@/utils/loginSwiperParams";
 
 export default {
   name: "LoginSwiper",
+  data() {
+    return {
+      swiperElement: null,
+    };
+  },
+  computed: {
+    ...mapStores(useSwiperStore),
+  },
   mounted() {
-    const swiperEl = document.querySelector("swiper-container");
-    Object.assign(swiperEl, swiperParams);
-    swiperEl.initialize();
+    this.swiperElement = document.querySelector("swiper-container");
+    Object.assign(this.swiperElement, {
+      ...swiperParams,
+      initialSlide: this.swiperStore.slideIndex || 0,
+    });
+    this.swiperElement.initialize();
+  },
+  beforeUnmount() {
+    this.swiperStore.updateIndex(this.swiperElement.swiper.realIndex);
   },
 };
 </script>

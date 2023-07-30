@@ -57,7 +57,7 @@ import InputField from "@/components/Shared/InputField.vue";
 import LeftArrowIcon from "@/assets/icons/LeftArrowIcon.vue";
 
 export default {
-  name: "ForgotPassword",
+  name: "RequestPassword",
   components: {
     ActionButton,
     InputField,

@@ -1,7 +1,10 @@
 <template>
   <form action="">
     <div class="mb-7">
-      <label for="email" class="mb-1 block text-sm font-semibold text-brand-gray-1">
+      <label
+        for="email"
+        class="mb-1 block text-sm font-semibold text-brand-gray-1"
+      >
         Email
       </label>
       <input-field
@@ -13,7 +16,10 @@
     </div>
 
     <div class="mb-7">
-      <label for="password" class="mb-1 block text-sm font-semibold text-brand-gray-1">
+      <label
+        for="password"
+        class="mb-1 block text-sm font-semibold text-brand-gray-1"
+      >
         Password
       </label>
       <input-field
@@ -28,10 +34,10 @@
       <the-checkbox text="Keep me logged in" />
     </div>
 
-    <action-button type="submit" text="Login" />
+    <action-button type="submit" text="Login" class="mb-6" />
 
     <router-link
-      to="/forgotpassword"
+      :to="{ name: 'RequestPassword' }"
       class="mx-auto block max-w-max text-sm font-bold text-brand-purple-1"
     >
       Forgot password
@@ -56,6 +62,6 @@ export default {
 
 <style scoped>
 .login-input {
-  @apply block w-full rounded-lg border-[1px] border-brand-gray-3 p-3 placeholder:text-sm placeholder:text-brand-gray-2 focus-visible:outline-brand-purple-1;
+  @apply block w-full;
 }
 </style>

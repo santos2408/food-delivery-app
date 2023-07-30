@@ -4,7 +4,7 @@
       <header class="w-full">
         <div class="inline-block">
           <a href="/">
-            <img src="../../assets/food-delivery-logo.svg" alt="Food Delivery" />
+            <img src="@/assets/food-delivery-logo.svg" alt="Food Delivery" />
           </a>
         </div>
       </header>
@@ -37,9 +37,13 @@
       <div class="text-center">
         <p class="text-bold text-sm text-brand-gray-1">
           Don't have an account?
-          <router-link to="/signup" href="#" class="font-bold text-brand-purple-1"
-            >Sign up</router-link
+          <router-link
+            :to="{ name: 'Signup' }"
+            href="#"
+            class="font-bold text-brand-purple-1"
           >
+            Sign up
+          </router-link>
         </p>
       </div>
     </div>
@@ -48,7 +52,7 @@
 
 <script>
 import GoogleIcon from "@/assets/Icons/GoogleIcon.vue";
-import LoginForm from "@/components/Login/LoginForm.vue";
+import LoginForm from "@/components/Auths/Login/LoginForm.vue";
 
 export default {
   name: "TheLogin",
