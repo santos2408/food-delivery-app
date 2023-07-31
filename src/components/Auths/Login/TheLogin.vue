@@ -1,13 +1,7 @@
 <template>
   <main class="h-full flex-1 px-4 py-5 xl:w-[650px] xl:flex-initial">
     <div class="mx-auto flex h-full max-w-sm flex-col justify-between">
-      <header class="w-full">
-        <div class="inline-block">
-          <a href="/">
-            <img src="@/assets/food-delivery-logo.svg" alt="Food Delivery" />
-          </a>
-        </div>
-      </header>
+      <header-logo />
 
       <div>
         <h1 class="mb-5 text-6xl font-bold text-brand-dark-1">Login</h1>
@@ -52,12 +46,14 @@
 
 <script>
 import GoogleIcon from "@/assets/Icons/GoogleIcon.vue";
+import HeaderLogo from "@/components/Shared/Auths/HeaderLogo.vue";
 import LoginForm from "@/components/Auths/Login/LoginForm.vue";
 
 export default {
   name: "TheLogin",
   components: {
     LoginForm,
+    HeaderLogo,
     GoogleIcon,
   },
 };

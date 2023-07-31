@@ -24,7 +24,6 @@ export default {
   mounted() {
     window.addEventListener("resize", () => {
       this.screenWidth = window.innerWidth;
-      this.shouldChangeCoverImage = this.screenWidth <= 1280 ? true : false;
       this.isADesktopDevice = this.screenWidth > 768 ? true : false;
     });
   },

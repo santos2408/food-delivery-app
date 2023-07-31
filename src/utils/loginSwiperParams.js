@@ -14,7 +14,7 @@ export default {
   `,
   ],
   autoplay: {
-    delay: 3000,
+    delay: 10000,
   },
   loop: true,
   allowTouchMove: false,
