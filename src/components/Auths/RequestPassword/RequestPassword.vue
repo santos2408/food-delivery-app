@@ -12,19 +12,15 @@
           Back to login
         </router-link>
 
-        <h1 class="mb-10 text-5xl font-bold text-brand-dark-1">
-          Forgot password
-        </h1>
+        <h1 class="mb-10 text-5xl font-bold text-brand-dark-1">Forgot password</h1>
         <p class="mb-8 text-sm text-brand-gray-1">
-          Enter the email associated with your account and we’ll send an email
-          with instructions to reset your password.
+          Enter the email associated with your account and we’ll send an email with
+          instructions to reset your password.
         </p>
 
         <form action="">
           <div class="mb-7">
-            <label
-              for="email"
-              class="mb-1 block text-sm font-semibold text-brand-gray-1"
+            <label for="email" class="mb-1 block text-sm font-semibold text-brand-gray-1"
               >Email</label
             >
             <input-field
@@ -63,6 +59,11 @@ export default {
     HeaderLogo,
     InputField,
     LeftArrowIcon,
+  },
+  data() {
+    return {
+      email: "",
+    };
   },
 };
 </script>

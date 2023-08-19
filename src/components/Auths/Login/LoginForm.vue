@@ -1,10 +1,7 @@
 <template>
   <form action="">
     <div class="mb-7">
-      <label
-        for="email"
-        class="mb-1 block text-sm font-semibold text-brand-gray-1"
-      >
+      <label for="email" class="mb-1 block text-sm font-semibold text-brand-gray-1">
         Email
       </label>
       <input-field
@@ -17,10 +14,7 @@
     </div>
 
     <div class="mb-7">
-      <label
-        for="password"
-        class="mb-1 block text-sm font-semibold text-brand-gray-1"
-      >
+      <label for="password" class="mb-1 block text-sm font-semibold text-brand-gray-1">
         Password
       </label>
       <input-field
