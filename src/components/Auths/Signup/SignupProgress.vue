@@ -55,8 +55,8 @@ export default {
   position: absolute;
   left: 6px;
   top: 3px;
-  width: 5px;
-  height: 9px;
+  width: 4px;
+  height: 8px;
   border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
