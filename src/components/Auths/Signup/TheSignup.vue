@@ -135,7 +135,7 @@
             <div class="mb-10">
               <h1 class="mb-5 text-4xl font-bold text-brand-dark-1">Confirmation</h1>
               <p class="mb-8 text-sm text-brand-gray-1">
-                Enter your security code that we sent to your phone.
+                Enter your security code that we sent to your email.
               </p>
             </div>
 
