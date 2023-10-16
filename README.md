@@ -30,13 +30,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="" alt="Yumz! Food Delivery Logo" width="80" height="80">
+    <img src="/public/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Food Delivery App</h3>
+  <h3 align="center">Yumz! - Food Delivery App</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Este projeto é construído utilizando o framework Vue.js para o front-end e, futuramente, será integrado com Node.js no back-end, junto com um banco de dados para garantir a funcionalidade completa.
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -84,17 +84,25 @@
   <img alt="" src="./src/assets/github-cover.png" width="100%">
 </p>
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Yumz! é um projeto pessoal de desenvolvimento de um aplicativo de entrega de comida que visa combinar uma ampla variedade de recursos e funcionalidades. Desenvolvido com o objetivo principal de aprimorar minhas habilidades em desenvolvimento de front-end e back-end, este projeto é uma jornada de aprendizado individual e uma valiosa adição ao meu portfólio pessoal.
 
-Here's why:
+- Cardápios e Pedidos Online: O aplicativo permite que restaurantes listem seus cardápios de forma atraente, com descrições de pratos, imagens e preços. Os usuários podem navegar pelos cardápios e fazer pedidos online com facilidade.
+
+- Interação Social: Yumz! incentiva a interação entre os usuários, oferecendo recursos como curtidas, comentários e favoritos. Os usuários podem compartilhar suas experiências gastronômicas, dar recomendações e se conectar com outros entusiastas da comida.
+
+- Gestão de Entregas: Os restaurantes têm a capacidade de gerenciar suas entregas diretamente pelo aplicativo. Isso inclui a confirmação de pedidos, o rastreamento de entregas e a comunicação com os clientes.
+
+- Promoções e Anúncios: Restaurantes podem destacar ofertas especiais, promoções e anúncios para atrair clientes e aumentar sua visibilidade no aplicativo.
+
+<!-- Here's why:
 
 - Your time should be focused on creating something amazing. A project that solves a problem and helps others
 - You shouldn't be doing the same tasks over and over like creating a README from scratch
 - You should implement DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template! -->
 
-Use the `BLANK_README.md` to get started.
+<!-- Use the `BLANK_README.md` to get started. -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,16 +110,20 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [![Next][Next.js]][Next-url]
-- [![React][React.js]][React-url]
+<!-- - [![Next][Next.js]][Next-url] -->
+<!-- - [![React][React.js]][React-url] -->
+
 - [![Vue][Vue.js]][Vue-url]
-- [![Angular][Angular.io]][Angular-url]
-- [![Svelte][Svelte.dev]][Svelte-url]
-- [![Laravel][Laravel.com]][Laravel-url]
-- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-- [![JQuery][JQuery.com]][JQuery-url]
+- [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+  <!-- - [![Angular][Angular.io]][Angular-url] -->
+  <!-- - [![Svelte][Svelte.dev]][Svelte-url] -->
+  <!-- - [![Laravel][Laravel.com]][Laravel-url] -->
+  <!-- - [![Bootstrap][Bootstrap.com]][Bootstrap-url] -->
+  <!-- - [![JQuery][JQuery.com]][JQuery-url] -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## README EM DESENVOLVIMENTO! ...
 
 <!-- GETTING STARTED -->
 
@@ -259,3 +271,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
+[TailwindCSS-url]: https://tailwindcss.com/
