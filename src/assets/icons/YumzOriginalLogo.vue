@@ -35,8 +35,8 @@
         y2="0.0957031"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF4164" />
-        <stop offset="1" stop-color="#FF6F52" />
+        <stop :stop-color="correctGradient1" />
+        <stop offset="1" :stop-color="correctGradient2" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_22_4489"
@@ -46,8 +46,8 @@
         y2="5.68018"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF4164" />
-        <stop offset="1" stop-color="#FF6F52" />
+        <stop :stop-color="correctGradient1" />
+        <stop offset="1" :stop-color="correctGradient2" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_22_4489"
@@ -57,8 +57,8 @@
         y2="5.04187"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF4164" />
-        <stop offset="1" stop-color="#FF6F52" />
+        <stop :stop-color="correctGradient1" />
+        <stop offset="1" :stop-color="correctGradient2" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_22_4489"
@@ -68,8 +68,8 @@
         y2="5.36108"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF4164" />
-        <stop offset="1" stop-color="#FF6F52" />
+        <stop :stop-color="correctGradient1" />
+        <stop offset="1" :stop-color="correctGradient2" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_22_4489"
@@ -79,8 +79,8 @@
         y2="0"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF4164" />
-        <stop offset="1" stop-color="#FF6F52" />
+        <stop :stop-color="correctGradient1" />
+        <stop offset="1" :stop-color="correctGradient2" />
       </linearGradient>
     </defs>
   </svg>
@@ -96,6 +96,14 @@ export default {
       default: () => {
         return "";
       },
+    },
+  },
+  computed: {
+    correctGradient1() {
+      return this.color ? this.color : "#FF4164";
+    },
+    correctGradient2() {
+      return this.color ? this.color : "#FF6F52";
     },
   },
 };

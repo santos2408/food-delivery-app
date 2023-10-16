@@ -2,7 +2,7 @@
   <header class="w-full">
     <div class="inline-block">
       <a href="/" aria-label="Food Delivery Logo">
-        <yumz-original-logo />
+        <yumz-original-logo :color="color" />
       </a>
     </div>
   </header>
@@ -15,6 +15,15 @@ export default {
   name: "HeaderLogo",
   components: {
     YumzOriginalLogo,
+  },
+  props: {
+    color: {
+      type: String,
+      required: false,
+      default: () => {
+        return "";
+      },
+    },
   },
 };
 </script>

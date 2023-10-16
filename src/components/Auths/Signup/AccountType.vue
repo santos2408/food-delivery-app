@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
 button {
-  @apply w-full rounded-2xl border-[2px] border-neutral-50 p-4;
+  @apply w-full rounded-2xl border-[2px] border-neutral-200 p-4;
 }
 .icon {
   @apply flex h-10 w-10 items-center justify-center rounded-xl bg-brand-neutral-50;

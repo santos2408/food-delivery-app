@@ -147,21 +147,21 @@
 
             <the-checkbox text="Turn on 2 factor authentication" class="mb-10" />
 
-            <div class="flex justify-end">
+            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+              <button
+                class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
+                @click="previousStep"
+              >
+                Back
+              </button>
+
               <action-button
                 type="button"
                 text="Continue"
-                class="mb-7 md:w-52"
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
             </div>
-
-            <button
-              class="brand-neutral-400 mx-auto mb-16 block font-semibold"
-              @click="previousStep"
-            >
-              Back
-            </button>
           </div>
 
           <div
@@ -193,16 +193,21 @@
               />
             </div>
 
-            <div class="flex justify-end">
-              <action-button type="button" text="Complete" class="mb-7 md:w-52" />
-            </div>
+            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+              <button
+                class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
+                @click="previousStep"
+              >
+                Back
+              </button>
 
-            <button
-              class="mx-auto mb-16 block font-semibold text-brand-neutral-400"
-              @click="previousStep"
-            >
-              Back
-            </button>
+              <action-button
+                type="button"
+                text="Continue"
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
+                @click="nextStep"
+              />
+            </div>
           </div>
         </form>
       </div>

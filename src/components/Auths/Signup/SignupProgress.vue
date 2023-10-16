@@ -3,7 +3,13 @@
     <li
       v-for="(step, index) in steps"
       :key="step.step"
-      class="flex w-full flex-col md:w-full"
+      :class="[
+        'flex',
+        'w-full',
+        'flex-col',
+        'md:w-full',
+        { 'last-step': steps.length - 1 === index },
+      ]"
     >
       <div class="mb-3 grid grid-cols-[auto_1fr] items-center gap-3">
         <span
@@ -26,7 +32,7 @@
       </div>
       <p
         class="text-sm font-semibold text-neutral-600"
-        :class="{ 'text-neutral-400': step.step !== currentStep }"
+        :class="{ 'text-brand-neutral-200': step.step !== currentStep }"
       >
         {{ step.title }}
       </p>
@@ -81,5 +87,9 @@ export default {
 
 .default-progress-line {
   @apply inline-block h-[2px] w-full bg-brand-neutral-50;
+}
+
+.last-step {
+  flex: 0.5;
 }
 </style>
