@@ -4,24 +4,28 @@
       <header-logo />
 
       <div>
-        <h1 class="mb-5 text-6xl font-bold text-brand-dark-1">Login</h1>
-        <p class="mb-8 text-sm text-brand-gray-1">
+        <h1 class="mb-5 text-6xl font-bold text-brand-neutral-800">Login</h1>
+        <p class="mb-8 text-base leading-custom tracking-custom text-brand-neutral-400">
           Sign in with your data that you entered during your registration.
         </p>
 
         <div>
           <button
             type="button"
-            class="flex w-full items-center justify-center gap-1 rounded-lg border-[1px] border-brand-gray-3 p-3 transition duration-300 ease-in-out hover:bg-brand-gray-4"
+            class="flex w-full items-center justify-center gap-1 rounded-md border-[1px] border-brand-neutral-200 border-opacity-50 p-3 transition duration-300 ease-in-out hover:bg-brand-neutral-200 hover:bg-opacity-5"
           >
             <google-icon />
-            <span>Log in with Google</span>
+            <span class="text-sm text-brand-neutral-400">Log in with Google</span>
           </button>
 
           <div class="my-6 flex items-center justify-center gap-3">
-            <span class="inline-block h-[1px] w-16 bg-brand-gray-3"></span>
-            <span class="text-sm text-brand-gray-2">Or</span>
-            <span class="inline-block h-[1px] w-16 bg-brand-gray-3"></span>
+            <span
+              class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
+            ></span>
+            <span class="text-xsm text-brand-neutral-400">Or</span>
+            <span
+              class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
+            ></span>
           </div>
         </div>
 
@@ -29,12 +33,12 @@
       </div>
 
       <div class="text-center">
-        <p class="text-bold text-sm text-brand-gray-1">
+        <p class="text-bold text-sm text-brand-neutral-400">
           Don't have an account?
           <router-link
             :to="{ name: 'Signup' }"
             href="#"
-            class="font-bold text-brand-purple-1"
+            class="font-bold text-brand-primary-500"
           >
             Sign up
           </router-link>

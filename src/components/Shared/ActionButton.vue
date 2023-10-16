@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    class="w-full rounded-lg bg-brand-purple-1 px-4 py-3 text-sm font-bold text-white shadow-purple transition duration-300 ease-in-out hover:bg-brand-purple-2"
+    class="w-full rounded-lg bg-brand-primary-500 px-4 py-3 text-sm font-bold text-brand-white shadow-primary transition duration-300 ease-in-out hover:bg-brand-primary-400"
   >
     {{ text }}
   </button>

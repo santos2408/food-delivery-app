@@ -30,6 +30,6 @@ export default {
 
 <style scoped>
 input {
-  @apply rounded-lg border-[1px] border-brand-gray-3 p-3 placeholder:text-sm placeholder:text-brand-gray-2 focus-visible:outline-brand-purple-1;
+  @apply rounded-lg border-[1px] border-brand-neutral-200 border-opacity-50 p-3 placeholder:text-sm placeholder:text-brand-neutral-200 focus-visible:outline-brand-primary-500;
 }
 </style>

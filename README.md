@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./src/assets/food-delivery-logo.svg" alt="Food Delivery Logo" width="80" height="80">
+    <img src="" alt="Yumz! Food Delivery Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Food Delivery App</h3>

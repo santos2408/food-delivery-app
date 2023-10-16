@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-10 flex flex-col gap-3">
+  <div class="mb-10 flex flex-col gap-3 md:flex-row md:gap-8">
     <button
       :class="{ 'selected-button': selectedType === 'restaurant' }"
       data-type="restaurant"
@@ -15,8 +15,8 @@
           <ShoppingBag :color="iconRestaurantColor" />
         </div>
         <div class="text-left">
-          <h2 class="text-base font-bold text-brand-dark-1">Restaurant</h2>
-          <p class="text-sm text-brand-gray-2">Manage your own restaurant</p>
+          <h2 class="text-base font-bold text-brand-neutral-800">Restaurant</h2>
+          <p class="text-sm text-brand-neutral-300">Manage your own restaurant</p>
         </div>
       </div>
     </button>
@@ -36,8 +36,8 @@
           <User :color="iconPersonalColor" />
         </div>
         <div class="text-left">
-          <h2 class="text-base font-bold text-brand-dark-1">Personal</h2>
-          <p class="text-sm text-brand-gray-2">Keep your orders in one place</p>
+          <h2 class="text-base font-bold text-brand-neutral-800">Personal</h2>
+          <p class="text-sm text-brand-neutral-300">Keep your orders in one place</p>
         </div>
       </div>
     </button>
@@ -60,10 +60,10 @@ export default {
   },
   computed: {
     iconRestaurantColor() {
-      return this.selectedType === "restaurant" ? "#fff" : "#83859C";
+      return this.selectedType === "restaurant" ? "#fff" : "#A3ABB2";
     },
     iconPersonalColor() {
-      return this.selectedType === "personal" ? "#fff" : "#83859C";
+      return this.selectedType === "personal" ? "#fff" : "#A3ABB2";
     },
   },
   methods: {
@@ -76,15 +76,15 @@ export default {
 
 <style scoped>
 button {
-  @apply w-full rounded-2xl border-[2px] border-[#E7E8EC] p-4;
+  @apply w-full rounded-2xl border-[2px] border-neutral-50 p-4;
 }
 .icon {
-  @apply flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gray-4;
+  @apply flex h-10 w-10 items-center justify-center rounded-xl bg-brand-neutral-50;
 }
 .selected-button {
-  @apply border-brand-purple-2 bg-[#F3F4FF];
+  @apply border-brand-primary-500 bg-brand-neutral-50;
 }
 .selected-button_icon-container {
-  @apply bg-brand-purple-2;
+  @apply bg-brand-primary-500;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <label
     for="checkmark"
-    class="checkmark-container inline-flex items-center gap-3 text-sm text-brand-dark-1"
+    class="checkmark-container inline-flex items-center gap-3 text-sm text-brand-neutral-400"
   >
     <input id="checkmark" type="checkbox" class="checkmark-input hidden" />
     <div class="checkmark"></div>
@@ -49,13 +49,13 @@ export default {
   width: 21px;
   background: #fff;
   border-radius: 5px;
-  border: 2px solid #c7c8d2;
+  border: 2px solid hsl(208, 9%, 67%, 50%);
 }
 
 /* When the checkbox is checked, add a blue background */
 .checkmark-input:checked ~ .checkmark {
-  background-color: #4e60ff;
-  border-color: #4e60ff;
+  background-color: #ff2851;
+  border-color: #ff2851;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

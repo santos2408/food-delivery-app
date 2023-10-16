@@ -1,35 +1,48 @@
 <template>
-  <main class="h-screen flex-1 px-4 py-5 xl:w-[650px] xl:flex-initial">
-    <div class="mx-auto flex h-full max-w-sm flex-col">
-      <header-logo class="mb-10" />
+  <main
+    class="h-screen flex-1 px-4 py-5 md:px-10 md:pt-10 lg:h-screen xl:w-[650px] xl:flex-initial"
+  >
+    <div class="mx-auto flex h-full max-w-sm flex-col sm:max-w-lg md:max-w-full">
+      <header-logo v-if="handleLogoVisibility" class="mb-14" />
 
       <div class="h-full">
         <signup-progress class="mb-16" :steps="steps" :current-step="currentStep" />
 
         <form action="">
-          <div v-if="showCurrentStep('account-type')" data-step="account-type">
+          <div
+            v-if="showCurrentStep('account-type')"
+            class="md:mb-16"
+            data-step="account-type"
+          >
             <div class="mb-10">
-              <h1 class="mb-5 text-4xl font-bold text-brand-dark-1">Sign up</h1>
-              <p class="mb-8 text-sm text-brand-gray-1">
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Sign up</h1>
+              <p class="mb-8 text-base text-brand-neutral-400">
                 Register to create your restaurant or personal account
               </p>
             </div>
 
             <account-type />
-            <div>
+
+            <div class="flex justify-end">
               <action-button
                 type="button"
                 text="Continue"
-                class="mb-6"
+                class="mb-6 md:w-52"
                 @click="nextStep"
               />
             </div>
           </div>
 
-          <div v-if="showCurrentStep('personal-details')" data-step="personal-details">
+          <div
+            v-if="showCurrentStep('personal-details')"
+            class="md:mb-16"
+            data-step="personal-details"
+          >
             <div class="mb-10">
-              <h1 class="mb-5 text-4xl font-bold text-brand-dark-1">Personal details</h1>
-              <p class="mb-8 text-sm text-brand-gray-1">
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">
+                Personal details
+              </h1>
+              <p class="mb-8 text-base text-brand-neutral-300">
                 Enter your data that you will use for entering.
               </p>
             </div>
@@ -38,7 +51,7 @@
               <div>
                 <label
                   for="email"
-                  class="mb-1 block text-sm font-semibold text-brand-gray-1"
+                  class="mb-1 block text-sm font-semibold text-brand-neutral-400"
                 >
                   Email
                 </label>
@@ -84,20 +97,33 @@
               </div>
             </div>
 
-            <action-button type="button" text="Continue" class="mb-7" @click="nextStep" />
+            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+              <button
+                class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
+                @click="previousStep"
+              >
+                Back
+              </button>
 
-            <button
-              class="mx-auto mb-16 block font-semibold text-brand-gray-1"
-              @click="previousStep"
-            >
-              Back
-            </button>
+              <action-button
+                type="button"
+                text="Continue"
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
+                @click="nextStep"
+              />
+            </div>
           </div>
 
-          <div v-if="showCurrentStep('additional-info')" data-step="additional-info">
+          <div
+            v-if="showCurrentStep('additional-info')"
+            class="md:mb-16"
+            data-step="additional-info"
+          >
             <div class="mb-10">
-              <h1 class="mb-5 text-4xl font-bold text-brand-dark-1">Additional info</h1>
-              <p class="mb-8 text-sm text-brand-gray-1">
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">
+                Additional info
+              </h1>
+              <p class="mb-8 text-base text-brand-neutral-400">
                 Enter your additional information.
               </p>
             </div>
@@ -105,7 +131,7 @@
             <div class="mb-7">
               <label
                 for="phone"
-                class="mb-1 block text-sm font-semibold text-brand-gray-1"
+                class="mb-1 block text-sm font-semibold text-brand-neutral-400"
               >
                 Phone number
               </label>
@@ -121,20 +147,31 @@
 
             <the-checkbox text="Turn on 2 factor authentication" class="mb-10" />
 
-            <action-button type="button" text="Continue" class="mb-7" @click="nextStep" />
+            <div class="flex justify-end">
+              <action-button
+                type="button"
+                text="Continue"
+                class="mb-7 md:w-52"
+                @click="nextStep"
+              />
+            </div>
 
             <button
-              class="mx-auto mb-16 block font-semibold text-brand-gray-1"
+              class="brand-neutral-400 mx-auto mb-16 block font-semibold"
               @click="previousStep"
             >
               Back
             </button>
           </div>
 
-          <div v-if="showCurrentStep('confirmation')" data-step="confirmation">
+          <div
+            v-if="showCurrentStep('confirmation')"
+            class="md:mb-16"
+            data-step="confirmation"
+          >
             <div class="mb-10">
-              <h1 class="mb-5 text-4xl font-bold text-brand-dark-1">Confirmation</h1>
-              <p class="mb-8 text-sm text-brand-gray-1">
+              <h1 class="mb-5 text-4xl font-bold text-brand-neutral-800">Confirmation</h1>
+              <p class="mb-8 text-sm text-brand-neutral-400">
                 Enter your security code that we sent to your email.
               </p>
             </div>
@@ -142,7 +179,7 @@
             <div class="mb-7">
               <label
                 for="phone"
-                class="mb-1 block text-sm font-semibold text-brand-gray-1"
+                class="mb-1 block text-sm font-semibold text-brand-neutral-400"
               >
                 Confirmation code
               </label>
@@ -156,12 +193,12 @@
               />
             </div>
 
-            <the-checkbox text="Remember this device" class="mb-10" />
-
-            <action-button type="button" text="Complete" class="mb-7" />
+            <div class="flex justify-end">
+              <action-button type="button" text="Complete" class="mb-7 md:w-52" />
+            </div>
 
             <button
-              class="mx-auto mb-16 block font-semibold text-brand-gray-1"
+              class="mx-auto mb-16 block font-semibold text-brand-neutral-400"
               @click="previousStep"
             >
               Back
@@ -171,12 +208,12 @@
       </div>
 
       <div class="text-center">
-        <p class="text-bold py-2 text-sm text-brand-gray-1">
+        <p class="text-bold py-2 text-sm text-brand-neutral-400">
           Don't have an account?
           <router-link
             :to="{ name: 'Login' }"
             href="#"
-            class="font-bold text-brand-purple-1"
+            class="font-bold text-brand-primary-500"
           >
             Sign in
           </router-link>
@@ -235,12 +272,27 @@ export default {
       confirmPassword: "",
       phone: "",
       confirmPhone: "",
+
+      screenWidth: window.innerWidth,
+      isADesktopDevice: null,
     };
   },
   computed: {
     showCurrentStep() {
       return (stepName) => this.currentStep === stepName;
     },
+    handleLogoVisibility() {
+      const isAMobileDevice = this.screenWidth > 767;
+      return isAMobileDevice ? false : true;
+    },
+  },
+  mounted() {
+    this.isADesktopDevice = this.screenWidth > 767 ? true : false;
+
+    window.addEventListener("resize", () => {
+      this.screenWidth = window.innerWidth;
+      this.isADesktopDevice = this.screenWidth > 767;
+    });
   },
   methods: {
     nextStep() {

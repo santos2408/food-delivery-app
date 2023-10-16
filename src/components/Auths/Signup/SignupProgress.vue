@@ -1,6 +1,10 @@
 <template>
   <ul class="flex flex-row flex-nowrap gap-3">
-    <li v-for="(step, index) in steps" :key="step.step" class="flex w-[70px] flex-col">
+    <li
+      v-for="(step, index) in steps"
+      :key="step.step"
+      class="flex w-full flex-col md:w-full"
+    >
       <div class="mb-3 grid grid-cols-[auto_1fr] items-center gap-3">
         <span
           :class="{
@@ -20,7 +24,12 @@
         >
         </span>
       </div>
-      <p class="text-sm font-semibold text-brand-dark-1">{{ step.title }}</p>
+      <p
+        class="text-sm font-semibold text-neutral-600"
+        :class="{ 'text-neutral-400': step.step !== currentStep }"
+      >
+        {{ step.title }}
+      </p>
     </li>
   </ul>
 </template>
@@ -43,11 +52,11 @@ export default {
 
 <style scoped>
 .current-progress-circle {
-  @apply inline-block h-4 w-4 rounded-full bg-brand-purple-1;
+  @apply inline-block h-4 w-4 rounded-full bg-brand-primary-500;
 }
 
 .completed-progress-circle {
-  @apply relative inline-block h-4 w-4 rounded-full bg-[#19BF70];
+  @apply relative inline-block h-4 w-4 rounded-full bg-brand-success-400;
 }
 
 .completed-progress-circle::after {
@@ -63,14 +72,14 @@ export default {
 }
 
 .default-progress-circle {
-  @apply inline-block h-4 w-4 rounded-full bg-brand-gray-3;
+  @apply inline-block h-4 w-4 rounded-full bg-brand-neutral-50;
 }
 
 .completed-progress-line {
-  @apply inline-block h-[2px] w-full bg-[#19bf6fa8];
+  @apply inline-block h-[2px] w-full bg-brand-success-400;
 }
 
 .default-progress-line {
-  @apply inline-block h-[2px] w-full bg-brand-gray-3;
+  @apply inline-block h-[2px] w-full bg-brand-neutral-50;
 }
 </style>
