@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-10 flex flex-col gap-3 md:flex-row md:gap-8">
+  <div class="mb-10 flex flex-col gap-3 md:gap-4">
     <button
       :class="{ 'selected-button': selectedType === 'restaurant' }"
       data-type="restaurant"

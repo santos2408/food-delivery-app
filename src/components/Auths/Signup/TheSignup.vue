@@ -2,13 +2,16 @@
   <main
     class="h-screen flex-1 px-4 py-5 md:px-10 md:pt-10 lg:h-screen xl:w-[650px] xl:flex-initial"
   >
-    <div class="mx-auto flex h-full max-w-sm flex-col sm:max-w-lg md:max-w-full">
-      <header-logo v-if="handleLogoVisibility" class="mb-14" />
+    <div class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full">
+      <header-logo
+        :color="handleLogoColor"
+        class="mx-auto mb-14 block max-w-md md:hidden xl:block"
+      />
 
       <div class="h-full">
         <signup-progress class="mb-16" :steps="steps" :current-step="currentStep" />
 
-        <form action="">
+        <form action="" class="mx-auto max-w-md">
           <div
             v-if="showCurrentStep('account-type')"
             class="md:mb-16"
@@ -286,9 +289,8 @@ export default {
     showCurrentStep() {
       return (stepName) => this.currentStep === stepName;
     },
-    handleLogoVisibility() {
-      const isAMobileDevice = this.screenWidth > 767;
-      return isAMobileDevice ? false : true;
+    handleLogoColor() {
+      return this.screenWidth < 1280 ? "#fff" : undefined;
     },
   },
   mounted() {
