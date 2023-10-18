@@ -125,7 +125,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## README EM DESENVOLVIMENTO! ...
+## README EM DESENVOLVIMENTO!...
 
 <!-- GETTING STARTED -->
 
