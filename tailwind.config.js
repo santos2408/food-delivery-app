@@ -31,16 +31,20 @@ module.exports = {
 
         "brand-primary-500": "#FF2851",
         "brand-primary-400": "#FF5374",
+        // "brand-primary-300": "#FF6F8A",
+        "brand-primary-100": "#FFBCC9",
+        "brand-primary-50": "#FFEAEE",
 
         "brand-secondary-500": "#FF7051",
 
         "brand-success-400": "#54C59C",
 
         "brand-neutral-50": "#EBEDEE",
-        // "brand-neutral-100": "#C1C7CB",
+        "brand-neutral-100": "#C1C7CB",
         "brand-neutral-200": "#A3ABB2",
         "brand-neutral-300": "#79858E",
         "brand-neutral-400": "#5F6D79",
+        "brand-neutral-500": "#374957",
         "brand-neutral-600": "#32424F",
         "brand-neutral-800": "#1E2830",
 
