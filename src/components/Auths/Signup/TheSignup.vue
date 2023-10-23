@@ -11,7 +11,10 @@
       <div class="h-full">
         <signup-progress class="mb-16" :steps="steps" :current-step="currentStep" />
 
-        <form action="" class="mx-auto max-w-md">
+        <form
+          action=""
+          class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:mx-auto xl:max-w-md"
+        >
           <div
             v-if="showCurrentStep('account-type')"
             class="md:mb-16"
@@ -173,8 +176,8 @@
             data-step="confirmation"
           >
             <div class="mb-10">
-              <h1 class="mb-5 text-4xl font-bold text-brand-neutral-800">Confirmation</h1>
-              <p class="mb-8 text-sm text-brand-neutral-400">
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Confirmation</h1>
+              <p class="mb-8 text-base text-brand-neutral-400">
                 Enter your security code that we sent to your email.
               </p>
             </div>
@@ -206,7 +209,7 @@
 
               <action-button
                 type="button"
-                text="Continue"
+                text="Complete"
                 class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
