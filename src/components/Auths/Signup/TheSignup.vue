@@ -4,6 +4,7 @@
   >
     <div class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full">
       <header-logo
+        v-if="handleLogoVisibility"
         :color="handleLogoColor"
         class="mx-auto mb-14 block max-w-md md:hidden xl:block"
       />
@@ -293,7 +294,14 @@ export default {
       return (stepName) => this.currentStep === stepName;
     },
     handleLogoColor() {
-      return this.screenWidth < 1280 ? "#fff" : undefined;
+      const isMobileWidth = this.screenWidth < 768;
+      const isDesktopWidth = this.screenWidth > 1279;
+      return isMobileWidth || isDesktopWidth ? undefined : "";
+    },
+    handleLogoVisibility() {
+      const isMobileWidth = this.screenWidth < 768;
+      const isDesktopWidth = this.screenWidth > 1279;
+      return isMobileWidth || isDesktopWidth ? true : false;
     },
   },
   mounted() {
