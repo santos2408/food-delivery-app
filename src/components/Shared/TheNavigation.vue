@@ -31,9 +31,7 @@
           <a href="#">Promoções</a>
         </li>
 
-        <span
-          class="seprator block h-8 w-[1px] bg-brand-neutral-50 text-brand-primary-500"
-        >
+        <span class="block h-8 w-[1px] bg-brand-neutral-50 text-brand-primary-500">
         </span>
 
         <li class="cursor-pointer p-2 hover:text-brand-primary-500">
@@ -81,8 +79,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.seprator {
-  /* width: 1px */
-}
-</style>
+<style scoped></style>
