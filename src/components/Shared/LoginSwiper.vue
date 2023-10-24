@@ -3,38 +3,38 @@
     <swiper-container class="h-36" init="false">
       <swiper-slide>
         <h2 class="mb-4 text-center text-2xl font-bold text-white lg:text-3xl">
-          Leave reviews for all meals
+          Deixe comentários nas refeições
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Your opinion matters here! Join our food review blog and help us
-          uncover the secrets of the most appetizing dishes.
+          Sua opinião é importante aqui! Participe de nosso blog de avaliação de alimentos
+          e nos ajude a descobrir os segredos dos pratos mais deliciosos.
         </p>
       </swiper-slide>
       <swiper-slide>
         <h2 class="mb-4 text-center text-2xl font-bold text-white lg:text-3xl">
-          Tasty Journeys
+          Viagens Saborosas
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Join us on this tasty journey, where we analyze every bite with care
-          to provide the best gastronomic tips and reviews.
+          Junte-se a nós nessa jornada saborosa, onde analisamos cada mordida com cuidado
+          para fornecer as melhores dicas e avaliações gastronômicas.
         </p>
       </swiper-slide>
       <swiper-slide>
         <h2 class="mb-4 text-center text-2xl font-bold text-white lg:text-3xl">
-          Culinary Adventures
+          Aventuras Culinárias
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Step into our culinary universe and share your experiences as we
-          explore the best restaurants and their delights.
+          Entre em nosso universo culinário e compartilhe suas experiências enquanto
+          exploramos os melhores restaurantes e suas delícias.
         </p>
       </swiper-slide>
       <swiper-slide>
         <h2 class="mb-4 text-center text-2xl font-bold text-white lg:text-3xl">
-          Discover the Delights
+          Descubra as Delícias
         </h2>
         <p class="mx-auto text-center text-sm text-white">
-          Explore the irresistible flavors of the culinary world with us and
-          discover what dishes have to reveal in our food reviews.
+          Explore os sabores irresistíveis do mundo da culinária conosco e descubra o que
+          os pratos pratos têm a revelar em nossas avaliações de alimentos.
         </p>
       </swiper-slide>
     </swiper-container>
