@@ -25,5 +25,8 @@ export default {
       },
     },
   },
+  mounted() {
+    console.log(this.color);
+  },
 };
 </script>
