@@ -3,7 +3,7 @@
     class="flex items-center justify-between border-b-[1px] border-brand-neutral-50 py-6"
   >
     <div class="flex items-center gap-14">
-      <a href="/">
+      <a href="/" class="py-4">
         <yumz-original-logo />
       </a>
       <label

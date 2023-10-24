@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <header class="container mx-auto">
-      <the-navigation />
-    </header>
-  </div>
+  <header class="container mx-auto">
+    <the-navigation />
+  </header>
 </template>
 
 <script>
