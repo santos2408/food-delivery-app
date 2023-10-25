@@ -6,7 +6,7 @@
       <div>
         <h1 class="mb-5 text-6xl font-bold text-brand-neutral-800">Login</h1>
         <p class="mb-8 text-base leading-custom tracking-custom text-brand-neutral-400">
-          Sign in with your data that you entered during your registration.
+          Entre com os dados que você inseriu ao criar a conta.
         </p>
 
         <div>
@@ -15,14 +15,14 @@
             class="flex w-full items-center justify-center gap-1 rounded-md border-[1px] border-brand-neutral-200 border-opacity-50 p-3 transition duration-300 ease-in-out hover:bg-brand-neutral-200 hover:bg-opacity-5"
           >
             <google-icon />
-            <span class="text-sm text-brand-neutral-400">Log in with Google</span>
+            <span class="text-sm text-brand-neutral-400">Entrar com Google</span>
           </button>
 
           <div class="my-6 flex items-center justify-center gap-3">
             <span
               class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
             ></span>
-            <span class="text-xsm text-brand-neutral-400">Or</span>
+            <span class="text-xsm text-brand-neutral-400">Ou</span>
             <span
               class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
             ></span>
@@ -34,13 +34,13 @@
 
       <div class="text-center">
         <p class="text-bold text-sm text-brand-neutral-400">
-          Don't have an account?
+          Novo na Yumz?
           <router-link
             :to="{ name: 'Signup' }"
             href="#"
             class="font-bold text-brand-primary-500"
           >
-            Sign up
+            Criar uma conta
           </router-link>
         </p>
       </div>

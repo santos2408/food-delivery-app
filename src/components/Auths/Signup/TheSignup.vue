@@ -22,9 +22,9 @@
             data-step="account-type"
           >
             <div class="mb-10">
-              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Sign up</h1>
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Criar Conta</h1>
               <p class="mb-8 text-base text-brand-neutral-400">
-                Register to create your restaurant or personal account
+                Cadastre para criar sua conta pessoal ou do restaurante
               </p>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="flex justify-end">
               <action-button
                 type="button"
-                text="Continue"
+                text="Continuar"
                 class="mb-6 md:w-52"
                 @click="nextStep"
               />
@@ -47,10 +47,10 @@
           >
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">
-                Personal details
+                Informações Pessoais
               </h1>
               <p class="mb-8 text-base text-brand-neutral-300">
-                Enter your data that you will use for entering.
+                Entre com os dados que serão usados no acesso
               </p>
             </div>
 
@@ -66,7 +66,7 @@
                   id="email"
                   v-model="email"
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder="nome@exemplo.com"
                   class="block w-full"
                 />
               </div>
@@ -76,13 +76,13 @@
                   for="password"
                   class="mb-1 block text-sm font-semibold text-brand-gray-1"
                 >
-                  Password
+                  Senha
                 </label>
                 <input-field
                   id="password"
                   v-model="password"
                   type="password"
-                  placeholder="min. 8 characters"
+                  placeholder="min. 8 caracteres"
                   class="block w-full"
                 />
               </div>
@@ -92,13 +92,13 @@
                   for="confirm-password"
                   class="mb-1 block text-sm font-semibold text-brand-gray-1"
                 >
-                  Confirm password
+                  Confirmar senha
                 </label>
                 <input-field
                   id="confirm-password"
                   v-model="confirmPassword"
                   type="password"
-                  placeholder="min. 8 characters"
+                  placeholder="min. 8 caracteres"
                   class="block w-full"
                 />
               </div>
@@ -109,12 +109,12 @@
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
               >
-                Back
+                Voltar
               </button>
 
               <action-button
                 type="button"
-                text="Continue"
+                text="Continuar"
                 class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
@@ -128,10 +128,10 @@
           >
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">
-                Additional info
+                Informações Adicionais
               </h1>
               <p class="mb-8 text-base text-brand-neutral-400">
-                Enter your additional information.
+                Insira o número do celular
               </p>
             </div>
 
@@ -140,14 +140,14 @@
                 for="phone"
                 class="mb-1 block text-sm font-semibold text-brand-neutral-400"
               >
-                Phone number
+                Número de celular
               </label>
 
               <input-field
                 id="phone"
                 v-model="phone"
                 type="text"
-                placeholder="(217) 555-0113"
+                placeholder="(00) 00000-0000"
                 class="block w-full"
               />
             </div>
@@ -159,12 +159,12 @@
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
               >
-                Back
+                Voltar
               </button>
 
               <action-button
                 type="button"
-                text="Continue"
+                text="Continuar"
                 class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
@@ -177,9 +177,9 @@
             data-step="confirmation"
           >
             <div class="mb-10">
-              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Confirmation</h1>
+              <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Confirmação</h1>
               <p class="mb-8 text-base text-brand-neutral-400">
-                Enter your security code that we sent to your email.
+                Insira o código de segurança enviado para o seu email.
               </p>
             </div>
 
@@ -188,7 +188,7 @@
                 for="phone"
                 class="mb-1 block text-sm font-semibold text-brand-neutral-400"
               >
-                Confirmation code
+                Código de confirmação
               </label>
 
               <input-field
@@ -205,12 +205,12 @@
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
               >
-                Back
+                Voltar
               </button>
 
               <action-button
                 type="button"
-                text="Complete"
+                text="Completar"
                 class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
@@ -221,13 +221,13 @@
 
       <div class="text-center">
         <p class="text-bold py-2 text-sm text-brand-neutral-400">
-          Don't have an account?
+          Você já tem uma conta?
           <router-link
             :to="{ name: 'Login' }"
             href="#"
             class="font-bold text-brand-primary-500"
           >
-            Sign in
+            Login
           </router-link>
         </p>
       </div>
@@ -258,22 +258,22 @@ export default {
       steps: [
         {
           step: "account-type",
-          title: "Account Type",
+          title: "Tipo de Conta",
           completed: false,
         },
         {
           step: "personal-details",
-          title: "Personal Details",
+          title: "Informações Pessoais",
           completed: false,
         },
         {
           step: "additional-info",
-          title: "Additional Info",
+          title: "Informações Adicionais",
           completed: false,
         },
         {
           step: "confirmation",
-          title: "Confirmation",
+          title: "Confirmação",
           completed: false,
         },
       ],

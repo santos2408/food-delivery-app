@@ -10,11 +10,10 @@
         <h2
           class="mb-4 text-4xl font-bold leading-[120%] text-white xl:text-center xl:text-3xl"
         >
-          A few steps to create your restaurant or personal account
+          Poucas etapas para criar sua conta pessoal ou de restaurante
         </h2>
         <p class="mx-auto text-base text-white xl:text-center">
-          Join our vibrant food community in just a few clicks! Your culinary journey
-          begins here.
+          Junte-se à nossa vibrante comunidade gastronômica com apenas alguns cliques!
         </p>
       </div>
       <img

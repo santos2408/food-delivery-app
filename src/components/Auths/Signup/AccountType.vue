@@ -15,8 +15,8 @@
           <ShoppingBag :color="iconRestaurantColor" />
         </div>
         <div class="text-left">
-          <h2 class="text-base font-bold text-brand-neutral-800">Restaurant</h2>
-          <p class="text-sm text-brand-neutral-300">Manage your own restaurant</p>
+          <h2 class="text-base font-bold text-brand-neutral-800">Restaurante</h2>
+          <p class="text-sm text-brand-neutral-300">Gerencie seu próprio restaurante</p>
         </div>
       </div>
     </button>
@@ -36,8 +36,10 @@
           <User :color="iconPersonalColor" />
         </div>
         <div class="text-left">
-          <h2 class="text-base font-bold text-brand-neutral-800">Personal</h2>
-          <p class="text-sm text-brand-neutral-300">Keep your orders in one place</p>
+          <h2 class="text-base font-bold text-brand-neutral-800">Pessoal</h2>
+          <p class="text-sm text-brand-neutral-300">
+            Mantenha seus pedidos em um só lugar
+          </p>
         </div>
       </div>
     </button>

@@ -8,7 +8,7 @@
         id="email"
         v-model="email"
         type="email"
-        placeholder="name@example.com"
+        placeholder="nome@exemplo.com"
         class="block w-full"
       />
     </div>
@@ -18,19 +18,19 @@
         for="password"
         class="mb-1 block text-sm font-semibold text-brand-neutral-400"
       >
-        Password
+        Senha
       </label>
       <input-field
         id="password"
         v-model="password"
         type="password"
-        placeholder="min. 8 characters"
+        placeholder="min. 8 caracteres"
         class="block w-full"
       />
     </div>
 
     <div class="mb-10">
-      <the-checkbox text="Keep me logged in" />
+      <the-checkbox text="Mantenha-me conectado" />
     </div>
 
     <action-button type="submit" text="Login" class="mb-6" />
@@ -39,7 +39,7 @@
       :to="{ name: 'RequestPassword' }"
       class="mx-auto block max-w-max text-sm font-bold text-brand-primary-500"
     >
-      Forgot password
+      Esqueceu a senha?
     </router-link>
   </form>
 </template>

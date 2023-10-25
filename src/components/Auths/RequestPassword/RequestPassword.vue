@@ -12,10 +12,10 @@
           Back to login
         </router-link>
 
-        <h1 class="mb-10 text-5xl font-bold text-brand-neutral-800">Forgot password</h1>
-        <p class="mb-8 text-sm text-brand-neutral-400">
-          Enter the email associated with your account and we’ll send an email with
-          instructions to reset your password.
+        <h1 class="mb-10 text-5xl font-bold text-brand-neutral-800">Esqueci a senha</h1>
+        <p class="mb-8 text-base text-brand-neutral-400">
+          Entre com o email cadastrado e nós enviaremos instruções para recuperação da
+          senha.
         </p>
 
         <form action="">
@@ -29,18 +29,18 @@
               id="email"
               v-model="email"
               type="email"
-              placeholder="name@example.com"
+              placeholder="nome@exemplo.com"
               class="block w-full"
             />
           </div>
 
-          <action-button type="submit" text="Send instructions" />
+          <action-button type="submit" text="Continuar" />
         </form>
       </div>
 
       <div class="mt-auto text-center">
         <p class="text-bold text-sm text-brand-neutral-400">
-          Do you have any questions?
+          Você tem alguma dúvida?
           <a href="#" class="font-bold text-brand-primary-400">FAQ</a>
         </p>
       </div>
