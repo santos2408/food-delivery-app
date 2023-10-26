@@ -73,7 +73,7 @@ import { mapStores } from "pinia";
 import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, X } from "lucide-vue-next";
-import YumzOriginalLogo from "@/assets/icons/YumzOriginalLogo.vue";
+import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
 
 export default {
   name: "MenuMobile",

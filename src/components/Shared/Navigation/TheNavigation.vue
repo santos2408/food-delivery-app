@@ -82,7 +82,7 @@ import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, Menu } from "lucide-vue-next";
 
-import YumzOriginalLogo from "@/assets/icons/YumzOriginalLogo.vue";
+import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
 import MenuMobile from "@/components/Shared/Navigation/MenuMobile.vue";
 
 export default {

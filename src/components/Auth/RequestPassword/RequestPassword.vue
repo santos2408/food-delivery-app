@@ -52,7 +52,7 @@
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
 import InputField from "@/components/Shared/InputField.vue";
-import LeftArrowIcon from "@/assets/icons/LeftArrowIcon.vue";
+import LeftArrowIcon from "@/assets/Icons/LeftArrowIcon.vue";
 
 export default {
   name: "RequestPassword",
