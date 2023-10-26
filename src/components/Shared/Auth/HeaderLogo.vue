@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import YumzOriginalLogo from "@/assets/icons/YumzOriginalLogo.vue";
+import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
 
 export default {
   name: "HeaderLogo",
