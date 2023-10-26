@@ -50,7 +50,7 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import HeaderLogo from "@/components/Shared/Auths/HeaderLogo.vue";
+import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
 import InputField from "@/components/Shared/InputField.vue";
 import LeftArrowIcon from "@/assets/icons/LeftArrowIcon.vue";
 

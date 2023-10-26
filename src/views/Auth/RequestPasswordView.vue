@@ -1,19 +1,19 @@
 <template>
   <div class="h-screen w-full md:flex">
-    <the-login />
+    <request-password />
     <info-cover v-if="isADesktopDevice" :screen-width="screenWidth" />
   </div>
 </template>
 
 <script>
 import InfoCover from "@/components/Shared/InfoCover.vue";
-import TheLogin from "@/components/Auths/Login/TheLogin.vue";
+import RequestPassword from "@/components/Auth/RequestPassword/RequestPassword.vue";
 
 export default {
-  name: "LoginView",
+  name: "RequestPasswordView",
   components: {
-    TheLogin,
     InfoCover,
+    RequestPassword,
   },
   data() {
     return {
@@ -24,7 +24,7 @@ export default {
   mounted() {
     window.addEventListener("resize", () => {
       this.screenWidth = window.innerWidth;
-      this.isADesktopDevice = this.screenWidth > 768;
+      this.isADesktopDevice = this.screenWidth > 768 ? true : false;
     });
   },
 };
