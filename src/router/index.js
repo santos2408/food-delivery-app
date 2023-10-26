@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 import HomeView from "@/views/HomeView.vue";
-import LoginView from "@/views/Auth/LoginView.vue";
-import RequestPasswordView from "@/views/Auth/RequestPasswordView.vue";
-import SignupView from "@/views/Auth/SignupView.vue";
+import LoginView from "@/views/Authentication/LoginView.vue";
+import RequestPasswordView from "@/views/Authentication/RequestPasswordView.vue";
+import SignupView from "@/views/Authentication/SignupView.vue";
 
 const routes = [
   {
