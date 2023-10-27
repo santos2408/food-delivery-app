@@ -237,10 +237,10 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import AccountType from "@/components/Auths/Signup/AccountType.vue";
-import HeaderLogo from "@/components/Shared/Auths/HeaderLogo.vue";
+import AccountType from "@/components/Auth/Signup/AccountType.vue";
+import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
 import InputField from "@/components/Shared/InputField.vue";
-import SignupProgress from "@/components/Auths/Signup/SignupProgress.vue";
+import SignupProgress from "@/components/Auth/Signup/SignupProgress.vue";
 import TheCheckbox from "@/components/Shared/TheCheckbox.vue";
 
 export default {

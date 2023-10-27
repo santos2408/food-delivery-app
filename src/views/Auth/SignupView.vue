@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import TheSignup from "@/components/Auths/Signup/TheSignup.vue";
-import SignupCover from "@/components/Auths/Signup/SignupCover.vue";
+import TheSignup from "@/components/Auth/Signup/TheSignup.vue";
+import SignupCover from "@/components/Auth/Signup/SignupCover.vue";
 
 export default {
   name: "SignupView",

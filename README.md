@@ -15,7 +15,7 @@
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use...
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
@@ -36,7 +36,7 @@
   <h3 align="center">Yumz! - Food Delivery App</h3>
 
   <p align="center">
-    Este projeto é construído utilizando o framework Vue.js para o front-end e, futuramente, será integrado com Node.js no back-end, junto com um banco de dados para garantir a funcionalidade completa.
+    Este projeto é construído utilizando o framework Vue.js para o front-end e, futuramente, será integrado com Node.js no back-end, junto com um banco de dados para garantir outras funcionalidades como armazenamento dos dados, criação de conta, etc.
     <!-- <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br /> -->
