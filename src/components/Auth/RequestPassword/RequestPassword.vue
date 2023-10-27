@@ -39,7 +39,7 @@
       </div>
 
       <div class="mt-auto text-center">
-        <p class="text-bold text-sm text-brand-neutral-400">
+        <p class="text-bold mt-5 text-sm text-brand-neutral-400">
           Você tem alguma dúvida?
           <a href="#" class="font-bold text-brand-primary-400">FAQ</a>
         </p>

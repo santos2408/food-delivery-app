@@ -216,20 +216,20 @@
               />
             </div>
           </div>
-        </form>
-      </div>
 
-      <div class="text-center">
-        <p class="text-bold py-2 text-sm text-brand-neutral-400">
-          Você já tem uma conta?
-          <router-link
-            :to="{ name: 'Login' }"
-            href="#"
-            class="font-bold text-brand-primary-500"
-          >
-            Login
-          </router-link>
-        </p>
+          <div class="text-center">
+            <p class="text-bold py-2 text-sm text-brand-neutral-400">
+              Você já tem uma conta?
+              <router-link
+                :to="{ name: 'Login' }"
+                href="#"
+                class="font-bold text-brand-primary-500"
+              >
+                Login
+              </router-link>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   </main>

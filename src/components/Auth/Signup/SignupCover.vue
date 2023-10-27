@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex-1 bg-gradient-to-t from-brand-primary-500 to-brand-secondary-500"
+    class="relative flex-1 bg-gradient-to-t from-brand-primary-500 to-brand-secondary-500 xl:min-h-[760px]"
   >
     <div
       class="relative flex h-full items-center overflow-hidden p-10 pt-5 xl:flex-col xl:justify-center"
