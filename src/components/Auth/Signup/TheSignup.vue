@@ -20,11 +20,7 @@
           action=""
           class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:max-w-md"
         >
-          <div
-            v-if="showCurrentStep('account-type')"
-            class="md:mb-16"
-            data-step="account-type"
-          >
+          <div v-if="showCurrentStep('account-type')" class="" data-step="account-type">
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Criar Conta</h1>
               <p class="mb-8 text-base text-brand-neutral-400">
@@ -46,7 +42,7 @@
 
           <div
             v-if="showCurrentStep('personal-details')"
-            class="md:mb-16"
+            class=""
             data-step="personal-details"
           >
             <div class="mb-10">
@@ -127,7 +123,7 @@
 
           <div
             v-if="showCurrentStep('additional-info')"
-            class="md:mb-16"
+            class=""
             data-step="additional-info"
           >
             <div class="mb-10">
@@ -175,11 +171,7 @@
             </div>
           </div>
 
-          <div
-            v-if="showCurrentStep('confirmation')"
-            class="md:mb-16"
-            data-step="confirmation"
-          >
+          <div v-if="showCurrentStep('confirmation')" class="" data-step="confirmation">
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Confirmação</h1>
               <p class="mb-8 text-base text-brand-neutral-400">
