@@ -1,20 +1,24 @@
 <template>
-  <main
-    class="h-screen flex-1 px-4 py-5 md:px-10 md:pt-10 lg:h-screen xl:w-[650px] xl:flex-initial"
-  >
-    <div class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full">
+  <main class="h-screen flex-1 p-5 lg:h-screen xl:w-[650px] xl:flex-initial">
+    <div
+      class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full xl:w-[430px] xl:max-w-none"
+    >
       <header-logo
         v-if="handleLogoVisibility"
         :color="handleLogoColor"
-        class="mx-auto mb-14 block max-w-md md:hidden xl:block"
+        class="mx-auto block md:hidden xl:block"
       />
 
-      <div class="h-full">
-        <signup-progress class="mb-16" :steps="steps" :current-step="currentStep" />
+      <div class="flex h-full flex-col">
+        <signup-progress
+          class="my-14 xl:my-20"
+          :steps="steps"
+          :current-step="currentStep"
+        />
 
         <form
           action=""
-          class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:mx-auto xl:max-w-md"
+          class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:max-w-md"
         >
           <div
             v-if="showCurrentStep('account-type')"
@@ -24,7 +28,7 @@
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Criar Conta</h1>
               <p class="mb-8 text-base text-brand-neutral-400">
-                Cadastre para criar sua conta pessoal ou do restaurante
+                Cadastre para criar sua conta pessoal ou do restaurante.
               </p>
             </div>
 
@@ -216,20 +220,20 @@
               />
             </div>
           </div>
-
-          <div class="text-center">
-            <p class="text-bold py-2 text-sm text-brand-neutral-400">
-              Você já tem uma conta?
-              <router-link
-                :to="{ name: 'Login' }"
-                href="#"
-                class="font-bold text-brand-primary-500"
-              >
-                Login
-              </router-link>
-            </p>
-          </div>
         </form>
+
+        <div class="mt-auto text-center">
+          <p class="text-bold py-2 text-sm text-brand-neutral-400">
+            Você já tem uma conta?
+            <router-link
+              :to="{ name: 'Login' }"
+              href="#"
+              class="font-bold text-brand-primary-500"
+            >
+              Login
+            </router-link>
+          </p>
+        </div>
       </div>
     </div>
   </main>

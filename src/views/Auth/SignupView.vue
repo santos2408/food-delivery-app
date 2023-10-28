@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full flex-col md:flex md:h-screen xl:flex-row">
+  <div class="min-h-screen w-full flex-col md:flex xl:flex-row">
     <signup-cover
       v-if="isADesktopDevice"
       :screen-width="screenWidth"

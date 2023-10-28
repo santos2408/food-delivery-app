@@ -1,12 +1,14 @@
 <template>
-  <main class="flex-1 px-4 py-5 xl:w-[650px] xl:flex-initial">
-    <div class="mx-auto flex max-w-sm flex-col justify-between gap-10">
+  <main class="flex flex-1 p-5 xl:w-[650px] xl:flex-initial">
+    <div
+      class="mx-auto flex max-w-sm flex-col justify-between gap-10 xl:w-[430px] xl:max-w-none"
+    >
       <header-logo />
 
       <div>
         <h1 class="mb-5 text-6xl font-bold text-brand-neutral-800">Login</h1>
-        <p class="mb-8 text-base leading-custom tracking-custom text-brand-neutral-400">
-          Entre com os dados que você inseriu ao criar a conta.
+        <p class="mb-8 text-base text-brand-neutral-400">
+          Entre com os dados que você inseriu durante o seu cadastro.
         </p>
 
         <div>

@@ -1,6 +1,6 @@
 <template>
-  <main class="h-full flex-1 px-4 py-5 xl:w-[650px] xl:flex-initial">
-    <div class="mx-auto flex h-full max-w-sm flex-col">
+  <main class="h-full flex-1 p-5 xl:w-[650px] xl:flex-initial">
+    <div class="mx-auto flex h-full max-w-sm flex-col xl:w-[430px] xl:max-w-none">
       <header-logo class="mb-20" />
 
       <div>

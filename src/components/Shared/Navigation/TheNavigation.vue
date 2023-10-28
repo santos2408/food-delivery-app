@@ -36,10 +36,10 @@
         >
           <span
             v-if="id === menuItems.length"
-            class="absolute -left-3 top-2/4 h-8 w-[1px] -translate-y-1/2 bg-brand-neutral-50"
+            class="pointer-events-none absolute -left-3 top-2/4 h-8 w-[1px] -translate-y-1/2 cursor-default bg-brand-neutral-50"
           >
           </span>
-          <a href="#" class="text-base">{{ title }}</a>
+          <a href="" class="text-base">{{ title }}</a>
         </li>
       </ul>
 
