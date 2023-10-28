@@ -9,7 +9,7 @@
           class="mb-14 flex items-center gap-4 font-semibold text-brand-neutral-400"
         >
           <left-arrow-icon color="#5F6D79" />
-          Back to login
+          Voltar para o login
         </router-link>
 
         <h1 class="mb-10 text-5xl font-bold text-brand-neutral-800">Esqueci a senha</h1>

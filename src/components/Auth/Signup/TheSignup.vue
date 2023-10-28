@@ -1,7 +1,7 @@
 <template>
   <main class="flex-1 p-5 xl:w-[650px] xl:flex-initial">
     <div
-      class="mx-auto flex flex-col sm:max-w-lg md:max-w-full xl:w-[430px] xl:max-w-none"
+      class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full xl:w-[430px] xl:max-w-none"
     >
       <header-logo
         v-if="handleLogoVisibility"
@@ -9,7 +9,7 @@
         class="mx-auto block md:hidden xl:block"
       />
 
-      <div class="flex flex-col">
+      <div class="flex h-full flex-col justify-between">
         <signup-progress
           class="my-14 xl:my-20"
           :steps="steps"
