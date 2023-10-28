@@ -1,7 +1,7 @@
 <template>
-  <main class="h-screen flex-1 p-5 lg:h-screen xl:w-[650px] xl:flex-initial">
+  <main class="flex-1 p-5 xl:w-[650px] xl:flex-initial">
     <div
-      class="mx-auto flex h-full flex-col sm:max-w-lg md:max-w-full xl:w-[430px] xl:max-w-none"
+      class="mx-auto flex flex-col sm:max-w-lg md:max-w-full xl:w-[430px] xl:max-w-none"
     >
       <header-logo
         v-if="handleLogoVisibility"
@@ -9,7 +9,7 @@
         class="mx-auto block md:hidden xl:block"
       />
 
-      <div class="flex h-full flex-col">
+      <div class="flex flex-col">
         <signup-progress
           class="my-14 xl:my-20"
           :steps="steps"
@@ -104,7 +104,9 @@
               </div>
             </div>
 
-            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+            <div
+              class="flex flex-col justify-end md:mb-7 md:flex-row md:items-center md:gap-16"
+            >
               <button
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
@@ -154,7 +156,9 @@
 
             <the-checkbox text="Turn on 2 factor authentication" class="mb-10" />
 
-            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+            <div
+              class="flex flex-col justify-end md:mb-7 md:flex-row md:items-center md:gap-16"
+            >
               <button
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
@@ -196,7 +200,9 @@
               />
             </div>
 
-            <div class="flex flex-col justify-end md:flex-row md:items-center md:gap-16">
+            <div
+              class="flex flex-col justify-end md:mb-7 md:flex-row md:items-center md:gap-16"
+            >
               <button
                 class="order-2 mx-auto mb-16 block font-semibold text-brand-neutral-400 md:order-1 md:m-0"
                 @click="previousStep"
