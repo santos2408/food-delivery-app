@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute left-0 top-0 z-10 w-full bg-brand-white p-4 shadow-lg lg:hidden">
+  <div class="absolute left-0 top-0 z-10 w-full bg-brand-white p-4 shadow-lg xl:hidden">
     <div class="flex items-center justify-between">
       <a href="/" class="py-4">
         <yumz-original-logo />

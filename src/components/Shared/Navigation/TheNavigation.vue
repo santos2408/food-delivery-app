@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative flex items-center justify-between border-b-[1px] border-brand-neutral-50 px-4 py-4"
+    class="relative flex items-center justify-between border-b-[1px] border-brand-neutral-50 px-4 py-4 lg:px-10 2xl:px-0"
   >
     <div class="flex items-center gap-14">
       <a href="/" class="py-4">
@@ -8,7 +8,7 @@
       </a>
       <label
         for="input-search"
-        class="hidden w-80 items-center rounded-xl bg-[#f7f7f7] px-4 lg:flex"
+        class="hidden w-80 items-center rounded-xl bg-[#f7f7f7] px-4 xl:flex"
       >
         <input
           id="input-search"
@@ -27,7 +27,7 @@
     </Transition>
 
     <div class="flex gap-6">
-      <ul class="hidden items-center gap-6 font-bold text-brand-neutral-600 lg:flex">
+      <ul class="hidden items-center gap-6 font-bold text-brand-neutral-600 xl:flex">
         <li
           v-for="{ id, title } in menuItems"
           :key="id"
@@ -62,11 +62,11 @@
           <img src="https://i.pravatar.cc/300" alt="" />
         </div>
 
-        <span class="mx-4 h-8 w-[1px] bg-brand-neutral-50 lg:hidden"> </span>
+        <span class="mx-4 h-8 w-[1px] bg-brand-neutral-50 xl:hidden"> </span>
 
         <button
           type="button"
-          class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl bg-brand-neutral-50 lg:hidden"
+          class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl bg-brand-neutral-50 xl:hidden"
           @click="toggleMenu"
         >
           <MenuToggle color="#79858E" />

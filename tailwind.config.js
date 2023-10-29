@@ -48,9 +48,9 @@ module.exports = {
         "brand-neutral-600": "#32424F",
         "brand-neutral-800": "#1E2830",
 
-        "brand-purple-1": "#4e60ff",
-        "brand-purple-2": "#5d6dff",
-        "brand-purple-3": "#697bff",
+        // "brand-purple-1": "#4e60ff",
+        // "brand-purple-2": "#5d6dff",
+        // "brand-purple-3": "#697bff",
         "brand-dark-1": "#2b2b43",
         "brand-gray-1": "#545563",
         "brand-gray-2": "#83859c",
