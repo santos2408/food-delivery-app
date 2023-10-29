@@ -46,7 +46,7 @@ import { mapStores } from "pinia";
 
 import { useSwiperStore } from "../../stores/swiper";
 
-import swiperParams from "@/utils/loginSwiperParams";
+import { loginSwiperParams } from "@/utils/swiperParams";
 
 export default {
   name: "LoginSwiper",
@@ -61,7 +61,7 @@ export default {
   mounted() {
     this.swiperElement = document.querySelector("swiper-container");
     Object.assign(this.swiperElement, {
-      ...swiperParams,
+      ...loginSwiperParams,
       initialSlide: this.swiperStore.slideIndex || 0,
     });
     this.swiperElement.initialize();
