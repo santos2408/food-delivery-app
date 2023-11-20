@@ -2,7 +2,11 @@
   <div class="absolute left-0 top-0 z-10 w-full bg-brand-white p-4 shadow-lg xl:hidden">
     <div class="flex items-center justify-between">
       <a href="/" class="py-4">
-        <yumz-original-logo />
+        <img
+          src="@/assets/Icons/yumz/yumz-logo-1.png"
+          class="w-24"
+          alt="Yumz! Food Delivery Logo"
+        />
       </a>
       <button
         type="button"
@@ -32,10 +36,7 @@
     </ul>
 
     <div class="flex items-center gap-4 pt-5">
-      <label
-        for="input-search"
-        class="flex flex-1 items-center rounded-xl bg-[#f7f7f7] px-4"
-      >
+      <label for="input-search" class="flex flex-1 items-center rounded-xl bg-[#f7f7f7] px-4">
         <input
           id="input-search"
           class="w-full rounded-xl bg-transparent py-3 text-base text-brand-neutral-500 outline-none placeholder:text-brand-neutral-200"
@@ -73,7 +74,6 @@ import { mapStores } from "pinia";
 import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, X } from "lucide-vue-next";
-import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
 
 export default {
   name: "MenuMobile",
@@ -81,7 +81,6 @@ export default {
     Search,
     ShoppingBag,
     MenuClose: X,
-    YumzOriginalLogo,
   },
   props: {
     status: {

@@ -14,10 +14,7 @@
     </div>
 
     <div class="mb-7">
-      <label
-        for="password"
-        class="mb-1 block text-sm font-semibold text-brand-neutral-400"
-      >
+      <label for="password" class="mb-1 block text-sm font-semibold text-brand-neutral-400">
         Senha
       </label>
       <input-field

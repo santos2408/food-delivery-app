@@ -5,7 +5,7 @@
 
       <div>
         <router-link
-          to="/login"
+          :to="{ name: 'Login' }"
           class="mb-14 flex items-center gap-4 font-semibold text-brand-neutral-400"
         >
           <left-arrow-icon color="#5F6D79" />
@@ -14,15 +14,12 @@
 
         <h1 class="mb-10 text-5xl font-bold text-brand-neutral-800">Esqueci a senha</h1>
         <p class="mb-8 text-base text-brand-neutral-400">
-          Entre com o email cadastrado e nós enviaremos instruções para recuperação da
-          senha.
+          Entre com o email cadastrado e nós enviaremos instruções para recuperação da senha.
         </p>
 
         <form action="">
           <div class="mb-7">
-            <label
-              for="email"
-              class="mb-1 block text-sm font-semibold text-brand-neutral-400"
+            <label for="email" class="mb-1 block text-sm font-semibold text-brand-neutral-400"
               >Email</label
             >
             <input-field

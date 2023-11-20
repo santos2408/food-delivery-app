@@ -1,21 +1,20 @@
 <template>
   <header class="w-full">
     <div class="inline-block">
-      <a href="/" aria-label="Food Delivery Logo">
-        <yumz-original-logo :color="color" />
-      </a>
+      <router-link to="/" aria-label="Food Delivery Logo">
+        <img
+          src="@/assets/Icons/yumz/yumz-logo-1.png"
+          class="w-24"
+          alt="Yumz! Food Delivery Logo"
+        />
+      </router-link>
     </div>
   </header>
 </template>
 
 <script>
-import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
-
 export default {
   name: "HeaderLogo",
-  components: {
-    YumzOriginalLogo,
-  },
   props: {
     color: {
       type: String,
@@ -24,9 +23,6 @@ export default {
         return "";
       },
     },
-  },
-  mounted() {
-    console.log(this.color);
   },
 };
 </script>

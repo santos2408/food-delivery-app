@@ -3,9 +3,13 @@
     class="relative flex items-center justify-between border-b-[1px] border-brand-neutral-50 px-4 py-4 lg:px-10 2xl:px-0"
   >
     <div class="flex items-center gap-14">
-      <a href="/" class="py-4">
-        <yumz-original-logo />
-      </a>
+      <router-link to="/" class="py-4">
+        <img
+          src="@/assets/Icons/yumz/yumz-logo-1.png"
+          class="w-24"
+          alt="Yumz! Food Delivery Logo"
+        />
+      </router-link>
       <label
         for="input-search"
         class="hidden w-80 items-center rounded-xl bg-[#f7f7f7] px-4 xl:flex"
@@ -29,17 +33,21 @@
     <div class="flex gap-6">
       <ul class="hidden items-center gap-6 font-bold text-brand-neutral-600 xl:flex">
         <li
-          v-for="{ id, title } in menuItems"
-          :key="id"
-          class="cursor-pointer p-2 hover:text-brand-primary-500"
-          :class="{ relative: id === menuItems.length }"
+          v-for="(menuItem, index) in menuItems"
+          :key="menuItem.title"
+          :class="[
+            'cursor-pointer',
+            'p-2',
+            'hover:text-brand-primary-500',
+            { relative: index === lastMenuItem },
+          ]"
         >
           <span
-            v-if="id === menuItems.length"
+            v-if="index === lastMenuItem"
             class="pointer-events-none absolute -left-3 top-2/4 h-8 w-[1px] -translate-y-1/2 cursor-default bg-brand-neutral-50"
           >
           </span>
-          <a href="" class="text-base">{{ title }}</a>
+          <router-link :to="menuItem.url" class="text-base">{{ menuItem.title }}</router-link>
         </li>
       </ul>
 
@@ -82,7 +90,6 @@ import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, Menu } from "lucide-vue-next";
 
-import YumzOriginalLogo from "@/assets/Icons/YumzOriginalLogo.vue";
 import MenuMobile from "@/components/Shared/Navigation/MenuMobile.vue";
 
 export default {
@@ -91,15 +98,14 @@ export default {
     Search,
     ShoppingBag,
     MenuToggle: Menu,
-    YumzOriginalLogo,
     MenuMobile,
   },
   data() {
     return {
       menuItems: [
-        { id: 1, title: "Restaurantes" },
-        { id: 2, title: "Promoções" },
-        { id: 3, title: "Meus Pedidos" },
+        { title: "Restaurantes", url: "#" },
+        { title: "Promoções", url: "#" },
+        { title: "Meus Pedidos", url: "#" },
       ],
     };
   },
@@ -107,6 +113,9 @@ export default {
     ...mapStores(useMenuStore),
     menuActive() {
       return this.menuStore.menuActive;
+    },
+    lastMenuItem() {
+      return this.menuItems.length - 1;
     },
   },
   methods: {

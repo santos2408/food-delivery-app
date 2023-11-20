@@ -21,13 +21,9 @@
           </button>
 
           <div class="my-6 flex items-center justify-center gap-3">
-            <span
-              class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
-            ></span>
+            <span class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"></span>
             <span class="text-xsm text-brand-neutral-400">Ou</span>
-            <span
-              class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"
-            ></span>
+            <span class="inline-block h-[1px] w-16 bg-brand-neutral-200 bg-opacity-50"></span>
           </div>
         </div>
 

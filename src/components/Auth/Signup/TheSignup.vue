@@ -10,16 +10,9 @@
       />
 
       <div class="flex h-full flex-col justify-between">
-        <signup-progress
-          class="my-14 xl:my-20"
-          :steps="steps"
-          :current-step="currentStep"
-        />
+        <signup-progress class="my-14 xl:my-20" :steps="steps" :current-step="currentStep" />
 
-        <form
-          action=""
-          class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:max-w-md"
-        >
+        <form action="" class="mx-auto max-w-md md:mx-[initial] md:max-w-full xl:max-w-md">
           <div v-if="showCurrentStep('account-type')" class="" data-step="account-type">
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">Criar Conta</h1>
@@ -74,7 +67,7 @@
               <div>
                 <label
                   for="password"
-                  class="mb-1 block text-sm font-semibold text-brand-gray-1"
+                  class="text-brand-gray-1 mb-1 block text-sm font-semibold"
                 >
                   Senha
                 </label>
@@ -90,7 +83,7 @@
               <div>
                 <label
                   for="confirm-password"
-                  class="mb-1 block text-sm font-semibold text-brand-gray-1"
+                  class="text-brand-gray-1 mb-1 block text-sm font-semibold"
                 >
                   Confirmar senha
                 </label>
@@ -117,24 +110,19 @@
               <action-button
                 type="button"
                 text="Continuar"
+                style-type="primary"
                 class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
             </div>
           </div>
 
-          <div
-            v-if="showCurrentStep('additional-info')"
-            class=""
-            data-step="additional-info"
-          >
+          <div v-if="showCurrentStep('additional-info')" class="" data-step="additional-info">
             <div class="mb-10">
               <h1 class="mb-5 text-5xl font-bold text-brand-neutral-800">
                 Informações Adicionais
               </h1>
-              <p class="mb-8 text-base text-brand-neutral-400">
-                Insira o número do celular
-              </p>
+              <p class="mb-8 text-base text-brand-neutral-400">Insira o número do celular</p>
             </div>
 
             <div class="mb-7">
@@ -308,7 +296,6 @@ export default {
   },
   mounted() {
     this.isADesktopDevice = this.screenWidth > 767 ? true : false;
-
     window.addEventListener("resize", () => {
       this.screenWidth = window.innerWidth;
       this.isADesktopDevice = this.screenWidth > 767;
@@ -316,12 +303,7 @@ export default {
   },
   methods: {
     nextStep() {
-      const steps = [
-        "account-type",
-        "personal-details",
-        "additional-info",
-        "confirmation",
-      ];
+      const steps = ["account-type", "personal-details", "additional-info", "confirmation"];
       const currentStepIndex = steps.indexOf(this.currentStep);
       const nextStepIndex = currentStepIndex + 1;
 
@@ -329,12 +311,7 @@ export default {
       this.currentStep = steps[nextStepIndex];
     },
     previousStep() {
-      const steps = [
-        "account-type",
-        "personal-details",
-        "additional-info",
-        "confirmation",
-      ];
+      const steps = ["account-type", "personal-details", "additional-info", "confirmation"];
       const currentStepIndex = steps.indexOf(this.currentStep);
       const previousStepIndex = currentStepIndex - 1;
 

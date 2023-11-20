@@ -1,13 +1,13 @@
 <template>
-  <section class="mb-8">
+  <section class="mb-12">
     <div class="mb-5 flex items-center justify-between px-4 lg:px-10 2xl:px-0">
-      <h2 class="text-3xl font-bold text-brand-neutral-800">Ofertas</h2>
-      <a
-        href="#"
+      <h2 class="text-3xl font-bold text-brand-neutral-500">Ofertas</h2>
+      <router-link
+        to="/"
         class="rounded-full border-[1px] border-brand-primary-500 px-5 py-3 text-xsm font-bold uppercase text-brand-primary-500 transition duration-150 hover:bg-brand-primary-500 hover:text-white"
       >
         Todas as ofertas
-      </a>
+      </router-link>
     </div>
 
     <div class="custom-swiper-content relative md:px-4 lg:px-10 2xl:px-0">
@@ -20,7 +20,7 @@
           <div class="transition duration-300 hover:-rotate-1 hover:scale-105">
             <a href="#">
               <span>
-                <img :src="deal.url" :alt="deal.alt" />
+                <img :src="deal.url" :alt="deal.description" />
               </span>
             </a>
           </div>
@@ -38,16 +38,9 @@
 </template>
 
 <script>
-import { dealsSwiperParams } from "@/utils/swiperParams";
+import axios from "axios";
 
-import deal1 from "@/assets/images/deals/oferta-1.avif";
-import deal2 from "@/assets/images/deals/oferta-2.avif";
-import deal3 from "@/assets/images/deals/oferta-3.avif";
-import deal4 from "@/assets/images/deals/oferta-4.avif";
-import deal5 from "@/assets/images/deals/oferta-5.avif";
-import deal6 from "@/assets/images/deals/oferta-6.avif";
-import deal7 from "@/assets/images/deals/oferta-7.avif";
-import deal8 from "@/assets/images/deals/oferta-8.avif";
+import { dealsSwiperParams } from "@/utils/swiperParams";
 
 export default {
   name: "TheDeals",
@@ -55,19 +48,17 @@ export default {
   data() {
     return {
       swiperElement: null,
-      deals: [
-        { id: 1, url: deal1, alt: "McDonald's com 40% OFF" },
-        { id: 2, url: deal2, alt: "Pra aproveitar o desconto" },
-        { id: 3, url: deal3, alt: "Pra aproveitar o desconto" },
-        { id: 4, url: deal4, alt: "Entrega grátis" },
-        { id: 5, url: deal5, alt: "Quem quer cupom?" },
-        { id: 6, url: deal6, alt: "Doces ou travessuras na Yumz!" },
-        { id: 7, url: deal7, alt: "Pizzas com promo" },
-        { id: 8, url: deal8, alt: "Até 50% OFF" },
-      ],
+      deals: [],
     };
   },
-  mounted() {
+  async mounted() {
+    try {
+      const response = await axios.get("http://localhost:3004/deals");
+      this.deals = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+
     this.swiperElement = document.querySelector("swiper-container");
     Object.assign(this.swiperElement, dealsSwiperParams);
     this.swiperElement.initialize();

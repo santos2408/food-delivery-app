@@ -1,10 +1,6 @@
 <template>
   <div class="min-h-screen w-full flex-col md:flex xl:flex-row">
-    <signup-cover
-      v-if="isADesktopDevice"
-      :screen-width="screenWidth"
-      class="xl:order-2"
-    />
+    <signup-cover v-if="isADesktopDevice" :screen-width="screenWidth" class="xl:order-2" />
     <the-signup />
   </div>
 </template>

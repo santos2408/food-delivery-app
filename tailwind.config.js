@@ -31,7 +31,7 @@ module.exports = {
 
         "brand-primary-500": "#FF2851",
         "brand-primary-400": "#FF5374",
-        // "brand-primary-300": "#FF6F8A",
+        "brand-primary-300": "#FF6F8A",
         "brand-primary-100": "#FFBCC9",
         "brand-primary-50": "#FFEAEE",
 
@@ -51,11 +51,11 @@ module.exports = {
         // "brand-purple-1": "#4e60ff",
         // "brand-purple-2": "#5d6dff",
         // "brand-purple-3": "#697bff",
-        "brand-dark-1": "#2b2b43",
-        "brand-gray-1": "#545563",
-        "brand-gray-2": "#83859c",
-        "brand-gray-3": "#c7c8d2",
-        "brand-gray-4": "#f5f5f5",
+        // "brand-dark-1": "#2b2b43",
+        // "brand-gray-1": "#545563",
+        // "brand-gray-2": "#83859c",
+        // "brand-gray-3": "#c7c8d2",
+        // "brand-gray-4": "#f5f5f5",
       },
       boxShadow: {
         primary: "0px 8px 20px 0px rgba(349, 100, 58, 0.16)",

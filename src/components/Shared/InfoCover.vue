@@ -10,18 +10,18 @@
           alt="Login cover image"
         />
       </div>
-      <login-swiper />
+      <auth-swiper />
     </div>
   </div>
 </template>
 
 <script>
-import LoginSwiper from "@/components/Shared/LoginSwiper.vue";
+import AuthSwiper from "@/components/Shared/AuthSwiper.vue";
 
 export default {
   name: "InfoCover",
   components: {
-    LoginSwiper,
+    AuthSwiper,
   },
   props: {
     screenWidth: {

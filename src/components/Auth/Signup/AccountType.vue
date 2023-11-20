@@ -28,18 +28,13 @@
     >
       <div class="flex flex-nowrap items-center gap-4">
         <div
-          :class="[
-            'icon',
-            { 'selected-button_icon-container': selectedType === 'personal' },
-          ]"
+          :class="['icon', { 'selected-button_icon-container': selectedType === 'personal' }]"
         >
           <User :color="iconPersonalColor" />
         </div>
         <div class="text-left">
           <h2 class="text-base font-bold text-brand-neutral-800">Pessoal</h2>
-          <p class="text-sm text-brand-neutral-300">
-            Mantenha seus pedidos em um só lugar
-          </p>
+          <p class="text-sm text-brand-neutral-300">Mantenha seus pedidos em um só lugar</p>
         </div>
       </div>
     </button>
