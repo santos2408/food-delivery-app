@@ -169,7 +169,7 @@
       "shipping": "Grátis"
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "Coco Bambu Botafogo - Rio",
       "logo": "coco-bambu-botafogo-logo.avif",
       "rate": 4.9,
@@ -178,7 +178,7 @@
       "shipping": 16.89
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "Espetto Carioca - Leblon",
       "logo": "espetto-carioca-logo.avif",
       "rate": 4.6,
@@ -187,7 +187,7 @@
       "shipping": 6.99
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "Bom Gosto",
       "logo": "bom-gosto-logo.avif",
       "rate": 4.6,
@@ -196,7 +196,7 @@
       "shipping": "Grátis"
     },
     {
-      "id": 19,
+      "id": 18,
       "name": "KFC - Frango Frito - Botafogo",
       "logo": "kfc-frango-frito-logo.avif",
       "rate": 4.6,
@@ -205,7 +205,7 @@
       "shipping": 15.99
     },
     {
-      "id": 20,
+      "id": 19,
       "name": "Big Polis - Leblon",
       "logo": "big-polis-logo.avif",
       "rate": 4.7,
@@ -214,22 +214,22 @@
       "shipping": 8.99
     },
     {
-      "id": 21,
-      "name": "Momo Gelato",
-      "logo": "momo-gelato-artesanal-logo.avif",
-      "rate": 4.5,
-      "category": "Sorvetes",
-      "deliveryTime": [59, 69],
-      "shipping": 12.99
-    },
-    {
-      "id": 22,
+      "id": 20,
       "name": "Sushi Master",
       "logo": "sushi-master-logo.avif",
       "rate": 4.8,
       "category": "Japonesa",
       "deliveryTime": [60, 70],
       "shipping": 13.99
+    },
+    {
+      "id": 21,
+      "name": "Bom Gosaaaaaato",
+      "logo": "bom-gosto-logo.avif",
+      "rate": 4.6,
+      "category": "Pizza",
+      "deliveryTime": [20, 30],
+      "shipping": "Grátis"
     }
   ]
 }

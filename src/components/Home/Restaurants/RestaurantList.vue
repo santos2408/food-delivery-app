@@ -20,7 +20,7 @@
       />
     </ul>
 
-    <div class="flex justify-center">
+    <div v-if="showSeeMore" class="flex justify-center">
       <div v-if="loading" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
@@ -56,6 +56,7 @@ export default {
       restaurants: [],
       currentPage: 1,
       loading: false,
+      showSeeMore: true,
     };
   },
   async mounted() {
@@ -63,10 +64,17 @@ export default {
   },
   methods: {
     async showMore() {
-      this.loading = true;
       this.currentPage = this.currentPage + 1;
 
       const restaurants = await getRestaurants(this.currentPage);
+
+      this.loading = true;
+
+      if (restaurants.length === 0) {
+        this.loading = false;
+        this.showSeeMore = false;
+        return;
+      }
 
       setTimeout(() => {
         this.restaurants = [...this.restaurants, ...restaurants];
