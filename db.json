@@ -221,15 +221,6 @@
       "category": "Japonesa",
       "deliveryTime": [60, 70],
       "shipping": 13.99
-    },
-    {
-      "id": 21,
-      "name": "Bom Gosaaaaaato",
-      "logo": "bom-gosto-logo.avif",
-      "rate": 4.6,
-      "category": "Pizza",
-      "deliveryTime": [20, 30],
-      "shipping": "Grátis"
     }
   ]
 }

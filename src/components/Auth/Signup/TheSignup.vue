@@ -25,9 +25,10 @@
 
             <div class="flex justify-end">
               <action-button
+                class="mb-6 md:w-52"
                 type="button"
                 text="Continuar"
-                class="mb-6 md:w-52"
+                style-type="primary"
                 @click="nextStep"
               />
             </div>
@@ -108,10 +109,10 @@
               </button>
 
               <action-button
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 type="button"
                 text="Continuar"
                 style-type="primary"
-                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 @click="nextStep"
               />
             </div>
@@ -136,9 +137,10 @@
               <input-field
                 id="phone"
                 v-model="phone"
-                type="text"
-                placeholder="(00) 00000-0000"
                 class="block w-full"
+                type="text"
+                style-type="primary"
+                placeholder="(00) 00000-0000"
               />
             </div>
 
@@ -155,9 +157,10 @@
               </button>
 
               <action-button
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 type="button"
                 text="Continuar"
-                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
+                style-type="primary"
                 @click="nextStep"
               />
             </div>
@@ -182,9 +185,9 @@
               <input-field
                 id="confirmPhone"
                 v-model="confirmPhone"
+                class="block w-full"
                 type="text"
                 placeholder="XXX - XXX - XXX"
-                class="block w-full"
               />
             </div>
 
@@ -199,9 +202,10 @@
               </button>
 
               <action-button
+                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
                 type="button"
                 text="Completar"
-                class="order-1 mb-7 md:order-2 md:m-0 md:w-52"
+                style-type="primary"
                 @click="nextStep"
               />
             </div>

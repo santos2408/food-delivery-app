@@ -44,7 +44,7 @@ button {
 }
 
 .primary {
-  @apply w-full rounded-lg bg-brand-primary-500 text-sm text-brand-white shadow-primary hover:bg-brand-primary-400;
+  @apply rounded-lg bg-brand-primary-500 text-sm text-brand-white shadow-primary hover:bg-brand-primary-400;
 }
 
 .secondary {

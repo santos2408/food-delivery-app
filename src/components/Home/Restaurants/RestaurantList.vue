@@ -70,11 +70,11 @@ export default {
 
       this.loading = true;
 
-      if (restaurants.length === 0) {
-        this.loading = false;
-        this.showSeeMore = false;
-        return;
-      }
+      // if (restaurants.length === 0) {
+      //   this.loading = false;
+      //   this.showSeeMore = false;
+      //   return;
+      // }
 
       setTimeout(() => {
         this.restaurants = [...this.restaurants, ...restaurants];

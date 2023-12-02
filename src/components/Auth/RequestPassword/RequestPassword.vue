@@ -31,7 +31,7 @@
             />
           </div>
 
-          <action-button type="submit" text="Continuar" />
+          <action-button class="w-full" type="submit" text="Continuar" style-type="primary" />
         </form>
       </div>
 

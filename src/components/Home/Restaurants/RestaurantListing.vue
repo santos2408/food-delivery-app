@@ -2,7 +2,7 @@
   <li
     class="flex-1 rounded-xl border shadow-sm transition duration-150 hover:shadow-md xl:flex"
   >
-    <router-link to="/" class="flex w-full items-center gap-3 p-3">
+    <router-link to="/" class="flex w-full items-center gap-3 px-3 py-4">
       <div class="h-20 w-20 overflow-hidden rounded-xl">
         <img :src="getLogoUrl(value.logo)" :alt="value.name" />
       </div>

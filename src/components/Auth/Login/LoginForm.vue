@@ -30,7 +30,7 @@
       <the-checkbox text="Mantenha-me conectado" />
     </div>
 
-    <action-button type="submit" text="Login" class="mb-6" />
+    <action-button class="mb-6 w-full" type="submit" text="Login" style-type="primary" />
 
     <router-link
       :to="{ name: 'RequestPassword' }"
