@@ -10,8 +10,10 @@
       </router-link>
     </div>
 
-    <div class="custom-swiper-content relative md:px-4 lg:px-10 2xl:px-0">
-      <swiper-container init="false">
+    <the-deals-content-loader v-show="loading" />
+
+    <div v-show="!loading" class="custom-swiper-content relative md:px-4 lg:px-10 2xl:px-0">
+      <swiper-container init="false" events-prefix="swiper-">
         <swiper-slide
           v-for="deal in deals"
           :key="deal.id"
@@ -42,26 +44,33 @@ import axios from "axios";
 
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
+import TheDealsContentLoader from "@/components/ContentLoaders/TheDealsContentLoader.vue";
+
 export default {
   name: "TheDeals",
-  components: {},
+  components: {
+    TheDealsContentLoader,
+  },
   data() {
     return {
       swiperElement: null,
       deals: [],
+      loading: true,
     };
   },
   async mounted() {
     try {
       const response = await axios.get("http://localhost:3004/deals");
       this.deals = response.data;
+
+      this.swiperElement = document.querySelector("swiper-container");
+
+      Object.assign(this.swiperElement, dealsSwiperParams);
+      this.swiperElement.initialize();
+      this.loading = false;
     } catch (error) {
       console.log(error);
     }
-
-    this.swiperElement = document.querySelector("swiper-container");
-    Object.assign(this.swiperElement, dealsSwiperParams);
-    this.swiperElement.initialize();
   },
 };
 </script>

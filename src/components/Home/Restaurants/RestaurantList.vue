@@ -10,7 +10,10 @@
       </router-link>
     </div>
 
+    <restaurant-list-content-loader v-show="contentLoading" />
+
     <ul
+      v-show="!contentLoading"
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
@@ -21,7 +24,7 @@
     </ul>
 
     <div v-if="showSeeMore" class="flex justify-center">
-      <div v-if="loading" class="loader my-5">
+      <div v-if="loadindMore" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span>
@@ -42,25 +45,29 @@
 <script>
 import getRestaurants from "@/api/getRestaurants";
 
-import RestaurantListing from "@/components/Home/Restaurants/RestaurantListing.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import RestaurantListing from "@/components/Home/Restaurants/RestaurantListing.vue";
+import RestaurantListContentLoader from "@/components/ContentLoaders/RestaurantListContentLoader.vue";
 
 export default {
   name: "TheRestaurants",
   components: {
-    RestaurantListing,
     ActionButton,
+    RestaurantListing,
+    RestaurantListContentLoader,
   },
   data() {
     return {
       restaurants: [],
       currentPage: 1,
-      loading: false,
+      loadindMore: false,
       showSeeMore: true,
+      contentLoading: true,
     };
   },
   async mounted() {
     this.restaurants = await getRestaurants();
+    this.contentLoading = false;
   },
   methods: {
     async showMore() {
@@ -68,17 +75,17 @@ export default {
 
       const restaurants = await getRestaurants(this.currentPage);
 
-      this.loading = true;
+      this.loadindMore = true;
 
       // if (restaurants.length === 0) {
-      //   this.loading = false;
+      //   this.loadindMore = false;
       //   this.showSeeMore = false;
       //   return;
       // }
 
       setTimeout(() => {
         this.restaurants = [...this.restaurants, ...restaurants];
-        this.loading = false;
+        this.loadindMore = false;
       }, 1000);
     },
   },
