@@ -221,6 +221,15 @@
       "category": "Sorvetes",
       "deliveryTime": [59, 69],
       "shipping": 12.99
+    },
+    {
+      "id": 22,
+      "name": "Sushi Master",
+      "logo": "sushi-master-logo.avif",
+      "rate": 4.8,
+      "category": "Japonesa",
+      "deliveryTime": [60, 70],
+      "shipping": 13.99
     }
   ]
 }
