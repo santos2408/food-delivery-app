@@ -72,10 +72,9 @@ export default {
   methods: {
     async showMore() {
       this.currentPage = this.currentPage + 1;
+      this.loadindMore = true;
 
       const restaurants = await getRestaurants(this.currentPage);
-
-      this.loadindMore = true;
 
       // if (restaurants.length === 0) {
       //   this.loadindMore = false;
