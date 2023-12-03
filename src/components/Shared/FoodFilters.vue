@@ -9,13 +9,15 @@
         v-for="filter in filters"
         :key="filter.id"
         :data-filter="filter.title.toLowerCase()"
-        class="flex flex-1 cursor-pointer flex-col items-center justify-center rounded-3xl p-4 outline outline-1 outline-slate-200 hover:bg-brand-primary-50 hover:outline-brand-primary-500"
+        class="flex flex-1 cursor-pointer flex-col items-center justify-center rounded-3xl bg-brand-white outline outline-1 outline-slate-200 hover:bg-brand-primary-50 hover:outline-brand-primary-500"
         @click="selectFilter"
       >
-        <img :src="filter.url" :alt="filter.title" class="mb-2" />
-        <p class="text-sm font-semibold text-brand-neutral-600 lg:text-base">
-          {{ filter.title }}
-        </p>
+        <router-link to="/restaurantes" class="mx-auto w-full p-4">
+          <img :src="filter.url" :alt="filter.title" class="mx-auto mb-2" />
+          <p class="text-center text-sm font-semibold text-brand-neutral-600 lg:text-base">
+            {{ filter.title }}
+          </p>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -31,7 +33,6 @@ import cake from "@/assets/Icons/filters/cake.png";
 
 export default {
   name: "TheFilter",
-  components: {},
   data() {
     return {
       filters: [
@@ -42,27 +43,11 @@ export default {
         { id: 5, title: "Vegano", url: broccoli },
         { id: 6, title: "Sobremesa", url: cake },
       ],
-      selectedFilters: [],
     };
   },
   methods: {
-    selectFilter(event) {
-      const clickedFilter = event.target.closest("[data-filter]");
-      const clickedFilterDataset = clickedFilter.dataset.filter;
-      const selectedFilterIndex = this.selectedFilters.findIndex(
-        (selectedFilter) => selectedFilter === clickedFilterDataset,
-      );
-
-      if (selectedFilterIndex >= 0) {
-        let updatedSelectedFilters = [...this.selectedFilters];
-        updatedSelectedFilters.splice(selectedFilterIndex, 1);
-        this.selectedFilters = updatedSelectedFilters;
-        clickedFilter.classList.remove("selected-filter");
-        return;
-      }
-
-      clickedFilter.classList.add("selected-filter");
-      this.selectedFilters.push(clickedFilterDataset);
+    selectFilter() {
+      //
     },
   },
 };

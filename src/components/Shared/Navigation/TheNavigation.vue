@@ -103,9 +103,9 @@ export default {
   data() {
     return {
       menuItems: [
-        { title: "Restaurantes", url: "#" },
-        { title: "Promoções", url: "#" },
-        { title: "Meus Pedidos", url: "#" },
+        { title: "Restaurantes", url: "/restaurantes" },
+        { title: "Promoções", url: "/promocoes" },
+        { title: "Meus Pedidos", url: "/pedidos" },
       ],
     };
   },

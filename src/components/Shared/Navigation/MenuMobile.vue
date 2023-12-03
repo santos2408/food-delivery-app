@@ -22,12 +22,12 @@
       @click="toggleMenu"
     >
       <li
-        v-for="{ id, title } in menuItems"
+        v-for="{ id, title, url } in menuItems"
         :key="id"
         class="cursor-pointer p-2 hover:text-brand-primary-500"
         :class="{ relative: id === menuItems.length }"
       >
-        <a href="#">{{ title }}</a>
+        <router-link :to="url">{{ title }}</router-link>
       </li>
       <div
         data-js="menu-outside"
@@ -92,9 +92,9 @@ export default {
   data() {
     return {
       menuItems: [
-        { id: 1, title: "Restaurantes" },
-        { id: 2, title: "Promoções" },
-        { id: 3, title: "Meus Pedidos" },
+        { id: 1, title: "Restaurantes", url: "/restauranes" },
+        { id: 2, title: "Promoções", url: "/promocoes" },
+        { id: 3, title: "Meus Pedidos", url: "/pedidos" },
       ],
     };
   },
