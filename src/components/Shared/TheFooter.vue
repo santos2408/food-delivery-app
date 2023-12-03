@@ -1,7 +1,7 @@
 <template>
-  <footer class="w-full bg-brand-primary-500 py-11">
-    <div class="flex 2xl:container 2xl:mx-auto">
-      <div class="flex-1">
+  <footer class="w-full bg-brand-primary-500 py-11 lg:px-10 2xl:px-0">
+    <div class="flex flex-col 2xl:container xl:flex-row 2xl:mx-auto">
+      <div class="flex flex-1 flex-col items-center xl:items-start">
         <router-link :to="{ name: 'Home' }" class="mb-5 inline-block">
           <img
             src="@/assets/Icons/yumz/yumz-logo-2.png"
@@ -12,39 +12,59 @@
         <ul class="mb-11 flex gap-4">
           <li>
             <a href="https://www.facebook.com" target="_blank">
-              <facebook-icon color="#FF6F8A" class="h-7 w-7 hover:brightness-200" />
+              <facebook-icon
+                color="#FF6F8A"
+                class="h-9 w-9 hover:brightness-200 lg:h-7 lg:w-7"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com" target="_blank">
-              <instagram-icon color="#FF6F8A" class="h-7 w-7 hover:brightness-200" />
+              <instagram-icon
+                color="#FF6F8A"
+                class="h-9 w-9 hover:brightness-200 lg:h-7 lg:w-7"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.youtube.com" target="_blank">
-              <youtube-icon color="#FF6F8A" class="h-7 w-7 hover:brightness-200" />
+              <youtube-icon
+                color="#FF6F8A"
+                class="h-9 w-9 hover:brightness-200 lg:h-7 lg:w-7"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.twitter.com" target="_blank">
-              <twitter-icon color="#FF6F8A" class="h-7 w-7 hover:brightness-200" />
+              <twitter-icon
+                color="#FF6F8A"
+                class="h-9 w-9 hover:brightness-200 lg:h-7 lg:w-7"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com" target="_blank">
-              <linkedin-icon color="#FF6F8A" class="h-7 w-7 hover:brightness-200" />
+              <linkedin-icon
+                color="#FF6F8A"
+                class="h-9 w-9 hover:brightness-200 lg:h-7 lg:w-7"
+              />
             </a>
           </li>
         </ul>
-        <p class="text-sm text-brand-primary-100">
-          2023 Yumz! Food Delivery. All Rights Reserveda.
+
+        <p class="hidden text-center text-sm text-brand-primary-100 xl:block xl:text-left">
+          <span class="block md:inline-block">
+            2023 Yumz! Food Delivery. All Rights Reserveda.
+          </span>
           <router-link to="/" class="hover:text-white">Termos de Uso</router-link>
           <span class="text-xsm"> • </span>
           <router-link to="/" class="hover:text-white">Políticas de privacidade</router-link>
         </p>
       </div>
 
-      <div class="flex gap-32">
+      <div
+        class="mb-11 flex flex-1 flex-col items-center gap-16 text-center md:flex-row md:justify-center md:gap-32 md:text-left lg:flex-row xl:mb-0"
+      >
         <div>
           <h4 class="mb-4 text-xl font-semibold text-brand-white">Responses</h4>
           <ul class="text-brand-300 flex flex-col gap-2 text-brand-primary-100">
@@ -98,6 +118,17 @@
             </li>
           </ul>
         </div>
+      </div>
+
+      <div class="xl:hidden">
+        <p class="text-center text-sm text-brand-primary-100 xl:text-left">
+          <span class="block md:inline-block">
+            2023 Yumz! Food Delivery. All Rights Reserveda.
+          </span>
+          <router-link to="/" class="hover:text-white">Termos de Uso</router-link>
+          <span class="text-xsm"> • </span>
+          <router-link to="/" class="hover:text-white">Políticas de privacidade</router-link>
+        </p>
       </div>
     </div>
   </footer>
