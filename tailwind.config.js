@@ -37,6 +37,7 @@ module.exports = {
 
         "brand-secondary-500": "#FF7051",
 
+        "brand-success-300": "#17AA64",
         "brand-success-400": "#54C59C",
 
         "brand-neutral-50": "#EBEDEE",

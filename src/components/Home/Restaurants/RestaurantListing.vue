@@ -28,8 +28,12 @@
             <Clock :size="13" color="#A3ABB2" />
             {{ deliveryTime(value.deliveryTime) }}
           </span>
+
           <span class="text-[10px]"> • </span>
-          <span>R$ {{ value.shipping }}</span>
+
+          <span :style="shippingValueStyle">
+            {{ shippingValue }}
+          </span>
         </div>
       </div>
     </router-link>
@@ -50,6 +54,22 @@ export default {
     value: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    getShippingValueType() {
+      const shippingValue = this.value.shipping;
+      return typeof shippingValue;
+    },
+    shippingValue() {
+      const shippingValueType = this.getShippingValueType;
+      return shippingValueType === "number"
+        ? `R$ ${this.value.shipping}`
+        : this.value.shipping;
+    },
+    shippingValueStyle() {
+      const shippingValueType = this.getShippingValueType;
+      return shippingValueType === "number" ? "" : { color: "#17AA64" };
     },
   },
   methods: {
