@@ -14,7 +14,7 @@ export const loginSwiperParams = {
   `,
   ],
   autoplay: {
-    delay: 10000,
+    delay: 6000,
   },
   loop: true,
   allowTouchMove: false,

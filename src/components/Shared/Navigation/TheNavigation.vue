@@ -59,7 +59,7 @@
             2
           </span>
           <span
-            class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border-2 border-brand-neutral-50 bg-brand-primary-50 hover:border-brand-primary-500"
+            class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl border-2 border-brand-neutral-50 bg-brand-white hover:border-brand-primary-500 md:bg-brand-primary-50"
           >
             <ShoppingBag size="20" color="#FF2851" />
           </span>

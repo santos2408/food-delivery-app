@@ -12,7 +12,11 @@
 
     <the-deals-content-loader v-show="loading" />
 
-    <div v-show="!loading" class="custom-swiper-content relative md:px-4 lg:px-10 2xl:px-0">
+    <div
+      v-show="!loading"
+      class="custom-swiper-content relative md:px-4 lg:px-10 2xl:px-0"
+      :class="classDeals"
+    >
       <swiper-container init="false" events-prefix="swiper-">
         <swiper-slide
           v-for="deal in deals"
@@ -57,6 +61,14 @@ export default {
       deals: [],
       loading: true,
     };
+  },
+  computed: {
+    classDeals() {
+      return {
+        "opacity-0": this.loading,
+        "opacity-1": !this.loading,
+      };
+    },
   },
   async mounted() {
     try {

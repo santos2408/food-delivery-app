@@ -27,7 +27,6 @@ export default {
       this.screenWidth = window.innerWidth;
       this.screenHeight = document.body.scrollHeight;
       this.isADesktopDevice = this.screenWidth > 768;
-      console.log(this.screenHeight);
     });
   },
 };
