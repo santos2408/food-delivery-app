@@ -1,15 +1,5 @@
 <template>
   <section class="mb-16 px-4 lg:px-10 2xl:px-0">
-    <div class="mb-5 flex items-center justify-between">
-      <h2 class="text-3xl font-bold text-brand-neutral-500">Restaurantes</h2>
-      <router-link
-        to="/"
-        class="rounded-full border-[1px] border-brand-primary-500 px-5 py-3 text-xsm font-bold uppercase text-brand-primary-500 transition duration-150 hover:bg-brand-primary-500 hover:text-white"
-      >
-        Ver todos
-      </router-link>
-    </div>
-
     <restaurant-list-content-loader v-show="contentLoading" />
 
     <ul
@@ -17,7 +7,7 @@
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
-        v-for="restaurant in restaurants"
+        v-for="restaurant in FILTERED_RESTAURANTS"
         :key="restaurant.id"
         :value="restaurant"
       />
@@ -43,11 +33,16 @@
 </template>
 
 <script>
-import getRestaurants from "@/api/getRestaurants";
+import { mapState, mapActions } from "pinia";
+import {
+  useRestaurantsStore,
+  FETCH_RESTAURANTS,
+  FILTERED_RESTAURANTS,
+} from "@/stores/restaurants";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import RestaurantListing from "@/components/Home/Restaurants/RestaurantListing.vue";
-import RestaurantListContentLoader from "@/components/ContentLoaders/RestaurantListContentLoader.vue";
+import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
 
 export default {
   name: "TheRestaurants",
@@ -65,16 +60,23 @@ export default {
       contentLoading: true,
     };
   },
+  computed: {
+    ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
+  },
   async mounted() {
-    this.restaurants = await getRestaurants();
+    if (this.FILTERED_RESTAURANTS.length) {
+      this.contentLoading = false;
+      return;
+    }
+
+    this.FETCH_RESTAURANTS();
     this.contentLoading = false;
   },
   methods: {
+    ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS]),
     async showMore() {
       this.currentPage = this.currentPage + 1;
       this.loadindMore = true;
-
-      const restaurants = await getRestaurants(this.currentPage);
 
       // if (restaurants.length === 0) {
       //   this.loadindMore = false;
@@ -83,7 +85,7 @@ export default {
       // }
 
       setTimeout(() => {
-        this.restaurants = [...this.restaurants, ...restaurants];
+        this.FETCH_RESTAURANTS(this.currentPage);
         this.loadindMore = false;
       }, 1000);
     },

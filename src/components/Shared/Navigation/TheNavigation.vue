@@ -27,7 +27,7 @@
     </div>
 
     <Transition name="slide-menu">
-      <menu-mobile v-show="menuActive" :status="menuActive" />
+      <menu-mobile v-show="isMenuActive" :status="isMenuActive" />
     </Transition>
 
     <div class="flex gap-6">
@@ -37,7 +37,6 @@
           :key="menuItem.title"
           :class="[
             'cursor-pointer',
-            'p-2',
             'hover:text-brand-primary-500',
             { relative: index === lastMenuItem },
           ]"
@@ -47,7 +46,9 @@
             class="pointer-events-none absolute -left-3 top-2/4 h-8 w-[1px] -translate-y-1/2 cursor-default bg-brand-neutral-50"
           >
           </span>
-          <router-link :to="menuItem.url" class="text-base">{{ menuItem.title }}</router-link>
+          <router-link :to="menuItem.url" class="p-2 text-base">{{
+            menuItem.title
+          }}</router-link>
         </li>
       </ul>
 
@@ -85,7 +86,7 @@
 </template>
 
 <script>
-import { mapStores } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, Menu } from "lucide-vue-next";
@@ -103,24 +104,25 @@ export default {
   data() {
     return {
       menuItems: [
-        { title: "Restaurantes", url: "/restaurantes" },
-        { title: "Promoções", url: "/promocoes" },
-        { title: "Meus Pedidos", url: "/pedidos" },
+        { title: "Restaurantes", url: "/restaurants" },
+        { title: "Promoções", url: "/deals" },
+        { title: "Meus Pedidos", url: "/orders" },
       ],
     };
   },
   computed: {
-    ...mapStores(useMenuStore),
-    menuActive() {
-      return this.menuStore.menuActive;
+    ...mapState(useMenuStore, ["menuActive"]),
+    isMenuActive() {
+      return this.menuActive;
     },
     lastMenuItem() {
       return this.menuItems.length - 1;
     },
   },
   methods: {
+    ...mapActions(useMenuStore, ["toggleMenu"]),
     toggleMenu(event) {
-      this.menuStore.toggleMenu(event);
+      this.toggleMenu(event);
     },
   },
 };

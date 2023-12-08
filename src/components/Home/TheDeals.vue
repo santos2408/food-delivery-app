@@ -1,14 +1,9 @@
 <template>
   <section class="mb-12">
-    <div class="mb-5 flex items-center justify-between px-4 lg:px-10 2xl:px-0">
-      <h2 class="text-3xl font-bold text-brand-neutral-500">Ofertas</h2>
-      <router-link
-        to="/"
-        class="rounded-full border-[1px] border-brand-primary-500 px-5 py-3 text-xsm font-bold uppercase text-brand-primary-500 transition duration-150 hover:bg-brand-primary-500 hover:text-white"
-      >
-        Todas as ofertas
-      </router-link>
-    </div>
+    <header-section :has-button="true">
+      <template #title>Ofertas</template>
+      <template #button>Todas as Ofertas</template>
+    </header-section>
 
     <the-deals-content-loader v-show="loading" />
 
@@ -48,12 +43,14 @@ import axios from "axios";
 
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
-import TheDealsContentLoader from "@/components/ContentLoaders/TheDealsContentLoader.vue";
+import HeaderSection from "@/components/Shared/HeaderSection.vue";
+import TheDealsContentLoader from "@/assets/Loaders/ContentLoaders/TheDealsContentLoader.vue";
 
 export default {
   name: "TheDeals",
   components: {
     TheDealsContentLoader,
+    HeaderSection,
   },
   data() {
     return {
