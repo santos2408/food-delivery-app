@@ -13,9 +13,14 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/restaurants/:category",
+    path: "/restaurants",
     name: "Restaurants",
     component: RestaurantsView,
+  },
+  {
+    path: "/restaurants/descobrir/:category",
+    name: "RestaurantsCategory",
+    // component: RestaurantsCategoryView,
   },
   {
     path: "/login",

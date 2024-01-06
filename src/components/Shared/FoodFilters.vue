@@ -6,44 +6,46 @@
         :key="filter.id"
         :data-filter="filter.title.toLowerCase()"
         class="flex flex-1 cursor-pointer flex-col items-center justify-center rounded-3xl bg-brand-white outline outline-1 outline-slate-200 hover:bg-brand-primary-50 hover:outline-brand-primary-500"
-        @click="selectFilter"
+        @click="selectFilter(filter.slug)"
       >
-        <router-link to="/restaurants" class="mx-auto w-full p-4">
+        <button class="mx-auto w-full p-4">
           <img :src="filter.url" :alt="filter.title" class="mx-auto mb-2" />
-          <p class="text-center text-sm font-semibold text-brand-neutral-600 lg:text-base">
+          <span
+            class="block text-center text-sm font-semibold text-brand-neutral-600 lg:text-base"
+          >
             {{ filter.title }}
-          </p>
-        </router-link>
+          </span>
+        </button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import pizza from "@/assets/Icons/filters/pizza.png";
-import burger from "@/assets/Icons/filters/burger.png";
-import meat from "@/assets/Icons/filters/meat.png";
-import sushi from "@/assets/Icons/filters/sushi.png";
-import broccoli from "@/assets/Icons/filters/broccoli.png";
-import cake from "@/assets/Icons/filters/cake.png";
+import { pizza, burger, meat, sushi, broccoli, cake } from "@/utils/foodFiltersImages.js";
 
 export default {
   name: "TheFilter",
   data() {
     return {
       filters: [
-        { id: 1, title: "Pizza", url: pizza },
-        { id: 2, title: "Hambúrguer", url: burger },
-        { id: 3, title: "Churrasco", url: meat },
-        { id: 4, title: "Sushi", url: sushi },
-        { id: 5, title: "Vegano", url: broccoli },
-        { id: 6, title: "Sobremesa", url: cake },
+        { id: 1, title: "Pizza", url: pizza, slug: "pizza" },
+        { id: 2, title: "Lanches", url: burger, slug: "lanches" },
+        { id: 3, title: "Churrasco", url: meat, slug: "churrasco" },
+        { id: 4, title: "Japonesa", url: sushi, slug: "japonesa" },
+        { id: 5, title: "Vegana", url: broccoli, slug: "vegana" },
+        { id: 6, title: "Sobremesa", url: cake, slug: "sobremesa" },
       ],
     };
   },
   methods: {
-    selectFilter() {
-      //
+    selectFilter(slug) {
+      this.$router.push({
+        name: "Restaurants",
+        query: {
+          category: slug,
+        },
+      });
     },
   },
 };
