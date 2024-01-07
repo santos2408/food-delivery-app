@@ -88,7 +88,6 @@ export default {
       required: true,
     },
   },
-  emits: ["toggle-menu"],
   data() {
     return {
       menuItems: [
@@ -98,12 +97,8 @@ export default {
       ],
     };
   },
-  computed: {},
   methods: {
     ...mapActions(useMenuStore, ["toggleMenu"]),
-    toggleMenu(event) {
-      this.toggleMenu(event);
-    },
   },
 };
 </script>

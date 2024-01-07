@@ -24,7 +24,7 @@ import FoodFilters from "@/components/Shared/FoodFilters.vue";
 import HeaderSection from "@/components/Shared/HeaderSection.vue";
 import TheNavigation from "@/components/Shared/Navigation/TheNavigation.vue";
 import TheDeals from "@/components/Home/TheDeals.vue";
-import RestaurantList from "@/components/Home/Restaurants/RestaurantList.vue";
+import RestaurantList from "@/components/Restaurants/RestaurantList.vue";
 import TheFooter from "@/components/Shared/TheFooter.vue";
 
 export default {
@@ -39,5 +39,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

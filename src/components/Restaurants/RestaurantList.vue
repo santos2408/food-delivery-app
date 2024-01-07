@@ -7,27 +7,31 @@
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
-        v-for="restaurant in FILTERED_RESTAURANTS"
+        v-for="restaurant in FILTERED_RESTAURANTS.data"
         :key="restaurant.id"
         :value="restaurant"
       />
     </ul>
 
-    <div v-if="showSeeMore" class="flex justify-center">
-      <div v-if="loadindMore" class="loader my-5">
+    <div v-if="shouldHideShowMoreButton" class="flex justify-center">
+      <div v-show="loadindMore" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span>
       </div>
 
       <action-button
-        v-else
+        v-show="!loadindMore"
         type="button"
         text="Ver mais"
         style-type="secondary"
         class="rounded-lg"
         @click="showMore"
       />
+    </div>
+
+    <div v-else class="flex justify-center">
+      <p>Desculpe, não foram encontrados mais restaurantes.</p>
     </div>
   </section>
 </template>
@@ -41,7 +45,7 @@ import {
 } from "@/stores/restaurants";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import RestaurantListing from "@/components/Home/Restaurants/RestaurantListing.vue";
+import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
 import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
 
 export default {
@@ -53,7 +57,6 @@ export default {
   },
   data() {
     return {
-      restaurants: [],
       currentPage: 1,
       loadindMore: false,
       showSeeMore: true,
@@ -62,15 +65,16 @@ export default {
   },
   computed: {
     ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
+    shouldHideShowMoreButton() {
+      return this.FILTERED_RESTAURANTS.hasNext ? true : false;
+    },
   },
   async mounted() {
-    if (this.FILTERED_RESTAURANTS.length) {
-      this.contentLoading = false;
-      return;
-    }
-
-    this.FETCH_RESTAURANTS();
     this.contentLoading = false;
+
+    if (this.FILTERED_RESTAURANTS.data.length === 0) {
+      await this.FETCH_RESTAURANTS();
+    }
   },
   methods: {
     ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS]),
@@ -78,16 +82,8 @@ export default {
       this.currentPage = this.currentPage + 1;
       this.loadindMore = true;
 
-      // if (restaurants.length === 0) {
-      //   this.loadindMore = false;
-      //   this.showSeeMore = false;
-      //   return;
-      // }
-
-      setTimeout(() => {
-        this.FETCH_RESTAURANTS(this.currentPage);
-        this.loadindMore = false;
-      }, 1000);
+      await this.FETCH_RESTAURANTS(this.currentPage);
+      this.loadindMore = false;
     },
   },
 };

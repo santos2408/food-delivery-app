@@ -121,9 +121,6 @@ export default {
   },
   methods: {
     ...mapActions(useMenuStore, ["toggleMenu"]),
-    toggleMenu(event) {
-      this.toggleMenu(event);
-    },
   },
 };
 </script>

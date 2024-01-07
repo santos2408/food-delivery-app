@@ -7,7 +7,10 @@ import getRestaurants from "@/api/getRestaurants";
 
 export const useRestaurantsStore = defineStore("restaurants", {
   state: () => ({
-    restaurants: [],
+    restaurants: {
+      data: [],
+      hasNext: undefined,
+    },
   }),
   getters: {
     [FILTERED_RESTAURANTS]: (state) => {
@@ -16,8 +19,18 @@ export const useRestaurantsStore = defineStore("restaurants", {
   },
   actions: {
     async [FETCH_RESTAURANTS](currentPage) {
+      console.log("executou");
       const restaurants = await getRestaurants(currentPage);
-      this.restaurants = [...this.restaurants, ...restaurants];
+
+      if (!this.restaurants.data) {
+        this.restaurants = { ...restaurants };
+        return;
+      }
+
+      this.restaurants = {
+        data: [...this.restaurants.data, ...restaurants.data],
+        hasNext: restaurants.hasNext,
+      };
     },
   },
 });
