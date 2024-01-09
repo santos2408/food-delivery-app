@@ -7,10 +7,7 @@ import getRestaurants from "@/api/getRestaurants";
 
 export const useRestaurantsStore = defineStore("restaurants", {
   state: () => ({
-    restaurants: {
-      data: [],
-      hasNext: undefined,
-    },
+    restaurantsAmount: 0,
   }),
   getters: {
     [FILTERED_RESTAURANTS]: (state) => {

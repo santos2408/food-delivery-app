@@ -1,39 +1,37 @@
 <template>
-  <div class="">
-    <header class="mb-16 2xl:container 2xl:mx-auto">
-      <the-navigation />
-    </header>
-    <main class="2xl:container 2xl:mx-auto">
-      <div>
-        <h1 class="mb-6 text-center text-6xl font-bold leading-tight">
-          <span class="text-brand-primary-500">Descubra</span> <br />
-          Novos Sabores
-        </h1>
+  <header class="mb-16 2xl:container 2xl:mx-auto">
+    <the-navigation />
+  </header>
 
-        <search-restaurants class="xl:mb-20" />
-      </div>
+  <main class="2xl:container 2xl:mx-auto">
+    <div>
+      <h1 class="mb-6 text-center text-6xl font-bold leading-tight">
+        <span class="text-brand-primary-500">Descubra</span> <br />
+        Novos Sabores
+      </h1>
 
-      <header-section :has-button="false">
-        <template #title>Todos os restaurantes</template>
-      </header-section>
+      <search-restaurants class="xl:mb-20" />
+    </div>
 
-      <food-filters class="xl:mb-12" />
+    <header-section :has-button="false">
+      <template #title>Todos os restaurantes</template>
+    </header-section>
 
-      <div class="mb-2 px-4 lg:px-10 2xl:px-0">
-        <span class="text-sm font-medium text-brand-neutral-400">
-          {{ FILTERED_RESTAURANTS.data.length }} restaurantes encontrados
-        </span>
-      </div>
-      <restaurant-list />
-    </main>
-    <the-footer />
-  </div>
+    <food-filters class="xl:mb-12" />
+
+    <div class="mb-2 px-4 lg:px-10 2xl:px-0">
+      <span class="text-sm font-medium text-brand-neutral-400">
+        {{ restaurantsAmount }} restaurantes encontrados
+      </span>
+    </div>
+
+    <restaurant-list @restaurants-amount="updatedRestaurantsAmount" />
+  </main>
+
+  <the-footer />
 </template>
 
 <script>
-import { mapState } from "pinia";
-import { useRestaurantsStore, FILTERED_RESTAURANTS } from "@/stores/restaurants";
-
 import SearchRestaurants from "@/components/Shared/SearchRestaurants.vue";
 import FoodFilters from "@/components/Shared/FoodFilters.vue";
 import HeaderSection from "@/components/Shared/HeaderSection.vue";
@@ -51,8 +49,16 @@ export default {
     TheNavigation,
     TheFooter,
   },
-  computed: {
-    ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
+  data() {
+    return {
+      restaurantsAmount: 0,
+    };
+  },
+  methods: {
+    updatedRestaurantsAmount(event) {
+      console.log(event);
+      this.restaurantsAmount = event;
+    },
   },
 };
 </script>

@@ -221,6 +221,15 @@
       "category": "Japonesa",
       "deliveryTime": [60, 70],
       "shipping": 13.99
+    },
+    {
+      "id": 21,
+      "name": "Big Polis - Leblon",
+      "logo": "big-polis-logo.avif",
+      "rate": 4.7,
+      "category": "Saudável",
+      "deliveryTime": [49, 59],
+      "shipping": 8.99
     }
   ]
 }

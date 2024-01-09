@@ -7,21 +7,21 @@
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
-        v-for="restaurant in FILTERED_RESTAURANTS.data"
+        v-for="restaurant in restaurants.data"
         :key="restaurant.id"
         :value="restaurant"
       />
     </ul>
 
-    <div v-if="hasMoreRestaurants" class="flex justify-center">
-      <div v-show="loadindMore" class="loader my-5">
+    <div v-if="hasMoreRestaurants" class="mb-16 flex justify-center">
+      <div v-show="loadingMore" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span>
       </div>
 
       <action-button
-        v-show="!loadindMore"
+        v-show="!loadingMore"
         type="button"
         text="Ver mais"
         style-type="secondary"
@@ -29,64 +29,61 @@
         @click="showMore"
       />
     </div>
-
-    <div v-else class="flex justify-center">
-      <p>Desculpe, não foram encontrados mais restaurantes.</p>
-    </div>
   </section>
 </template>
 
 <script>
-import { mapState, mapActions } from "pinia";
-import {
-  useRestaurantsStore,
-  FETCH_RESTAURANTS,
-  FILTERED_RESTAURANTS,
-} from "@/stores/restaurants";
+import getRestaurants from "@/api/getRestaurants";
 
-import ActionButton from "@/components/Shared/ActionButton.vue";
 import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
 import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default {
-  name: "TheRestaurants",
+  name: "RestaurantList",
   components: {
-    ActionButton,
     RestaurantListing,
     RestaurantListContentLoader,
+    ActionButton,
   },
+
+  emits: ["restaurants-amount"],
 
   data() {
     return {
+      restaurants: { data: [], hasNext: null },
       currentPage: 1,
-      loadindMore: false,
+      loadingMore: false,
       contentLoading: true,
+      hasMoreRestaurants: true,
     };
   },
 
-  computed: {
-    ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
-    hasRestaurantsToLoad() {
-      return this.FILTERED_RESTAURANTS.hasNext ? true : false;
-    },
-  },
-
   async mounted() {
+    await this.loadRestaurants(this.currentPage);
+    this.$emit("restaurants-amount", this.restaurants.data.length);
     this.contentLoading = false;
-
-    if (this.FILTERED_RESTAURANTS.data.length === 0) {
-      await this.FETCH_RESTAURANTS();
-    }
   },
+
   methods: {
-    ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS]),
+    async loadRestaurants(currentPage) {
+      const restaurants = await getRestaurants(currentPage);
+
+      this.restaurants = {
+        data: [...this.restaurants.data, ...restaurants.data],
+        hasNext: restaurants.hasNext,
+      };
+    },
+
     async showMore() {
       this.currentPage = this.currentPage + 1;
-      this.loadindMore = true;
+      this.loadingMore = true;
 
-      await this.FETCH_RESTAURANTS(this.currentPage);
-      this.hasMoreRestaurants = this.hasRestaurantsToLoad;
-      this.loadindMore = false;
+      await this.loadRestaurants(this.currentPage);
+      this.$emit("restaurants-amount", this.restaurants.data.length);
+
+      this.hasMoreRestaurants = this.restaurants.hasNext;
+      this.loadingMore = false;
     },
   },
 };
