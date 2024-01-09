@@ -17,7 +17,7 @@
 
     <food-filters class="mb-12" />
 
-    <header-section :has-button="true" link="/restaurants">
+    <header-section :has-button="true" link="/restaurantes">
       <template #title>Restaurantes</template>
       <template #button>Ver todos</template>
     </header-section>

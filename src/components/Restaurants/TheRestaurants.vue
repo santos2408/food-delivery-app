@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     updatedRestaurantsAmount(event) {
-      console.log(event);
       this.restaurantsAmount = event;
     },
   },

@@ -13,12 +13,22 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/restaurants",
+    path: "/restaurantes",
     name: "Restaurants",
     component: RestaurantsView,
   },
   {
-    path: "/restaurants/descobrir/:category",
+    path: "/promocoes",
+    name: "Deals",
+    // component: RestaurantsView,
+  },
+  {
+    path: "/pedidos",
+    name: "Orders",
+    // component: RestaurantsView,
+  },
+  {
+    path: "/restaurants/descobrir/:categoria",
     name: "RestaurantsCategory",
     // component: RestaurantsCategoryView,
   },
@@ -28,12 +38,12 @@ const routes = [
     component: LoginView,
   },
   {
-    path: "/request-password",
+    path: "/recuperar-senha",
     name: "RequestPassword",
     component: RequestPasswordView,
   },
   {
-    path: "/signup",
+    path: "/cadastrar",
     name: "Signup",
     component: SignupView,
   },
