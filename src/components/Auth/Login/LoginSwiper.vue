@@ -16,7 +16,7 @@
 <script>
 import { mapState, mapActions } from "pinia";
 
-import { useSwiperStore } from "../../stores/swiper";
+import { useSwiperStore } from "@/stores/swiper";
 
 import { loginSwiperParams } from "@/utils/swiperParams";
 

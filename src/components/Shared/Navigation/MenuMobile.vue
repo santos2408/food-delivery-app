@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import { mapStores } from "pinia";
+import { mapActions } from "pinia";
 import { useMenuStore } from "@/stores/menu";
 
 import { Search, ShoppingBag, X } from "lucide-vue-next";
@@ -88,23 +88,18 @@ export default {
       required: true,
     },
   },
-  emits: ["toggle-menu"],
   data() {
     return {
       menuItems: [
-        { id: 1, title: "Restaurantes", url: "/restauranes" },
-        { id: 2, title: "Promoções", url: "/promocoes" },
-        { id: 3, title: "Meus Pedidos", url: "/pedidos" },
+        { id: 1, title: "Home", url: "/" },
+        { id: 2, title: "Restaurantes", url: "/restaurants" },
+        { id: 3, title: "Promoções", url: "/deals" },
+        { id: 4, title: "Meus Pedidos", url: "/orders" },
       ],
     };
   },
-  computed: {
-    ...mapStores(useMenuStore),
-  },
   methods: {
-    toggleMenu(event) {
-      this.menuStore.toggleMenu(event);
-    },
+    ...mapActions(useMenuStore, ["toggleMenu"]),
   },
 };
 </script>

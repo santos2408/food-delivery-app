@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     getLogoUrl(logo) {
-      return new URL(`../../../assets/images/logos/${logo}`, import.meta.url).href;
+      return new URL(`../../assets/images/logos/${logo}`, import.meta.url).href;
     },
     deliveryTime(times) {
       return `${times[0]}-${times[1]} min`;

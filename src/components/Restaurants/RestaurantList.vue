@@ -1,15 +1,5 @@
 <template>
   <section class="mb-16 px-4 lg:px-10 2xl:px-0">
-    <div class="mb-5 flex items-center justify-between">
-      <h2 class="text-3xl font-bold text-brand-neutral-500">Restaurantes</h2>
-      <router-link
-        to="/"
-        class="rounded-full border-[1px] border-brand-primary-500 px-5 py-3 text-xsm font-bold uppercase text-brand-primary-500 transition duration-150 hover:bg-brand-primary-500 hover:text-white"
-      >
-        Ver todos
-      </router-link>
-    </div>
-
     <restaurant-list-content-loader v-show="contentLoading" />
 
     <ul
@@ -17,21 +7,21 @@
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
-        v-for="restaurant in restaurants"
+        v-for="restaurant in FILTERED_RESTAURANTS.data"
         :key="restaurant.id"
         :value="restaurant"
       />
     </ul>
 
-    <div v-if="showSeeMore" class="flex justify-center">
-      <div v-if="loadindMore" class="loader my-5">
+    <div v-if="hasMoreRestaurants" class="flex justify-center">
+      <div v-show="loadindMore" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span>
       </div>
 
       <action-button
-        v-else
+        v-show="!loadindMore"
         type="button"
         text="Ver mais"
         style-type="secondary"
@@ -39,15 +29,24 @@
         @click="showMore"
       />
     </div>
+
+    <div v-else class="flex justify-center">
+      <p>Desculpe, não foram encontrados mais restaurantes.</p>
+    </div>
   </section>
 </template>
 
 <script>
-import getRestaurants from "@/api/getRestaurants";
+import { mapState, mapActions } from "pinia";
+import {
+  useRestaurantsStore,
+  FETCH_RESTAURANTS,
+  FILTERED_RESTAURANTS,
+} from "@/stores/restaurants";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import RestaurantListing from "@/components/Home/Restaurants/RestaurantListing.vue";
-import RestaurantListContentLoader from "@/components/ContentLoaders/RestaurantListContentLoader.vue";
+import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
+import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
 
 export default {
   name: "TheRestaurants",
@@ -56,36 +55,38 @@ export default {
     RestaurantListing,
     RestaurantListContentLoader,
   },
+
   data() {
     return {
-      restaurants: [],
       currentPage: 1,
       loadindMore: false,
-      showSeeMore: true,
       contentLoading: true,
     };
   },
+
+  computed: {
+    ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
+    hasRestaurantsToLoad() {
+      return this.FILTERED_RESTAURANTS.hasNext ? true : false;
+    },
+  },
+
   async mounted() {
-    this.restaurants = await getRestaurants();
     this.contentLoading = false;
+
+    if (this.FILTERED_RESTAURANTS.data.length === 0) {
+      await this.FETCH_RESTAURANTS();
+    }
   },
   methods: {
+    ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS]),
     async showMore() {
       this.currentPage = this.currentPage + 1;
       this.loadindMore = true;
 
-      const restaurants = await getRestaurants(this.currentPage);
-
-      // if (restaurants.length === 0) {
-      //   this.loadindMore = false;
-      //   this.showSeeMore = false;
-      //   return;
-      // }
-
-      setTimeout(() => {
-        this.restaurants = [...this.restaurants, ...restaurants];
-        this.loadindMore = false;
-      }, 1000);
+      await this.FETCH_RESTAURANTS(this.currentPage);
+      this.hasMoreRestaurants = this.hasRestaurantsToLoad;
+      this.loadindMore = false;
     },
   },
 };

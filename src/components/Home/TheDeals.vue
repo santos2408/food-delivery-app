@@ -1,14 +1,9 @@
 <template>
   <section class="mb-12">
-    <div class="mb-5 flex items-center justify-between px-4 lg:px-10 2xl:px-0">
-      <h2 class="text-3xl font-bold text-brand-neutral-500">Ofertas</h2>
-      <router-link
-        to="/"
-        class="rounded-full border-[1px] border-brand-primary-500 px-5 py-3 text-xsm font-bold uppercase text-brand-primary-500 transition duration-150 hover:bg-brand-primary-500 hover:text-white"
-      >
-        Todas as ofertas
-      </router-link>
-    </div>
+    <header-section :has-button="true">
+      <template #title>Ofertas</template>
+      <template #button>Todas as Ofertas</template>
+    </header-section>
 
     <the-deals-content-loader v-show="loading" />
 
@@ -43,48 +38,39 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import axios from "axios";
-
+import { ref, computed, onMounted } from "vue";
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
-import TheDealsContentLoader from "@/components/ContentLoaders/TheDealsContentLoader.vue";
+import HeaderSection from "@/components/Shared/HeaderSection.vue";
+import TheDealsContentLoader from "@/assets/Loaders/ContentLoaders/TheDealsContentLoader.vue";
 
-export default {
-  name: "TheDeals",
-  components: {
-    TheDealsContentLoader,
-  },
-  data() {
-    return {
-      swiperElement: null,
-      deals: [],
-      loading: true,
-    };
-  },
-  computed: {
-    classDeals() {
-      return {
-        "opacity-0": this.loading,
-        "opacity-1": !this.loading,
-      };
-    },
-  },
-  async mounted() {
-    try {
-      const response = await axios.get("http://localhost:3004/deals");
-      this.deals = response.data;
+const swiperElement = ref(null);
+const deals = ref([]);
+const loading = ref(true);
 
-      this.swiperElement = document.querySelector("swiper-container");
+const classDeals = computed(() => {
+  return {
+    "opacity-0": loading.value,
+    "opacity-1": !loading.value,
+  };
+});
 
-      Object.assign(this.swiperElement, dealsSwiperParams);
-      this.swiperElement.initialize();
-      this.loading = false;
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+onMounted(async () => {
+  try {
+    const response = await axios.get("http://localhost:3004/deals");
+
+    deals.value = response.data;
+    swiperElement.value = document.querySelector("swiper-container");
+
+    Object.assign(swiperElement.value, dealsSwiperParams);
+    swiperElement.value.initialize();
+    loading.value = false;
+  } catch (error) {
+    console.log(error);
+  }
+});
 </script>
 
 <style scoped>
