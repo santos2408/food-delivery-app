@@ -19,7 +19,6 @@ export const useRestaurantsStore = defineStore("restaurants", {
   },
   actions: {
     async [FETCH_RESTAURANTS](currentPage) {
-      console.log("executou");
       const restaurants = await getRestaurants(currentPage);
 
       if (!this.restaurants.data) {

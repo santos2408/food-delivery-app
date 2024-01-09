@@ -38,50 +38,39 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import axios from "axios";
-
+import { ref, computed, onMounted } from "vue";
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
 import HeaderSection from "@/components/Shared/HeaderSection.vue";
 import TheDealsContentLoader from "@/assets/Loaders/ContentLoaders/TheDealsContentLoader.vue";
 
-export default {
-  name: "TheDeals",
-  components: {
-    TheDealsContentLoader,
-    HeaderSection,
-  },
-  data() {
-    return {
-      swiperElement: null,
-      deals: [],
-      loading: true,
-    };
-  },
-  computed: {
-    classDeals() {
-      return {
-        "opacity-0": this.loading,
-        "opacity-1": !this.loading,
-      };
-    },
-  },
-  async mounted() {
-    try {
-      const response = await axios.get("http://localhost:3004/deals");
-      this.deals = response.data;
+const swiperElement = ref(null);
+const deals = ref([]);
+const loading = ref(true);
 
-      this.swiperElement = document.querySelector("swiper-container");
+const classDeals = computed(() => {
+  return {
+    "opacity-0": loading.value,
+    "opacity-1": !loading.value,
+  };
+});
 
-      Object.assign(this.swiperElement, dealsSwiperParams);
-      this.swiperElement.initialize();
-      this.loading = false;
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+onMounted(async () => {
+  try {
+    const response = await axios.get("http://localhost:3004/deals");
+
+    deals.value = response.data;
+    swiperElement.value = document.querySelector("swiper-container");
+
+    Object.assign(swiperElement.value, dealsSwiperParams);
+    swiperElement.value.initialize();
+    loading.value = false;
+  } catch (error) {
+    console.log(error);
+  }
+});
 </script>
 
 <style scoped>

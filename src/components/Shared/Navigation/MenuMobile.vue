@@ -91,9 +91,10 @@ export default {
   data() {
     return {
       menuItems: [
-        { id: 1, title: "Restaurantes", url: "/restaurants" },
-        { id: 2, title: "Promoções", url: "/deals" },
-        { id: 3, title: "Meus Pedidos", url: "/orders" },
+        { id: 1, title: "Home", url: "/" },
+        { id: 2, title: "Restaurantes", url: "/restaurants" },
+        { id: 3, title: "Promoções", url: "/deals" },
+        { id: 4, title: "Meus Pedidos", url: "/orders" },
       ],
     };
   },

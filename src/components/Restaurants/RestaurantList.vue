@@ -13,7 +13,7 @@
       />
     </ul>
 
-    <div v-if="shouldHideShowMoreButton" class="flex justify-center">
+    <div v-if="hasMoreRestaurants" class="flex justify-center">
       <div v-show="loadindMore" class="loader my-5">
         <span class="ball"></span>
         <span class="ball"></span>
@@ -55,20 +55,22 @@ export default {
     RestaurantListing,
     RestaurantListContentLoader,
   },
+
   data() {
     return {
       currentPage: 1,
       loadindMore: false,
-      showSeeMore: true,
       contentLoading: true,
     };
   },
+
   computed: {
     ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
-    shouldHideShowMoreButton() {
+    hasRestaurantsToLoad() {
       return this.FILTERED_RESTAURANTS.hasNext ? true : false;
     },
   },
+
   async mounted() {
     this.contentLoading = false;
 
@@ -83,6 +85,7 @@ export default {
       this.loadindMore = true;
 
       await this.FETCH_RESTAURANTS(this.currentPage);
+      this.hasMoreRestaurants = this.hasRestaurantsToLoad;
       this.loadindMore = false;
     },
   },

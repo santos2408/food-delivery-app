@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-12 px-4 lg:px-10 2xl:px-0">
+  <div class="px-4 lg:px-10 2xl:px-0">
     <ul class="grid grid-cols-3 justify-between gap-3 sm:grid-cols-3 md:grid-cols-6 lg:gap-8">
       <li
         v-for="filter in filters"
