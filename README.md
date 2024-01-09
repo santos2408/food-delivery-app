@@ -42,7 +42,7 @@
     <br /> -->
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://food-delivery-app-roger-santtoss.netlify.app/#/">View Demo</a>
     ·
     <a href="https://github.com/santos2408/food-delivery-app/issues">Report Bug</a>
     ·
