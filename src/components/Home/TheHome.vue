@@ -1,11 +1,11 @@
 <template>
-  <header class="mb-16 2xl:container 2xl:mx-auto">
+  <header class="mb-12 2xl:container xl:mb-16 2xl:mx-auto">
     <the-navigation />
   </header>
 
   <main class="2xl:container 2xl:mx-auto">
-    <div>
-      <h1 class="mb-6 text-center text-6xl font-bold leading-tight">
+    <div class="px-4 xl:px-0">
+      <h1 class="mb-6 text-center text-4xl font-bold leading-tight xl:text-6xl">
         Encontre o <br />
         <span class="text-brand-primary-500">Restaurante</span> Perfeito
       </h1>

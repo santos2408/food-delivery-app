@@ -1,5 +1,7 @@
 <template>
-  <div class="absolute left-0 top-0 z-10 w-full bg-brand-white p-4 shadow-lg xl:hidden">
+  <div
+    class="absolute left-0 top-0 z-10 w-full rounded-3xl bg-brand-white p-4 shadow-lg xl:hidden"
+  >
     <div class="flex items-center justify-between">
       <a href="/" class="py-4">
         <img
@@ -35,8 +37,8 @@
       ></div>
     </ul>
 
-    <div class="flex items-center gap-4 pt-5">
-      <label for="input-search" class="flex flex-1 items-center rounded-xl bg-[#f7f7f7] px-4">
+    <div class="flex items-center justify-center gap-4 pt-5">
+      <!-- <label for="input-search" class="flex flex-1 items-center rounded-xl bg-[#f7f7f7] px-4">
         <input
           id="input-search"
           class="w-full rounded-xl bg-transparent py-3 text-base text-brand-neutral-500 outline-none placeholder:text-brand-neutral-200"
@@ -46,7 +48,7 @@
         <div>
           <Search class="cursor-pointer" color="#FF2851" size="22" />
         </div>
-      </label>
+      </label> -->
 
       <div class="relative">
         <span
@@ -73,12 +75,12 @@
 import { mapActions } from "pinia";
 import { useMenuStore } from "@/stores/menu";
 
-import { Search, ShoppingBag, X } from "lucide-vue-next";
+import { ShoppingBag, X } from "lucide-vue-next";
 
 export default {
   name: "MenuMobile",
   components: {
-    Search,
+    // Search,
     ShoppingBag,
     MenuClose: X,
   },
@@ -103,5 +105,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>
