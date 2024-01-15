@@ -4,14 +4,10 @@
   </header>
 
   <main class="2xl:container 2xl:mx-auto">
-    <div class="px-4 xl:px-0">
-      <h1 class="mb-6 text-center text-4xl font-bold leading-tight xl:text-6xl">
-        Encontre o <br />
-        <span class="text-brand-primary-500">Restaurante</span> Perfeito
-      </h1>
-
-      <search-restaurants class="xl:mb-20" />
-    </div>
+    <search-section>
+      Encontre o <br />
+      <span class="text-brand-primary-500">Restaurante</span> Perfeito
+    </search-section>
 
     <the-deals />
 
@@ -29,7 +25,7 @@
 </template>
 
 <script>
-import SearchRestaurants from "@/components/Shared/SearchRestaurants.vue";
+import SearchSection from "@/components/Shared/SearchSection.vue";
 import FoodFilters from "@/components/Shared/FoodFilters.vue";
 import HeaderSection from "@/components/Shared/HeaderSection.vue";
 import TheNavigation from "@/components/Shared/Navigation/TheNavigation.vue";
@@ -40,7 +36,7 @@ import TheFooter from "@/components/Shared/TheFooter.vue";
 export default {
   name: "TheHome",
   components: {
-    SearchRestaurants,
+    SearchSection,
     FoodFilters,
     HeaderSection,
     TheFooter,

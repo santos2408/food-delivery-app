@@ -10,7 +10,7 @@
 
       <input
         id="input-search"
-        class="w-full rounded-xl bg-transparent py-3 text-base text-brand-neutral-500 outline-none placeholder:text-brand-neutral-200"
+        class="w-full rounded-xl bg-transparent py-3 text-sm text-brand-neutral-500 outline-none placeholder:text-brand-neutral-200"
         type="text"
         placeholder="Busque por item ou loja"
       />
