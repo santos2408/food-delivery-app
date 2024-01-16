@@ -59,7 +59,7 @@ const classDeals = computed(() => {
 
 onMounted(async () => {
   try {
-    const response = await axios.get("http://localhost:3004/deals");
+    const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/deals`);
 
     deals.value = response.data;
     swiperElement.value = document.querySelector("swiper-container");

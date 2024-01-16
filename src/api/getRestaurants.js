@@ -7,10 +7,12 @@ export default async (page = 1, category) => {
   let url = "";
 
   if (category) {
-    url = `${baseUrl}?category=${category}&_page=${page}&_limit=${limitPerPage}`;
+    url = `${baseUrl}/restaurants?category=${category}&_page=${page}&_limit=${limitPerPage}`;
   } else {
-    url = `${baseUrl}`;
+    url = `${baseUrl}/restaurants?_page=${page}&_limit=${limitPerPage}`;
   }
+
+  console.log(url);
 
   try {
     const response = await axios.get(url);
