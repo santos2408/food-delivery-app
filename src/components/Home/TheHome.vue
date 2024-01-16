@@ -4,7 +4,7 @@
   </header>
 
   <main class="2xl:container 2xl:mx-auto">
-    <search-section>
+    <search-section class="mb-12">
       Encontre o <br />
       <span class="text-brand-primary-500">Restaurante</span> Perfeito
     </search-section>

@@ -7,7 +7,7 @@
       class="mb-8 grid grid-cols-[minmax(328px,_1fr)] gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
     >
       <restaurant-listing
-        v-for="restaurant in restaurants.data"
+        v-for="restaurant in FILTERED_RESTAURANTS.data"
         :key="restaurant.id"
         :value="restaurant"
       />
@@ -33,7 +33,15 @@
 </template>
 
 <script>
-import getRestaurants from "@/api/getRestaurants";
+import { mapState, mapActions } from "pinia";
+import {
+  useRestaurantsStore,
+  FILTERED_RESTAURANTS,
+  FETCH_RESTAURANTS,
+  CLEAR_RESTAURANTS,
+} from "@/stores/restaurants";
+
+import { useUserStore } from "@/stores/user";
 
 import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
 import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
@@ -47,11 +55,8 @@ export default {
     ActionButton,
   },
 
-  emits: ["restaurants-amount"],
-
   data() {
     return {
-      restaurants: { data: [], hasNext: null },
       currentPage: 1,
       loadingMore: false,
       contentLoading: true,
@@ -59,30 +64,37 @@ export default {
     };
   },
 
+  computed: {
+    ...mapState(useRestaurantsStore, [FILTERED_RESTAURANTS]),
+    ...mapState(useUserStore, ["selectedRestaurantTypes"]),
+  },
+
   async mounted() {
-    await this.loadRestaurants(this.currentPage);
-    this.$emit("restaurants-amount", this.restaurants.data.length);
+    let selectedCategory = null;
+
+    if (this.selectedRestaurantTypes) {
+      selectedCategory = this.selectedRestaurantTypes;
+    }
+
+    await this.FETCH_RESTAURANTS(this.currentPage, selectedCategory);
+
     this.contentLoading = false;
   },
 
-  methods: {
-    async loadRestaurants(currentPage) {
-      const restaurants = await getRestaurants(currentPage);
+  unmounted() {
+    this.CLEAR_RESTAURANTS();
+  },
 
-      this.restaurants = {
-        data: [...this.restaurants.data, ...restaurants.data],
-        hasNext: restaurants.hasNext,
-      };
-    },
+  methods: {
+    ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS, CLEAR_RESTAURANTS]),
 
     async showMore() {
       this.currentPage = this.currentPage + 1;
       this.loadingMore = true;
 
-      await this.loadRestaurants(this.currentPage);
-      this.$emit("restaurants-amount", this.restaurants.data.length);
+      await this.FETCH_RESTAURANTS(this.currentPage, null);
 
-      this.hasMoreRestaurants = this.restaurants.hasNext;
+      this.hasMoreRestaurants = this.FILTERED_RESTAURANTS.hasNext;
       this.loadingMore = false;
     },
   },

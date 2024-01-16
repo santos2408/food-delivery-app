@@ -4,7 +4,7 @@
   </header>
 
   <main class="2xl:container 2xl:mx-auto">
-    <search-section>
+    <search-section class="mb-12">
       <span class="text-brand-primary-500">Descubra</span> <br />
       Novos Sabores
     </search-section>
@@ -13,7 +13,7 @@
       <template #title>Todos os restaurantes</template>
     </header-section>
 
-    <food-filters class="xl:mb-12" />
+    <food-filters class="mb-12" />
 
     <div class="mb-2 px-4 lg:px-10 2xl:px-0">
       <span class="text-sm font-medium text-brand-neutral-400">
@@ -29,6 +29,7 @@
 
 <script>
 import { mapState } from "pinia";
+
 import { useRestaurantsStore, FILTERED_RESTAURANTS } from "@/stores/restaurants";
 
 import SearchSection from "@/components/Shared/SearchSection.vue";

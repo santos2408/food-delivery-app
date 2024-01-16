@@ -22,6 +22,14 @@
 </template>
 
 <script>
+import { mapActions } from "pinia";
+import { useUserStore, ADD_SELECTED_RESTAURANT_TYPE } from "@/stores/user";
+import {
+  useRestaurantsStore,
+  FETCH_RESTAURANTS,
+  CLEAR_RESTAURANTS,
+} from "@/stores/restaurants";
+
 import { pizza, burger, meat, sushi, broccoli, cake } from "@/utils/foodFiltersImages.js";
 
 export default {
@@ -39,7 +47,12 @@ export default {
     };
   },
   methods: {
-    selectFilter(slug) {
+    ...mapActions(useUserStore, [ADD_SELECTED_RESTAURANT_TYPE]),
+    ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS, CLEAR_RESTAURANTS]),
+
+    async selectFilter(slug) {
+      this.ADD_SELECTED_RESTAURANT_TYPE(slug);
+
       this.$router.push({
         name: "Restaurants",
         query: {
