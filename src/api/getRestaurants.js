@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://food-delivery-app-two-delta.vercel.app/#/restaurantes";
+const baseUrl = "https://food-delivery-app-two-delta.vercel.app/#/restaurants";
 const limitPerPage = 20;
 
 export default async (page = 1, category) => {
@@ -9,7 +9,7 @@ export default async (page = 1, category) => {
   if (category) {
     url = `${baseUrl}?category=${category}&_page=${page}&_limit=${limitPerPage}`;
   } else {
-    url = `${baseUrl}?_page=${page}&_limit=${limitPerPage}`;
+    url = `${baseUrl}`;
   }
 
   try {
