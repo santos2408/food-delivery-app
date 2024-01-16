@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://food-delivery-app-two-delta.vercel.app/#/restaurants";
+const baseUrl = import.meta.env.VITE_APP_API_URL;
 const limitPerPage = 20;
 
 export default async (page = 1, category) => {
