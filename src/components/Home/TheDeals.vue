@@ -21,7 +21,7 @@
           <div class="transition duration-300 hover:-rotate-1 hover:scale-105">
             <a href="#">
               <span>
-                <img :src="deal.url" :alt="deal.description" />
+                <img :src="getDealUrl(deal.url)" :alt="deal.description" />
               </span>
             </a>
           </div>
@@ -71,6 +71,10 @@ onMounted(async () => {
     console.log(error);
   }
 });
+
+const getDealUrl = (deal) => {
+  return new URL(`../../assets/images/deals/${deal}`, import.meta.url).href;
+};
 </script>
 
 <style scoped>
