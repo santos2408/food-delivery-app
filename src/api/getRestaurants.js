@@ -6,13 +6,13 @@ const limitPerPage = 20;
 export default async (page = 1, category) => {
   let url = "";
 
+  console.log(`URL Base: ${baseUrl}`);
+
   if (category) {
     url = `${baseUrl}/restaurants?category=${category}&_page=${page}&_limit=${limitPerPage}`;
   } else {
     url = `${baseUrl}/restaurants?_page=${page}&_limit=${limitPerPage}`;
   }
-
-  console.log(url);
 
   try {
     const response = await axios.get(url);
