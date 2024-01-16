@@ -3,42 +3,42 @@
     {
       "id": 1,
       "description": "McDonald's com 40% OFF",
-      "url": "src/assets/images/deals/oferta-1.avif"
+      "image": "oferta-1.avif"
     },
     {
       "id": 2,
       "description": "Pra aproveitar o desconto",
-      "url": "src/assets/images/deals/oferta-2.avif"
+      "image": "oferta-2.avif"
     },
     {
       "id": 3,
       "description": "Pra aproveitar o desconto",
-      "url": "src/assets/images/deals/oferta-3.avif"
+      "image": "oferta-3.avif"
     },
     {
       "id": 4,
       "description": "Entrega grátis",
-      "url": "src/assets/images/deals/oferta-4.avif"
+      "image": "oferta-4.avif"
     },
     {
       "id": 5,
       "description": "Quem quer cupom?",
-      "url": "src/assets/images/deals/oferta-5.avif"
+      "image": "oferta-5.avif"
     },
     {
       "id": 6,
       "description": "Doces ou travessuras na Yumz!",
-      "url": "src/assets/images/deals/oferta-6.avif"
+      "image": "oferta-6.avif"
     },
     {
       "id": 7,
       "description": "Pizzas com promo",
-      "url": "src/assets/images/deals/oferta-7.avif"
+      "image": "oferta-7.avif"
     },
     {
       "id": 8,
       "description": "Até 50% OFF",
-      "url": "src/assets/images/deals/oferta-8.avif"
+      "image": "oferta-8.avif"
     }
   ],
   "restaurants": [
@@ -83,7 +83,7 @@
       "name": "Bibi Sucos - Shopping Leblon",
       "logo": "bibi-sucos-logo.avif",
       "rate": 4.6,
-      "category": "Saudável",
+      "category": "Vegana",
       "deliveryTime": [81, 91],
       "shipping": 9.99
     },
@@ -209,7 +209,7 @@
       "name": "Big Polis - Leblon",
       "logo": "big-polis-logo.avif",
       "rate": 4.7,
-      "category": "Saudável",
+      "category": "Vegana",
       "deliveryTime": [49, 59],
       "shipping": 8.99
     },
@@ -227,7 +227,7 @@
       "name": "Big Polis - Leblon",
       "logo": "big-polis-logo.avif",
       "rate": 4.7,
-      "category": "Saudável",
+      "category": "Vegana",
       "deliveryTime": [49, 59],
       "shipping": 8.99
     }
