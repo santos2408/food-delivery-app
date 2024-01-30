@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="/public/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="150">
+    <img src="./front-end/public/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="150">
   </a>
 
   <h3 align="center">Yumz! - Food Delivery App</h3>
@@ -80,7 +80,7 @@
 
 ## About The Project
 
-[![Yumz! Devivery Screen Shot][product-screenshot]](./public/github-cover.png)
+[![Yumz! Devivery Screen Shot][product-screenshot]](./front-end/public/github-cover.png)
 
 <!-- <p align="center">
   <img alt="" src="./public/github-cover.png" width="100%">
