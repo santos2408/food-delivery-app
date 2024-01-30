@@ -77,7 +77,6 @@ export default {
     }
 
     await this.FETCH_RESTAURANTS(this.currentPage, selectedCategory);
-
     this.contentLoading = false;
   },
 

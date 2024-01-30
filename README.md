@@ -42,11 +42,11 @@
     <br /> -->
     <br />
     <br />
-    <a href="https://food-delivery-app-roger-santtoss.netlify.app/#/">View Demo</a>
+    <a href="https://yumz-food-delivery-app.vercel.app/#/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/santos2408/food-delivery-app/issues">Report Bug</a>
+    <a href="https://github.com/santos2408/food-delivery-app/issues" target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/santos2408/food-delivery-app/issues">Request Feature</a>
+    <a href="https://github.com/santos2408/food-delivery-app/issues" target="_blank">Request Feature</a>
   </p>
 </div>
 
