@@ -5,6 +5,7 @@ import RestaurantsView from "@/views/RestaurantsView.vue";
 import LoginView from "@/views/Auth/LoginView.vue";
 import RequestPasswordView from "@/views/Auth/RequestPasswordView.vue";
 import SignupView from "@/views/Auth/SignupView.vue";
+import RestaurantView from "@/views/RestaurantView.vue";
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: "/restaurants/discovery/:category",
     name: "RestaurantsCategory",
     // component: RestaurantsCategoryView,
+  },
+  {
+    path: "/restaurants/:restaurant/:id",
+    name: "Restaurant",
+    component: RestaurantView,
   },
   {
     path: "/login",
