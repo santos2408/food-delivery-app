@@ -1,12 +1,10 @@
-// const express = express();
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-// const database = require("../config/database");
+const restaurantsController = require("../controllers/restaurantsController");
 
-// router.post("/restaurants/create", async (request, response) => {
-//   const { name, description } = request.body;
-//   console.log("estou aqui");
-//   await database.query("INSERT INTO restaurants (id, name, description) VALUES (UUID(), ?, ?)", [name, description]);
-// });
+router.post("/restaurants/create", restaurantsController.postCreateRestaurant);
 
-// module.exports = router;
+router.get("/restaurants", restaurantsController.getRestaurants);
+
+module.exports = router;

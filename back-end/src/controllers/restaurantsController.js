@@ -1,22 +1,27 @@
 const database = require("../config/database");
 
 exports.getRestaurants = async (request, response) => {
-  const [rows] = await database.query("SELECT * FROM restaurants");
-
-  console.log(rows);
-
-  response.status(202).send({
-    message: "Restaurantes obtidos com sucesso!",
-  });
+  try {
+    const [rows] = await database.query("SELECT * FROM restaurants");
+    response.status(200).send(rows);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 exports.postCreateRestaurant = async (request, response) => {
-  const { name, description, category, rate, logo, shipping, delivery_time, adress } = request.body;
+  const { name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress } = request.body;
 
-  await database.query(
-    "INSERT INTO restaurants (id, name, description, category, rate, logo, shipping, delivery_time, adress) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?)",
-    [name, description, category, rate, logo, shipping, delivery_time, adress],
-  );
+  try {
+    await database.query(
+      "INSERT INTO restaurants (id, name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [name, description, slug, logo, rate, category, delivery_time_min, delivery_time_max, shipping, adress],
+    );
 
-  response.status(202).end();
+    response.status(202).send({
+      message: "Restaurante criado com sucesso.",
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
