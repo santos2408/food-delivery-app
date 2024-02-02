@@ -70,7 +70,7 @@ export default {
   },
 
   async mounted() {
-    const restaurantsPage = this.$route.path === "/restaurantes";
+    const restaurantsPage = this.$route.path === "/restaurants";
 
     if (restaurantsPage) {
       await this.FETCH_RESTAURANTS(this.currentPage, 40, this.selectedRestaurantTypes);

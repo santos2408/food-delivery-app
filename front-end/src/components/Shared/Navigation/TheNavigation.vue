@@ -89,9 +89,9 @@ export default {
     return {
       menuItems: [
         { id: 1, title: "Home", url: "/" },
-        { id: 2, title: "Restaurantes", url: "/restaurantes" },
-        { id: 3, title: "Promoções", url: "/promocoes" },
-        { id: 4, title: "Meus Pedidos", url: "/pedidos" },
+        { id: 2, title: "Restaurantes", url: "/restaurants" },
+        { id: 3, title: "Promoções", url: "/deals" },
+        { id: 4, title: "Meus Pedidos", url: "/orders" },
       ],
     };
   },
