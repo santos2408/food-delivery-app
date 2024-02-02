@@ -18,7 +18,7 @@
           <TheStar class="mb-1 h-4 w-4" />
           <span class="ml-1 font-semibold text-[#FFC700]">{{ value.rate }}</span>
           <span class="mx-2 text-[10px] text-brand-neutral-300"> • </span>
-          <span class="font-semibold text-brand-neutral-300">
+          <span class="font-semibold capitalize text-brand-neutral-300">
             {{ value.category }}
           </span>
         </div>

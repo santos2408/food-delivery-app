@@ -1,18 +1,15 @@
 import axios from "axios";
 
 const baseUrl = import.meta.env.VITE_APP_API_URL;
-const limitPerPage = 20;
 
-export default async (page = 1, category) => {
+export default async (page = 1, limit = 20, category) => {
   let url = "";
 
   if (category) {
-    url = `${baseUrl}/restaurants?category=${category}&_page=${page}&_limit=${limitPerPage}`;
+    url = `${baseUrl}/restaurants?category=${category}&_page=${page}&_limit=${limit}`;
   } else {
-    url = `${baseUrl}/restaurants?_page=${page}&_limit=${limitPerPage}`;
+    url = `${baseUrl}/restaurants?_page=${page}&_limit=${limit}`;
   }
-
-  console.log(url);
 
   try {
     const response = await axios.get(url);

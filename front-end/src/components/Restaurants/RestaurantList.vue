@@ -41,7 +41,7 @@ import {
   CLEAR_RESTAURANTS,
 } from "@/stores/restaurants";
 
-import { useUserStore } from "@/stores/user";
+import { useUserStore, ADD_SELECTED_RESTAURANT_TYPE } from "@/stores/user";
 
 import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
 import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
@@ -70,13 +70,14 @@ export default {
   },
 
   async mounted() {
-    let selectedCategory = null;
+    const restaurantsPage = this.$route.path === "/restaurantes";
 
-    if (this.selectedRestaurantTypes) {
-      selectedCategory = this.selectedRestaurantTypes;
+    if (restaurantsPage) {
+      await this.FETCH_RESTAURANTS(this.currentPage, 40, this.selectedRestaurantTypes);
+    } else {
+      await this.FETCH_RESTAURANTS(this.currentPage, 20, this.selectedRestaurantTypes);
     }
 
-    await this.FETCH_RESTAURANTS(this.currentPage, selectedCategory);
     this.contentLoading = false;
   },
 
@@ -85,13 +86,18 @@ export default {
   },
 
   methods: {
+    ...mapActions(useUserStore, [ADD_SELECTED_RESTAURANT_TYPE]),
     ...mapActions(useRestaurantsStore, [FETCH_RESTAURANTS, CLEAR_RESTAURANTS]),
 
     async showMore() {
       this.currentPage = this.currentPage + 1;
       this.loadingMore = true;
 
-      await this.FETCH_RESTAURANTS(this.currentPage, null);
+      if (this.selectedRestaurantTypes) {
+        this.selectedCategory = this.selectedRestaurantTypes;
+      }
+
+      await this.FETCH_RESTAURANTS(this.currentPage, 40, this.selectedCategory);
 
       this.hasMoreRestaurants = this.FILTERED_RESTAURANTS.hasNext;
       this.loadingMore = false;

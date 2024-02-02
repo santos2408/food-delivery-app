@@ -47,7 +47,7 @@
       "name": "Sushi Master",
       "logo": "sushi-master-logo.avif",
       "rate": 4.8,
-      "category": "Japonesa",
+      "category": "japonesa",
       "deliveryTime": [60, 70],
       "shipping": 13.99
     },
@@ -56,7 +56,7 @@
       "name": "Safari Burger & Grill",
       "logo": "safari-burger-logo.avif",
       "rate": 4.7,
-      "category": "Lanches",
+      "category": "lanches",
       "deliveryTime": [20, 30],
       "shipping": 4.99
     },
@@ -65,7 +65,7 @@
       "name": "Lemax Hamburgueria - PUC Rio",
       "logo": "lemax-hamburgueria-logo.avif",
       "rate": 4.8,
-      "category": "Lanches",
+      "category": "lanches",
       "deliveryTime": [40, 50],
       "shipping": "Grátis"
     },
@@ -74,7 +74,7 @@
       "name": "Mané - São Conrado",
       "logo": "mane-sao-conrado-logo.avif",
       "rate": 4.5,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [73, 83],
       "shipping": 7.99
     },
@@ -83,7 +83,7 @@
       "name": "Bibi Sucos - Shopping Leblon",
       "logo": "bibi-sucos-logo.avif",
       "rate": 4.6,
-      "category": "Vegana",
+      "category": "vegana",
       "deliveryTime": [81, 91],
       "shipping": 9.99
     },
@@ -92,7 +92,7 @@
       "name": "La Mole Pizza - Leblon",
       "logo": "la-mole-pizza-logo.avif",
       "rate": 4.5,
-      "category": "Pizza",
+      "category": "pizza",
       "deliveryTime": [40, 50],
       "shipping": "Grátis"
     },
@@ -101,7 +101,7 @@
       "name": "Santa Marta - Ipanema",
       "logo": "santa-marta-logo.avif",
       "rate": 4.8,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [75, 85],
       "shipping": 10.99
     },
@@ -110,7 +110,7 @@
       "name": "Mex Burritos - Jardim Botânico",
       "logo": "mex-burritos-logo.avif",
       "rate": 4.5,
-      "category": "Mexicana",
+      "category": "mexicana",
       "deliveryTime": [44, 54],
       "shipping": 8.99
     },
@@ -119,7 +119,7 @@
       "name": "Reservado - Comida Brasileira",
       "logo": "reservado-logo.avif",
       "rate": 4.6,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [25, 35],
       "shipping": "Grátis"
     },
@@ -128,7 +128,7 @@
       "name": "Mirante Rocinha",
       "logo": "mirante-rocinha-logo.avif",
       "rate": 4.5,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [33, 43],
       "shipping": 5.0
     },
@@ -137,7 +137,7 @@
       "name": "Petisco Gourmet",
       "logo": "petisco-gourmet-logo.avif",
       "rate": 4.8,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [38, 48],
       "shipping": "Grátis"
     },
@@ -146,7 +146,7 @@
       "name": "OakBerry Açaí - Leblon",
       "logo": "oakberry-acai-logo.avif",
       "rate": 4.7,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [58, 68],
       "shipping": 7.99
     },
@@ -155,7 +155,7 @@
       "name": "Tako Sushi",
       "logo": "tako-sushi-logo.avif",
       "rate": 5.0,
-      "category": "Japonesa",
+      "category": "japonesa",
       "deliveryTime": [40, 50],
       "shipping": "Grátis"
     },
@@ -164,7 +164,7 @@
       "name": "Padaria Santa Marta - Lagoa",
       "logo": "padaria-santa-marta-logo.avif",
       "rate": 5.0,
-      "category": "Japonesa",
+      "category": "japonesa",
       "deliveryTime": [40, 50],
       "shipping": "Grátis"
     },
@@ -173,7 +173,7 @@
       "name": "Coco Bambu Botafogo - Rio",
       "logo": "coco-bambu-botafogo-logo.avif",
       "rate": 4.9,
-      "category": "Frutos do Mar",
+      "category": "frutos do Mar",
       "deliveryTime": [75, 85],
       "shipping": 16.89
     },
@@ -182,7 +182,7 @@
       "name": "Espetto Carioca - Leblon",
       "logo": "espetto-carioca-logo.avif",
       "rate": 4.6,
-      "category": "Brasileira",
+      "category": "brasileira",
       "deliveryTime": [61, 71],
       "shipping": 6.99
     },
@@ -191,7 +191,7 @@
       "name": "Bom Gosto",
       "logo": "bom-gosto-logo.avif",
       "rate": 4.6,
-      "category": "Pizza",
+      "category": "pizza",
       "deliveryTime": [20, 30],
       "shipping": "Grátis"
     },
@@ -200,7 +200,7 @@
       "name": "KFC - Frango Frito - Botafogo",
       "logo": "kfc-frango-frito-logo.avif",
       "rate": 4.6,
-      "category": "Lanches",
+      "category": "lanches",
       "deliveryTime": [74, 84],
       "shipping": 15.99
     },
@@ -209,7 +209,7 @@
       "name": "Big Polis - Leblon",
       "logo": "big-polis-logo.avif",
       "rate": 4.7,
-      "category": "Vegana",
+      "category": "vegana",
       "deliveryTime": [49, 59],
       "shipping": 8.99
     },
@@ -218,18 +218,18 @@
       "name": "Sushi Master",
       "logo": "sushi-master-logo.avif",
       "rate": 4.8,
-      "category": "Japonesa",
+      "category": "japonesa",
       "deliveryTime": [60, 70],
       "shipping": 13.99
     },
     {
       "id": 21,
-      "name": "Big Polis - Leblon",
-      "logo": "big-polis-logo.avif",
-      "rate": 4.7,
-      "category": "Vegana",
-      "deliveryTime": [49, 59],
-      "shipping": 8.99
+      "name": "O Fornês - Pizzaria Copacabana",
+      "logo": "o-fornes-logo.avif",
+      "rate": 4.8,
+      "category": "pizza",
+      "deliveryTime": [34, 44],
+      "shipping": 8.0
     }
   ]
 }
