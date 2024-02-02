@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://yumz-food-delivery-app.vercel.app/#/">
     <img src="./front-end/public/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="150">
   </a>
 
@@ -80,7 +80,7 @@
 
 ## About The Project
 
-[![Yumz! Devivery Screen Shot][product-screenshot]](./front-end/public/github-cover.png)
+[![Yumz! Devivery Screen Shot][product-screenshot]](https://yumz-food-delivery-app.vercel.app/#/)
 
 <!-- <p align="center">
   <img alt="" src="./public/github-cover.png" width="100%">
