@@ -13,6 +13,7 @@ export default async (page = 1, limit = 20, category) => {
 
   try {
     const response = await axios.get(url);
+
     const isRequestOk = response.request.status === 200 && response.request.readyState === 4;
 
     if (!isRequestOk) {

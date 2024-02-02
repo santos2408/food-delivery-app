@@ -7,7 +7,7 @@
       class="flex w-full items-center gap-3 px-3 py-4"
     >
       <div class="h-20 w-20 overflow-hidden rounded-xl">
-        <img :src="getLogoUrl(value.logo)" :alt="value.name" />
+        <img :src="getLogoUrl" :alt="value.name" />
       </div>
 
       <div ref="description" class="flex flex-1 flex-col gap-1">
@@ -29,7 +29,7 @@
         <div class="flex items-center gap-[8px] text-sm font-semibold text-brand-neutral-300">
           <span class="flex items-center gap-1">
             <Clock :size="13" color="#A3ABB2" />
-            {{ deliveryTime(value.deliveryTime) }}
+            {{ formattedDeliveryTime }}
           </span>
 
           <span class="text-[10px]"> • </span>
@@ -74,13 +74,11 @@ export default {
       const shippingValueType = this.getShippingValueType;
       return shippingValueType === "number" ? "" : { color: "#17AA64" };
     },
-  },
-  methods: {
-    getLogoUrl(logo) {
-      return new URL(`../../assets/images/logos/${logo}`, import.meta.url).href;
+    formattedDeliveryTime() {
+      return `${this.value.delivery_time_min}-${this.value.delivery_time_max} min`;
     },
-    deliveryTime(times) {
-      return `${times[0]}-${times[1]} min`;
+    getLogoUrl() {
+      return new URL(`../../assets/images/logos/${this.value.logo}`, import.meta.url).href;
     },
   },
 };
