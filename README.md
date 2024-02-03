@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://yumz-food-delivery-app.vercel.app/#/">
-    <img src="/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="150">
+    <img src="./public/yumz-logo.svg" alt="Yumz! Food Delivery Logo" width="150">
   </a>
 
   <h3 align="center">Yumz! - Food Delivery App</h3>
@@ -256,7 +256,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: /github-cover.png
+[product-screenshot]: ./public/github-cover.png
 
 <!-- [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
