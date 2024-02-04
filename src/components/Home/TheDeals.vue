@@ -39,12 +39,12 @@
 </template>
 
 <script setup>
-import axios from "axios";
 import { ref, computed, onMounted } from "vue";
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
 import HeaderSection from "@/components/Shared/HeaderSection.vue";
 import TheDealsContentLoader from "@/assets/Loaders/ContentLoaders/TheDealsContentLoader.vue";
+import getDeals from "@/api/getDeals";
 
 const swiperElement = ref(null);
 const deals = ref([]);
@@ -58,18 +58,14 @@ const classDeals = computed(() => {
 });
 
 onMounted(async () => {
-  try {
-    const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/deals`);
+  const response = await getDeals();
 
-    deals.value = response.data;
-    swiperElement.value = document.querySelector("swiper-container");
+  deals.value = response.data;
+  swiperElement.value = document.querySelector("swiper-container");
 
-    Object.assign(swiperElement.value, dealsSwiperParams);
-    swiperElement.value.initialize();
-    loading.value = false;
-  } catch (error) {
-    console.log(error);
-  }
+  Object.assign(swiperElement.value, dealsSwiperParams);
+  swiperElement.value.initialize();
+  loading.value = false;
 });
 
 const getDealUrl = (deal) => {
