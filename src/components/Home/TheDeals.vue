@@ -59,7 +59,6 @@ const classDeals = computed(() => {
 
 onMounted(async () => {
   const response = await getDeals();
-
   deals.value = response.data;
   swiperElement.value = document.querySelector("swiper-container");
 

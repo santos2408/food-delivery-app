@@ -3,7 +3,7 @@
     <the-navigation />
   </header>
 
-  <main class="2xl:container 2xl:mx-auto">
+  <main class="2xl:container 2xl:mx-auto min-h-screen">
     <header-section :has-button="false">
       <template #title>Todos os restaurantes</template>
     </header-section>
