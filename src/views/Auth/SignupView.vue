@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import TheSignup from "@/components/Auth/Signup/TheSignup.vue";
-import SignupCover from "@/components/Auth/Signup/SignupCover.vue";
+import TheSignup from "@/features/Auth/components/Signup/TheSignup.vue";
+import SignupCover from "@/features/Auth/components/Signup/SignupCover.vue";
 
 export default {
   name: "SignupView",

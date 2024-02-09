@@ -3,7 +3,7 @@
     <the-navigation />
   </header>
 
-  <main class="2xl:container 2xl:mx-auto min-h-screen">
+  <main class="min-h-screen 2xl:container 2xl:mx-auto">
     <header-section :has-button="false">
       <template #title>Todos os restaurantes</template>
     </header-section>
@@ -19,10 +19,10 @@ import { mapState } from "pinia";
 
 import { useRestaurantsStore, FILTERED_RESTAURANTS } from "@/stores/restaurants";
 
-import HeaderSection from "@/components/Shared/HeaderSection.vue";
-import RestaurantList from "@/components/Restaurants/RestaurantList.vue";
-import TheNavigation from "@/components/Shared/Navigation/TheNavigation.vue";
-import TheFooter from "@/components/Shared/TheFooter.vue";
+import HeaderSection from "@/components/HeaderSection.vue";
+import RestaurantList from "@/features/Restaurants/components/RestaurantList.vue";
+import TheNavigation from "@/components/Navigation/TheNavigation.vue";
+import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   name: "TheRestaurants",

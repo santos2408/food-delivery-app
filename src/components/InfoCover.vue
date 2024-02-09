@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import LoginSwiper from "@/components/Auth/Login/LoginSwiper.vue";
+import LoginSwiper from "@/features/Auth/components/Login/LoginSwiper.vue";
 
 export default {
   name: "InfoCover",

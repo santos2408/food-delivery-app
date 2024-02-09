@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SearchRestaurants from "@/components/Shared/SearchRestaurants.vue";
+import SearchRestaurants from "@/components/SearchRestaurants.vue";
 
 export default {
   name: "SearchSection",

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TheRestaurants from "@/components/Restaurants/TheRestaurants.vue";
+import TheRestaurants from "@/features/Restaurants/components/TheRestaurants.vue";
 
 export default {
   name: "RestaurantsView",

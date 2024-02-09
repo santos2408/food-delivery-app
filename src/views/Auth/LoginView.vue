@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import InfoCover from "@/components/Shared/InfoCover.vue";
-import TheLogin from "@/components/Auth/Login/TheLogin.vue";
+import InfoCover from "@/components/InfoCover.vue";
+import TheLogin from "@/features/Auth/components/Login/TheLogin.vue";
 
 export default {
   name: "LoginView",

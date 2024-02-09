@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
+import HeaderLogo from "@/components/Auth/HeaderLogo.vue";
 
 export default {
   name: "SignupCover",

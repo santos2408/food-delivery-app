@@ -12,6 +12,8 @@ export const useMenuStore = defineStore("menu", {
       const clickOutside = clickedElement.dataset.js === "menu-outside";
       const menuShouldBeToggled = menuItem || closeButton || clickOutside;
 
+      console.log(menuItem, closeButton, clickOutside);
+
       if (clickOutside && !this.menuActive) {
         return;
       }

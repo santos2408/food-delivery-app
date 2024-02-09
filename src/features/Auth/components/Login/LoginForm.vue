@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import InputField from "@/components/Shared/InputField.vue";
-import TheCheckbox from "@/components/Shared/TheCheckbox.vue";
+import ActionButton from "@/components/ActionButton.vue";
+import InputField from "@/components/InputField.vue";
+import TheCheckbox from "@/components/TheCheckbox.vue";
 
 export default {
   name: "LoginForm",

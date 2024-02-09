@@ -26,11 +26,6 @@
           { relative: index === lastMenuItem },
         ]"
       >
-        <!-- <span
-          v-if="index === lastMenuItem"
-          class="pointer-events-none absolute -left-3 top-2/4 h-8 w-[1px] -translate-y-1/2 cursor-default bg-brand-neutral-50"
-        >
-        </span> -->
         <router-link :to="menuItem.url" class="p-2 text-base">
           {{ menuItem.title }}
         </router-link>
@@ -38,7 +33,7 @@
     </ul>
 
     <div class="flex items-center">
-      <div class="relative">
+      <div class="relative hidden xl:block">
         <span
           class="absolute -top-2 right-0 flex h-5 min-w-[20px] items-center justify-center rounded-lg bg-brand-primary-500 px-1 text-[10px] font-semibold leading-none text-white"
         >
@@ -51,13 +46,29 @@
         </span>
       </div>
 
-      <div
-        class="ml-4 box-border h-12 w-12 cursor-pointer overflow-hidden rounded-2xl border-2 border-brand-neutral-50 hover:border-brand-primary-500"
-      >
-        <img src="https://i.pravatar.cc/300" alt="" />
+      <div v-if="isLoggedIn" class="group hidden cursor-pointer items-center gap-1 xl:flex">
+        <div
+          class="ml-4 box-border h-12 w-12 overflow-hidden rounded-2xl border-2 border-brand-neutral-50 transition duration-150 group-hover:border-brand-primary-500"
+        >
+          <img src="https://i.pravatar.cc/300" alt="" />
+        </div>
+
+        <ChevronDown
+          size="18"
+          class="text-brand-neutral-100 transition duration-150 group-hover:text-brand-primary-500"
+        />
       </div>
 
-      <span class="mx-4 h-8 w-[1px] bg-brand-neutral-50 xl:hidden"></span>
+      <button
+        v-else
+        type="button"
+        class="ml-4 rounded-full bg-brand-primary-500 px-6 py-[10px] text-sm font-bold text-white transition duration-150 hover:bg-brand-primary-400 active:bg-brand-primary-100 xl:px-8 xl:py-3"
+        @click="login"
+      >
+        Entrar
+      </button>
+
+      <span class="mx-4 hidden h-8 w-[1px] bg-brand-neutral-50 xl:hidden"></span>
 
       <button
         type="button"
@@ -73,16 +84,18 @@
 <script>
 import { mapState, mapActions } from "pinia";
 import { useMenuStore } from "@/stores/menu";
+import { useUserStore } from "@/stores/user";
 
-import { ShoppingBag, Menu } from "lucide-vue-next";
+import { ShoppingBag, Menu, ChevronDown } from "lucide-vue-next";
 
-import MenuMobile from "@/components/Shared/Navigation/MenuMobile.vue";
+import MenuMobile from "@/components/Navigation/MenuMobile.vue";
 
 export default {
   name: "TheNavigation",
   components: {
     ShoppingBag,
     MenuToggle: Menu,
+    ChevronDown,
     MenuMobile,
   },
   data() {
@@ -91,12 +104,12 @@ export default {
         { id: 1, title: "Home", url: "/" },
         { id: 2, title: "Restaurantes", url: "/restaurants" },
         { id: 3, title: "Promoções", url: "/deals" },
-        { id: 4, title: "Meus Pedidos", url: "/orders" },
       ],
     };
   },
   computed: {
     ...mapState(useMenuStore, ["menuActive"]),
+    ...mapState(useUserStore, ["isLoggedIn"]),
     isMenuActive() {
       return this.menuActive;
     },
@@ -106,6 +119,7 @@ export default {
   },
   methods: {
     ...mapActions(useMenuStore, ["toggleMenu"]),
+    ...mapActions(useUserStore, ["login"]),
   },
 };
 </script>
@@ -121,6 +135,6 @@ export default {
 
 .slide-menu-enter-from,
 .slide-menu-leave-to {
-  transform: translateY(-100%);
+  transform: translateX(-100%);
 }
 </style>

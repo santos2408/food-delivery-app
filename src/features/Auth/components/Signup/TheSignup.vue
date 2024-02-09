@@ -230,12 +230,12 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import AccountType from "@/components/Auth/Signup/AccountType.vue";
-import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
-import InputField from "@/components/Shared/InputField.vue";
-import SignupProgress from "@/components/Auth/Signup/SignupProgress.vue";
-import TheCheckbox from "@/components/Shared/TheCheckbox.vue";
+import ActionButton from "@/components/ActionButton.vue";
+import AccountType from "@/features/Auth/components/Signup/AccountType.vue";
+import HeaderLogo from "@/components/Auth/HeaderLogo.vue";
+import InputField from "@/components/InputField.vue";
+import SignupProgress from "@/features/Auth/components/Signup/SignupProgress.vue";
+import TheCheckbox from "@/components/TheCheckbox.vue";
 
 export default {
   name: "TheSignup",

@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
-import InputField from "@/components/Shared/InputField.vue";
+import ActionButton from "@/components/ActionButton.vue";
+import HeaderLogo from "@/components/Auth/HeaderLogo.vue";
+import InputField from "@/components/InputField.vue";
 import LeftArrowIcon from "@/assets/Icons/LeftArrowIcon.vue";
 
 export default {

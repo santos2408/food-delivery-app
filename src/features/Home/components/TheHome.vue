@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import SearchSection from "@/components/Shared/SearchSection.vue";
-import FoodFilters from "@/components/Shared/FoodFilters.vue";
-import HeaderSection from "@/components/Shared/HeaderSection.vue";
-import TheNavigation from "@/components/Shared/Navigation/TheNavigation.vue";
-import TheDeals from "@/components/Home/TheDeals.vue";
-import RestaurantList from "@/components/Restaurants/RestaurantList.vue";
-import TheFooter from "@/components/Shared/TheFooter.vue";
+import SearchSection from "@/components/SearchSection.vue";
+import FoodFilters from "@/components/FoodFilters.vue";
+import HeaderSection from "@/components/HeaderSection.vue";
+import TheNavigation from "@/components/Navigation/TheNavigation.vue";
+import TheDeals from "@/features/Home/components/TheDeals.vue";
+import RestaurantList from "@/features/Restaurants/components/RestaurantList.vue";
+import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   name: "TheHome",

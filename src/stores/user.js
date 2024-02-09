@@ -11,5 +11,8 @@ export const useUserStore = defineStore("user", {
     [ADD_SELECTED_RESTAURANT_TYPE](restaurantType) {
       this.selectedRestaurantTypes = restaurantType;
     },
+    login() {
+      this.isLoggedIn = !this.isLoggedIn;
+    },
   },
 });

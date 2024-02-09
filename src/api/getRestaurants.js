@@ -6,9 +6,9 @@ export default async (page = 1, limit = 20, category) => {
   let url = "";
 
   if (category) {
-    url = `${baseUrl}/restaurants?category=${category}&_page=${page}&_limit=${limit}`;
+    url = `${baseUrl}/restaurants?category=${category}&page=${page}&limit=${limit}`;
   } else {
-    url = `${baseUrl}/restaurants?_page=${page}&_limit=${limit}`;
+    url = `${baseUrl}/restaurants?page=${page}&limit=${limit}`;
   }
 
   try {

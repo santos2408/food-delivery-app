@@ -42,7 +42,7 @@
 import { ref, computed, onMounted } from "vue";
 import { dealsSwiperParams } from "@/utils/swiperParams";
 
-import HeaderSection from "@/components/Shared/HeaderSection.vue";
+import HeaderSection from "@/components/HeaderSection.vue";
 import TheDealsContentLoader from "@/assets/Loaders/ContentLoaders/TheDealsContentLoader.vue";
 import getDeals from "@/api/getDeals";
 
@@ -68,7 +68,7 @@ onMounted(async () => {
 });
 
 const getDealUrl = (deal) => {
-  return new URL(`../../assets/images/deals/${deal}`, import.meta.url).href;
+  return new URL(`../../../assets/images/deals/${deal}`, import.meta.url).href;
 };
 </script>
 

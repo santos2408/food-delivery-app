@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import InfoCover from "@/components/Shared/InfoCover.vue";
-import RequestPassword from "@/components/Auth/RequestPassword/RequestPassword.vue";
+import InfoCover from "@/components/InfoCover.vue";
+import RequestPassword from "@/features/Auth/components/RequestPassword/RequestPassword.vue";
 
 export default {
   name: "RequestPasswordView",

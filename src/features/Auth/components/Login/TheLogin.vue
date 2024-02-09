@@ -48,8 +48,8 @@
 
 <script>
 import GoogleIcon from "@/assets/Icons/GoogleIcon.vue";
-import HeaderLogo from "@/components/Shared/Auth/HeaderLogo.vue";
-import LoginForm from "@/components/Auth/Login/LoginForm.vue";
+import HeaderLogo from "@/components/Auth/HeaderLogo.vue";
+import LoginForm from "@/features/Auth/components/Login/LoginForm.vue";
 
 export default {
   name: "TheLogin",

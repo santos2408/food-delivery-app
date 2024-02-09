@@ -43,9 +43,9 @@ import {
 
 import { useUserStore, ADD_SELECTED_RESTAURANT_TYPE } from "@/stores/user";
 
-import RestaurantListing from "@/components/Restaurants/RestaurantListing.vue";
+import RestaurantListing from "@/features/Restaurants/components/RestaurantListing.vue";
 import RestaurantListContentLoader from "@/assets/Loaders/ContentLoaders/RestaurantListContentLoader.vue";
-import ActionButton from "@/components/Shared/ActionButton.vue";
+import ActionButton from "@/components/ActionButton.vue";
 
 export default {
   name: "RestaurantList",

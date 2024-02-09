@@ -66,19 +66,19 @@ export default {
     },
     shippingValue() {
       const shippingValueType = this.getShippingValueType;
-      return shippingValueType === "number"
-        ? `R$ ${this.value.shipping}`
-        : this.value.shipping;
+      return shippingValueType.toLowerCase() === "grátis"
+        ? this.value.shipping
+        : `R$ ${this.value.shipping}`;
     },
     shippingValueStyle() {
       const shippingValueType = this.getShippingValueType;
-      return shippingValueType === "number" ? "" : { color: "#17AA64" };
+      return shippingValueType.toLowerCase() === "grátis" ? { color: "#17AA64" } : "";
     },
     formattedDeliveryTime() {
       return `${this.value.delivery_time_min}-${this.value.delivery_time_max} min`;
     },
     getLogoUrl() {
-      return new URL(`../../assets/images/logos/${this.value.logo}`, import.meta.url).href;
+      return new URL(`../../../assets/images/logos/${this.value.logo}`, import.meta.url).href;
     },
   },
 };
