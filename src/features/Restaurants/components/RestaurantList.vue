@@ -71,8 +71,12 @@ export default {
 
   async mounted() {
     const restaurantsPage = this.$route.path === "/restaurants";
+    const category = this.$route.query.category;
+
+    this.ADD_SELECTED_RESTAURANT_TYPE(category);
 
     if (restaurantsPage) {
+      console.log(this.selectedRestaurantTypes);
       await this.FETCH_RESTAURANTS(this.currentPage, 40, this.selectedRestaurantTypes);
     } else {
       await this.FETCH_RESTAURANTS(this.currentPage, 20, this.selectedRestaurantTypes);

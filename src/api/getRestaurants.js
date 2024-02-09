@@ -5,6 +5,8 @@ const baseUrl = import.meta.env.VITE_APP_API_URL;
 export default async (page = 1, limit = 20, category) => {
   let url = "";
 
+  console.log(page, limit, category);
+
   if (category) {
     url = `${baseUrl}/restaurants?category=${category}&page=${page}&limit=${limit}`;
   } else {

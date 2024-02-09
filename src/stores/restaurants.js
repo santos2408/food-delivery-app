@@ -31,8 +31,8 @@ export const useRestaurantsStore = defineStore("restaurants", {
     },
   },
   actions: {
-    async [FETCH_RESTAURANTS](currentPage, category) {
-      const restaurants = await getRestaurants(currentPage, category);
+    async [FETCH_RESTAURANTS](currentPage, quantity, category) {
+      const restaurants = await getRestaurants(currentPage, quantity, category);
 
       this.restaurants = {
         data: [...this.restaurants.data, ...restaurants.data],

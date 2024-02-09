@@ -41,7 +41,7 @@ export default {
         { id: 2, title: "Lanches", url: burger, slug: "lanches" },
         { id: 3, title: "Churrasco", url: meat, slug: "churrasco" },
         { id: 4, title: "Japonesa", url: sushi, slug: "japonesa" },
-        { id: 5, title: "Vegana", url: broccoli, slug: "vegana" },
+        { id: 5, title: "Saudável", url: broccoli, slug: "saudavel" },
         { id: 6, title: "Sobremesa", url: cake, slug: "sobremesa" },
       ],
     };
