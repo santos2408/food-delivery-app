@@ -24,7 +24,10 @@
       </div>
 
       <div>
-        <div class="flex items-center gap-4 border-t-[1px] border-brand-neutral-50 pt-8">
+        <div
+          v-if="isLoggedIn"
+          class="flex items-center gap-4 border-t-[1px] border-brand-neutral-50 pt-8"
+        >
           <div class="relative">
             <span
               class="absolute -top-2 right-0 flex h-5 w-5 items-center justify-center rounded-lg bg-brand-primary-500 text-[10px] font-semibold text-white"
@@ -38,7 +41,7 @@
             </span>
           </div>
 
-          <div v-if="isLoggedIn" class="group flex cursor-pointer items-center gap-1">
+          <div class="group flex cursor-pointer items-center gap-1">
             <div
               class="box-border h-14 w-14 cursor-pointer overflow-hidden rounded-2xl border-2 border-brand-neutral-50 hover:border-brand-primary-500"
             >
@@ -50,14 +53,21 @@
               class="text-brand-neutral-100 transition duration-150 group-hover:text-brand-primary-500"
             />
           </div>
+        </div>
+
+        <div v-else class="flex flex-col items-center gap-4">
+          <router-link
+            :to="{ name: 'Login' }"
+            class="font-bold text-brand-neutral-600 hover:text-brand-primary-500"
+            >Entrar
+          </router-link>
 
           <button
-            v-else
             type="button"
             class="h-14 w-full rounded-full bg-brand-primary-500 px-16 text-sm font-bold text-white transition duration-150 hover:bg-brand-primary-400 active:bg-brand-primary-100 xl:px-8 xl:py-3"
             @click="login"
           >
-            Entrar
+            Cadastrar
           </button>
         </div>
 

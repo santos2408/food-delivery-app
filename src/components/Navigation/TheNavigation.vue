@@ -32,7 +32,7 @@
       </li>
     </ul>
 
-    <div class="flex items-center">
+    <div v-if="isLoggedIn" class="flex items-center">
       <div class="relative hidden xl:block">
         <span
           class="absolute -top-2 right-0 flex h-5 min-w-[20px] items-center justify-center rounded-lg bg-brand-primary-500 px-1 text-[10px] font-semibold leading-none text-white"
@@ -46,7 +46,7 @@
         </span>
       </div>
 
-      <div v-if="isLoggedIn" class="group hidden cursor-pointer items-center gap-1 xl:flex">
+      <div class="group hidden cursor-pointer items-center gap-1 xl:flex">
         <div
           class="ml-4 box-border h-12 w-12 overflow-hidden rounded-2xl border-2 border-brand-neutral-50 transition duration-150 group-hover:border-brand-primary-500"
         >
@@ -59,25 +59,31 @@
         />
       </div>
 
-      <button
-        v-else
-        type="button"
-        class="ml-4 rounded-full bg-brand-primary-500 px-6 py-[10px] text-sm font-bold text-white transition duration-150 hover:bg-brand-primary-400 active:bg-brand-primary-100 xl:px-8 xl:py-3"
-        @click="login"
-      >
-        Entrar
-      </button>
-
       <span class="mx-4 hidden h-8 w-[1px] bg-brand-neutral-50 xl:hidden"></span>
-
-      <button
-        type="button"
-        class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl bg-brand-neutral-50 xl:hidden"
-        @click="toggleMenu"
-      >
-        <MenuToggle color="#79858E" />
-      </button>
     </div>
+
+    <div v-else class="hidden items-center xl:flex">
+      <router-link
+        :to="{ name: 'Login' }"
+        class="font-bold text-brand-neutral-600 hover:text-brand-primary-500"
+        >Entrar
+      </router-link>
+
+      <router-link
+        :to="{ name: 'Signup' }"
+        class="ml-4 rounded-full bg-brand-primary-500 px-6 py-[10px] text-sm font-bold text-white transition duration-150 hover:bg-brand-primary-400 active:bg-brand-primary-100 xl:px-8 xl:py-3"
+      >
+        Cadastrar
+      </router-link>
+    </div>
+
+    <button
+      type="button"
+      class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-2xl bg-brand-neutral-50 xl:hidden"
+      @click="toggleMenu"
+    >
+      <MenuToggle color="#79858E" />
+    </button>
   </nav>
 </template>
 
