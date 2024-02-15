@@ -1,14 +1,14 @@
 <template>
-  <the-restaurant />
+  <restaurant-profile />
 </template>
 
 <script>
-import TheRestaurant from "@/features/ProfileRestaurant/components/TheRestaurant.vue";
+import RestaurantProfile from "@/features/ProfileRestaurant/components/RestaurantProfile.vue";
 
 export default {
   name: "RestaurantView",
   components: {
-    TheRestaurant,
+    RestaurantProfile,
   },
 };
 </script>

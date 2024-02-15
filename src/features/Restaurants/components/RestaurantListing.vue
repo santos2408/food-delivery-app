@@ -3,7 +3,7 @@
     class="flex-1 rounded-xl border bg-brand-white shadow-sm transition duration-150 hover:shadow-md xl:flex"
   >
     <router-link
-      :to="{ name: 'Restaurant', params: { restaurant: value.slug, id: value.id } }"
+      :to="{ name: 'RestaurantProfile', params: { restaurant: value.slug, id: value.id } }"
       class="flex w-full items-center gap-3 px-3 py-4"
     >
       <div class="h-20 w-20 overflow-hidden rounded-xl">

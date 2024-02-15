@@ -35,7 +35,7 @@ const routes = [
   },
   {
     path: "/restaurants/:restaurant/:id",
-    name: "Restaurant",
+    name: "RestaurantProfile",
     component: RestaurantView,
   },
   {
